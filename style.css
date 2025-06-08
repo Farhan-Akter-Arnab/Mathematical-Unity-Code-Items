@@ -23,6 +23,7 @@ body {
     align-items: center;
     height: 500px;
     background-size: contain;
+    margin-bottom: 50px;
 }
 .myslides{
     display: none;
