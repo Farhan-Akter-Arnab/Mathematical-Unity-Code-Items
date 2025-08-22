@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Al-Sijzi</h3>
+        <h4>Innovative Mathematician and Astronomer of the Islamic Golden Age</h4>
+        <p>Al-Sijzi (c. 945 – c. 1020 CE), full name Abu Sa'id Ahmad ibn Muhammad ibn 'Abd al-Jalil al-Sijzi, was a
+            Persian
+            mathematician and astronomer known for his original contributions to geometry, planetary theory, and
+            astronomical
+            instruments. He was born in Sijistan (present-day Sistan region spanning eastern Iran and southwestern
+            Afghanistan)
+            and was active in major scientific centers such as Baghdad and Shiraz.</p>
+        <img src="Al-Sijzi.jpeg" alt="Al-Sijzi" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <p>In mathematics, Al-Sijzi made significant progress in geometry. He explored curves beyond the classical Greek
+            approach, notably working on the <b>epicycloid</b> and conic sections. One of his most remarkable
+            contributions was
+            his proposed mechanical solution to angle trisection — a problem considered impossible using only compass
+            and
+            straightedge. He designed an ingenious geometric instrument called the <i>“Zahrawi’s compasses”</i> to aid
+            this
+            process, reflecting his deep understanding of practical geometry and mathematical instruments.</p>
+
+        <p>Al-Sijzi was among the first to explicitly consider the possibility that the Earth rotates on its axis. While
+            this
+            idea was not widely accepted in his time, he defended it scientifically and built astronomical models based
+            on a
+            rotating Earth — a perspective that predated Copernican thought by several centuries.</p>
+
+        <p>He also invented an astronomical device known as the <b>al-zūraqī astrolabe</b>, which assumed a rotating
+            Earth,
+            differing from the traditional Ptolemaic astrolabes. This bold theoretical innovation illustrates his
+            departure from
+            geocentric orthodoxy and shows how Islamic scholars like Al-Sijzi were engaging in conceptual
+            experimentation far
+            ahead of their era.</p>
+
+        <p>Al-Sijzi authored works on spherical geometry, trigonometry, and planetary motions. He criticized and
+            corrected parts
+            of Ptolemaic astronomy and expanded upon Greek and Indian astronomical traditions, often through precise
+            observational and mathematical techniques.</p>
+
+        <ul>
+            <li>Proposed a rotating Earth centuries before Copernicus</li>
+            <li>Designed instruments for solving angle trisection geometrically</li>
+            <li>Developed the al-zūraqī astrolabe based on Earth's rotation</li>
+            <li>Advanced conic sections and studied epicycloidal motion</li>
+        </ul>
+
+        <p>Al-Sijzi’s combination of theoretical creativity and mechanical ingenuity highlights his importance in the
+            history of
+            science. His willingness to challenge prevailing cosmological ideas reflects the intellectual boldness of
+            Islamic
+            scientific culture during its golden age.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

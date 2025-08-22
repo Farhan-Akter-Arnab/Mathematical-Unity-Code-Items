@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Anthemius of Tralles</h3>
+        <h4>Geometer, Engineer, and Architect of Hagia Sophia</h4>
+        <p>
+            Anthemius of Tralles (c. 474 – mid-6th century CE) was a Byzantine mathematician and architect best known as one of
+            the co-designers of Hagia Sophia in Constantinople. He combined advanced geometric knowledge with practical
+            engineering, applying theoretical principles to the design and construction of monumental structures.
+        </p>
+        <img src="Anthemius.webp" alt="Anthemius" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <p>
+            Anthemius studied conic sections and optical phenomena, particularly the reflective properties of parabolic and
+            elliptical surfaces. In his treatise <i>On Burning Mirrors</i>, he analyzed how curved mirrors could focus light and
+            heat, demonstrating an understanding of ray optics that connected mathematics to physics. These studies illustrate
+            the integration of pure and applied mathematics in Byzantine engineering.
+        </p>
+        <p>
+            In architecture, Anthemius applied geometric reasoning to design pendentives, domes, and arches that could sustain
+            massive weights and maintain structural stability. His use of geometry in spatial problem-solving foreshadowed
+            modern structural analysis. For example, he considered the curvature of domes and calculated how forces were
+            transmitted along arches and vaults, anticipating later developments in statics.
+        </p>
+        <p>
+            Anthemius’ work exemplifies the practical application of mathematics in real-world engineering. He ensured that
+            theoretical constructs, such as conic sections, became tools for solving structural and optical problems. His blend
+            of theory, observation, and experimentation influenced Byzantine architectural practice and preserved a lineage of
+            applied geometry for future generations.
+        </p>
+        <p>
+            Through his contributions, Anthemius represents a rare combination of mathematician, scientist, and architect,
+            demonstrating how geometry could inform and guide the creation of enduring monuments.
+        </p>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

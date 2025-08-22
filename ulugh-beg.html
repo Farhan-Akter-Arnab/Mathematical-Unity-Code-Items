@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Ulugh Beg, the Mathematician Sultan</h3>
+        <p><b>Muhammad Taraghay <code>Ulugh Beg</code></b> was the fourth Sultan of the Timurid Empire. He was the
+            descendant of
+            the worldwide known <em>Amir Timur (Tamerlane)</em>. Interestingly, he was a Sultan,
+            <code>mathematician</code> and
+            <code>astronomer</code> at the same time. He was born on 22 March, 1394 at Sultaniyeh in Timurid Empire. The
+            mighty ruler <em>Amir Timur (Tamerlane)</em> was ruling the empire at that time.
+        </p>
+        <img src="Ulugh-Beg.webp" style="float: right; height: 250px;">
+        <p>Ulugh Beg composed a star catalogue consisting of 1018 stars, which is eleven fewer stars than are present in
+            the
+            star catalogue of Ptolemy.Throughout his life as an astronomer, Ulugh Beg came to realize that there were
+            multiple
+            mistakes in the work and subsequent data of Ptolemy that had been in use for many years. Not only that, he
+            also
+            mentioned almost accurate measurements for the sidereal year (<abbr
+                title="with an error of +58 seconds, actual time is around 365 days 6 hours 11 minutes and 6 seconds">365
+                days 6
+                hours 10 minutes and 8 seconds)</abbr>, and for the tropical year, he mentioned <abbr
+                title="with an error of +28 seconds, actual time= 365 days 5 hours 49 minutes and 40 seconds">365 days 5
+                hours
+                49 minutes and 15 seconds</abbr>, which was more accurate than Copernicus' estimate.</p>
+        <p>He also discovered the <code>obliquity of the elliptic</code>, which was very important in the study of
+            astronomy. He
+            was also a great mathematician, with keen interests in trigonometry. He wrote trigonometric tables of sine
+            and
+            tangent values, accurate to at least eight decimal places.</p>
+        <p>Ulugh Beg was made governor of Samarqand in Timurid Empire under the reign of his father, Shah Rukh Mirza. He
+            built
+            the great Ulugh Beg Observatory in Samarqand between 1424 and 1429, which was one of the finest
+            observatories in
+            Islamic world and largest in Central Asia at that time. He also built the Ulugh Beg Madrasah from 1417 to
+            1420 in
+            Samarqand and Bukhara. He was known as the most important observational astronomer by many scholars from the
+            15th
+            century AD.</p>
+        <p>However, despite being such a great mathematician and astronomer, Ulugh Beg was made the Sultan of Timurid
+            Empire on
+            March 13, 1447, a day before the <abbr
+                title="Although unknown at that time, Mathematics Day is the date of March 14, corresponding to the first digits of π (3.14)">Mathematics
+                Day</abbr>. However, his reign was short-lived, and full of struggles. The war of succession caused the
+            Timurid
+            Empire to become fragmented, with <abbr title="his nephew">Ala-ad-Dawla and Abul-Qasim Babur Mirza</abbr>
+            declaring
+            as the Sultan. Ulugh Beg went to encounter them, with defeating the first, but being defeated against the
+            second.
+            Not only that, his Sultanate was also being conquered by the rival Jahan Shah ibn Yusuf of the Qara Qoyunlu,
+            a
+            Turkoman dynasty closely related to Azerbaijanis. Ulugh Beg had to surrender to his son Abdul-Latif Mirza,
+            who
+            granted him the permission to go for Hajj. However, Abdul-Latif assassinated his mathematician father on his
+            route
+            for Hajj on 27 October 1449.</p><br>
+        <script>
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

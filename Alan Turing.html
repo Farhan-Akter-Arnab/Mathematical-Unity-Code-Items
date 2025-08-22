@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Alan Turing</h3>
+        <h4>The Father of Modern Computing</h4>
+        <h5><i><strong>Not to be confused with <a href="Alan Walker(from Mathematics).html" style="color:white;" id="fishy">Alan Walker!!! (Clickable Link)</a></strong></i></h5>
+        <p>Alan Mathison Turing (1912–1954) was an English mathematician, logician, cryptanalyst, and computer scientist. He is
+            widely regarded as the father of theoretical computer science and artificial intelligence. Turing’s pioneering work
+            laid the foundations for modern computers and significantly influenced cryptography during World War II.</p>
+        <img src="Alan Turing.jpg" alt="Alan Turing" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Early Life and Education</h4>
+        <p>Turing was born in London, England, and displayed exceptional intellectual abilities from a young age. He excelled in
+            mathematics and science, eventually studying at King’s College, Cambridge, where he became a Fellow for his research
+            in probability theory and mathematical logic.</p>
+        
+        <h4>The Turing Machine and Computability</h4>
+        <p>In 1936, Turing introduced the concept of the <strong>Turing Machine</strong>, an abstract device capable of
+            simulating any algorithmic computation. This idea formalized the notion of computability and is central to
+            theoretical computer science. The Turing Machine consists of:</p>
+        <ul>
+            <li>An infinite tape divided into cells</li>
+            <li>A read/write head that moves along the tape</li>
+            <li>A set of rules defining state transitions</li>
+        </ul>
+        <p>Mathematically, the machine operates by reading symbols \( s_i \) from the tape, changing its state \( q_j \),
+            writing a symbol \( s_k \), and moving the head left or right, following a transition function:</p>
+        \[
+        \delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}
+        \]
+        <p>where \( Q \) is the set of states, \( \Gamma \) is the tape alphabet, and \( L, R \) denote head movement.</p>
+        
+        <h4>Codebreaking and World War II</h4>
+        <p>During World War II, Turing worked at Bletchley Park, leading efforts to break German ciphers, particularly the
+            Enigma code. He developed the <strong>Bombe</strong>, an electromechanical device that helped decrypt Enigma
+            messages, significantly shortening the war and saving countless lives.</p>
+        
+        <h4>Artificial Intelligence and the Turing Test</h4>
+        <p>Turing also proposed the concept of machine intelligence. In 1950, he introduced the <strong>Turing Test</strong> as
+            a criterion for evaluating whether a machine can exhibit intelligent behavior indistinguishable from that of a
+            human. The test involves an interrogator communicating with both a human and a machine without knowing which is
+            which; if the machine can convince the interrogator of its humanness, it passes the test.</p>
+        
+        <h4>Legacy</h4>
+        <p>Turing’s contributions form the foundation of modern computing, artificial intelligence, and cryptography.
+            Posthumously, he has been honored in numerous ways, including the naming of the <strong>Turing Award</strong>, the
+            highest distinction in computer science. Turing’s life and work continue to inspire scientists, mathematicians, and
+            engineers worldwide, embodying both genius and profound social impact.</p>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();
+        document.getElementById('fishy').addEventListener('click', function (event) {
+                if (!confirm('This is not about Alan Turing, but a fishy by-product of this website. If you are not a member of the Mathematical Unity, you should not click on this link. But if you are a Walker, or a member of the Mathematical Unity, please use it wisely. Do you want to continue?')) {
+                    event.preventDefault();
+                }
+            });
+    
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

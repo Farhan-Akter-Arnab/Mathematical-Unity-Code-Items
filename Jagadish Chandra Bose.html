@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Jagadish Chandra Bose</h3>
+        <h4>Pioneer of Wireless Communication and Plant Physiology</h4>
+        <p>Jagadish Chandra Bose (1858–1937) was an Indian polymath, physicist, biologist, and inventor. Born in Bengal,
+            British
+            India, he made pioneering contributions to radio and microwave optics, as well as to the study of plant
+            physiology.
+            Bose is often regarded as one of the earliest researchers to explore the electrical nature of life and the
+            communication of plants.</p>
+        <img src="Jagadish Chandra Bose.jpg" alt="Jagadish Chandra Bose" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Contributions to Physics and Wireless Communication</h4>
+        <p>Bose conducted groundbreaking experiments in the field of radio and microwave optics. In the late 19th
+            century, he
+            demonstrated the use of millimeter-length electromagnetic waves and conducted experiments on their
+            reflection,
+            refraction, and polarization, predating Marconi’s practical radio work. He also invented highly sensitive
+            receivers
+            and detectors for microwaves, showing that electromagnetic waves could travel long distances and be
+            manipulated for
+            communication purposes.</p>
+
+        <h4>Contributions to Plant Physiology</h4>
+        <p>Bose extended his research to biology, pioneering experiments that demonstrated electrical responses in
+            plants. He
+            showed that plants respond to various stimuli, including light, temperature, and mechanical touch, and that
+            these
+            responses could be measured electrically:</p>
+        \[
+        V = IR
+        \]
+        <p>where \( V \) is the electrical potential across plant tissues, \( I \) is the induced current, and \( R \)
+            is the
+            resistance. Bose also invented the crescograph, an instrument capable of measuring plant growth at
+            micrometer
+            scales, revealing that plants exhibited shock responses similar to nerves in animals.</p>
+
+        <h4>Integration of Science and Philosophy</h4>
+        <p>Bose’s work bridged physics and biology, demonstrating that electrical and physical phenomena could explain
+            life
+            processes. His experiments provided early evidence for the continuity between animal and plant life in terms
+            of
+            responsiveness and sensitivity, challenging traditional boundaries in science.</p>
+
+        <h4>Legacy</h4>
+        <p>Jagadish Chandra Bose’s innovative research laid the foundation for wireless communication technology, the
+            study of
+            bioelectromagnetics, and plant neurobiology. He was among the first to show that plants are not inert but
+            respond to
+            their environment in measurable ways. His contributions influenced generations of scientists in India and
+            abroad,
+            cementing his place as a pioneer in both physics and biology.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

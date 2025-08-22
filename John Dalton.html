@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>John Dalton</h3>
+        <h4>Father of Modern Atomic Theory</h4>
+        <p>John Dalton (1766–1844) was an English chemist, meteorologist, and physicist, best known for formulating the
+            modern
+            atomic theory. Born in Eaglesfield, England, Dalton displayed remarkable curiosity and intellect from a
+            young age,
+            teaching himself mathematics and natural philosophy while still a child. He worked as a teacher, and his
+            early
+            studies in meteorology and gases eventually led him to groundbreaking discoveries in chemistry.</p>
+        <img src="John Dalton.webp" alt="John Dalton" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Dalton’s Atomic Theory</h4>
+        <p>Dalton proposed that matter is composed of small indivisible particles called atoms, which combine in fixed
+            ratios to
+            form compounds. His main postulates include:</p>
+        <ul>
+            <li>All matter is made of atoms, indivisible and indestructible.</li>
+            <li>Atoms of the same element are identical in mass and properties, while atoms of different elements
+                differ.</li>
+            <li>Atoms combine in simple whole-number ratios to form compounds.</li>
+            <li>Chemical reactions involve the rearrangement of atoms, not their creation or destruction.</li>
+        </ul>
+        <p>This theory provided a systematic explanation for chemical reactions and the law of multiple proportions.</p>
+
+        <h4>Law of Multiple Proportions</h4>
+        <p>Dalton also formulated the <em>law of multiple proportions</em>, which states that when two elements form
+            more than
+            one compound, the ratios of the masses of one element that combine with a fixed mass of the other are simple
+            whole
+            numbers. For example:</p>
+        \[
+        \text{CO: } \frac{12 \text{ g C}}{16 \text{ g O}}, \quad
+        \text{CO}_2: \frac{12 \text{ g C}}{32 \text{ g O}}
+        \]
+        <p>The ratio of oxygen masses combining with a fixed mass of carbon is \(16:32 = 1:2\), illustrating Dalton’s
+            law.</p>
+
+        <h4>Studies on Gases and Meteorology</h4>
+        <p>Dalton conducted extensive research on gases and their pressures, leading to what is now called Dalton’s Law
+            of
+            Partial Pressures: in a mixture of non-reacting gases, the total pressure is equal to the sum of the partial
+            pressures of individual gases:</p>
+        \[
+        P_\text{total} = P_1 + P_2 + P_3 + \dots
+        \]
+        <p>He also made detailed observations of the atmosphere and contributed to meteorology, keeping careful records
+            of
+            temperature, pressure, and humidity over decades.</p>
+
+        <h4>Color Blindness Research</h4>
+        <p>Interestingly, Dalton was color blind himself. He studied the condition scientifically and published the
+            first paper
+            on it, which led to the term “Daltonism” being used for color blindness in some countries.</p>
+
+        <h4>Legacy</h4>
+        <p>John Dalton’s atomic theory laid the foundation for modern chemistry, providing a framework for understanding
+            chemical reactions and the composition of matter. His work influenced generations of chemists and
+            physicists,
+            eventually paving the way for the discovery of subatomic particles and quantum theory. Dalton is remembered
+            as one
+            of the great pioneers of scientific thought in chemistry and physics.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

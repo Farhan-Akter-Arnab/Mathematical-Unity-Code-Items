@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Socrates</h3>
+        <h4>Ancient Greek Philosopher and Founder of Western Philosophy</h4>
+        <p>Socrates (c. 470 – 399 BCE) is often regarded as the father of Western philosophy and one of the most
+            influential
+            thinkers in history. Born in Athens during its Golden Age, he lived through the city’s rise and fall in the
+            Peloponnesian War. Socrates came from humble origins, working as a stonemason in his early life, yet devoted
+            himself
+            to the pursuit of wisdom and the examination of human life. He did not write any works himself; most of what
+            we know
+            about him comes from his students, especially Plato, and from other contemporaries such as Xenophon and the
+            playwright Aristophanes.</p>
+        <img src="Socrates.jpg" alt="Socrates" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>The Socratic Method</h4>
+        <p>Socrates developed the <em>Socratic Method</em>, a way of teaching through questioning and dialogue. This
+            method
+            involved asking a series of probing questions to expose contradictions in a person’s beliefs, encouraging
+            them to
+            think more clearly and logically. By leading his interlocutors to examine their own ideas, Socrates sought
+            to
+            uncover definitions of abstract concepts such as justice, virtue, courage, and piety.</p>
+        <ul>
+            <li>Encouraged critical thinking and self-examination.</li>
+            <li>Exposed assumptions and inconsistencies in arguments.</li>
+            <li>Promoted dialogue as a means to discover truth.</li>
+        </ul>
+        <p>He believed that the pursuit of virtue and wisdom was more important than wealth or power, famously declaring
+            that
+            “the unexamined life is not worth living.”</p>
+
+        <h4>Focus on Ethics and Virtue</h4>
+        <p>Socrates was less concerned with natural science than many earlier Greek thinkers, focusing instead on how
+            people
+            should live and what it means to live a good life. He believed that knowledge and virtue were inseparable —
+            that to
+            truly know what is right is to do what is right. This moral philosophy formed the ethical foundation for
+            much of
+            Western thought.</p>
+        <ul>
+            <li>Virtue is the highest good.</li>
+            <li>Ignorance is the root of wrongdoing.</li>
+            <li>Wisdom begins with recognizing one’s own ignorance.</li>
+        </ul>
+
+        <h4>Trial and Death</h4>
+        <p>In 399 BCE, Socrates was put on trial in Athens on charges of impiety and “corrupting the youth” by
+            encouraging them
+            to question traditional beliefs and authority. Found guilty by a narrow margin, he was sentenced to death by
+            drinking poison hemlock. Rejecting the chance to escape, Socrates accepted his fate, choosing to uphold his
+            principles and obey the law even at the cost of his life.</p>
+        <ul>
+            <li>Faced trial before a jury of 500 Athenians.</li>
+            <li>Defended his mission as a moral duty to question and seek truth.</li>
+            <li>Died calmly, discussing philosophy until the final moments.</li>
+        </ul>
+        <p>His death became a symbol of intellectual integrity and courage in the face of injustice.</p>
+
+        <h4>Legacy and Influence</h4>
+        <p>Socrates’ life and ideas profoundly shaped the development of philosophy. Through the works of Plato and
+            Aristotle,
+            his methods and teachings influenced countless generations of thinkers. The Socratic Method remains a
+            cornerstone of
+            philosophical inquiry, legal education, and debate. His emphasis on reason, ethics, and dialogue helped lay
+            the
+            foundations for Western intellectual tradition.</p>
+        <ul>
+            <li>Plato (his most famous student)</li>
+            <li>Aristotle</li>
+            <li>Stoic and Cynic philosophers</li>
+            <li>Modern educational and legal questioning techniques</li>
+        </ul>
+        <p>Socrates’ true importance lies not in any single doctrine but in his way of seeking knowledge — through
+            relentless
+            questioning, logical reasoning, and the belief that truth can be discovered through human inquiry.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

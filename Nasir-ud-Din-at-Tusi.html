@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Nasir-ud-Din al-Tusi</h3>
+        <h4>Scholar of Astronomy, Mathematics, and Philosophy</h4>
+        <h5><i><strong>Not to be confused with <a href="Sharaf ad-Din at-Tusi.html" style="color:white;">Sharaf ad-Din
+                        al-Tusi!!! (Clickable Link)</a></strong></i></h5>
+        <p>Nasir-ud-Din al-Tusi (1201 – 1274 CE), full name Muhammad ibn Muhammad ibn al-Hasan al-Tusi, was a Persian
+            polymath
+            who made significant contributions to astronomy, mathematics, philosophy, and theology during the Islamic
+            Golden
+            Age. Born in Tus, in the region of Khorasan (present-day Iran), al-Tusi became one of the most influential
+            scholars
+            of the 13th century. He produced over 150 works across various disciplines, many of which were later
+            translated into
+            Latin and influenced European Renaissance thinkers.</p>
+        <img src="Nasir-ud-Din al-Tusi.webp" alt="Nasir-ud-Din al-Tusi" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <p>Al-Tusi made remarkable contributions to trigonometry, establishing it as an independent branch of
+            mathematics. He
+            was one of the first to treat trigonometry as a mathematical science rather than a tool of astronomy. His
+            work
+            <i>“Treatise on the Complete Quadrilateral”</i> systematically defined the six fundamental trigonometric
+            functions
+            and presented the law of sines for both plane and spherical triangles:
+        </p>
+
+        <ul>
+            <li>\[ \frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} \]</li>
+        </ul>
+
+        <p>He also derived the spherical law of sines and established relationships between sides and angles in
+            spherical
+            triangles, which became foundational for later Islamic and European astronomy. His text <i>“Al-Tadhkira fi
+                Ilm
+                al-Hay’a”</i> (Memoir on Astronomy) corrected and improved many aspects of the Ptolemaic model,
+            introducing the
+            famous “Tusi Couple” — a geometric model involving two circular motions that produced linear motion, used to
+            explain
+            planetary behavior without violating uniform circular motion.</p>
+
+        <p>Al-Tusi headed the Maragha Observatory, one of the most advanced scientific institutions of its time, where
+            he led a
+            team of scholars and produced highly accurate astronomical tables known as the “Zij-i Ilkhani.” His
+            mathematical
+            innovations, especially in trigonometry and geometry, helped lay the groundwork for later developments in
+            mathematical astronomy.</p>
+
+        <ul>
+            <li>Established trigonometry as an independent mathematical discipline</li>
+            <li>Introduced the law of sines and advanced spherical trigonometry</li>
+            <li>Proposed the Tusi Couple to resolve issues in planetary motion models</li>
+            <li>Directed the Maragha Observatory, producing precise astronomical data</li>
+        </ul>
+
+        <p>Nasir-ud-Din al-Tusi’s influence extended beyond mathematics and science. He also wrote extensively on
+            ethics, logic,
+            and metaphysics, blending Islamic thought with Greek philosophy. His legacy lives on in both Islamic and
+            Western
+            scientific traditions, and he is remembered as one of the most brilliant minds of medieval science.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

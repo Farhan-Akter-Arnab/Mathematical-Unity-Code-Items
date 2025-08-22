@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Henry Briggs (1561 – 1630)</h3>
+        <h4>Developer of Common Logarithms and Master of Practical Computation</h4>
+        
+        <p>
+            Henry Briggs refined <b>John Napier’s logarithms</b> by introducing base-10, or <b>common logarithms</b>, which made
+            calculations even more practical for <b>scientists</b>, <b>navigators</b>, and <b>engineers</b>. Instead of Napier’s
+            original formulation, Briggs standardized:
+            \[
+            \log_{10}(10) = 1, \quad \log_{10}(100) = 2, \quad \log_{10}(1000) = 3,
+            \]
+            so that powers of ten aligned directly with integer values. This made logarithms easier to use and understand,
+            turning them into an indispensable tool for computation.
+        </p>
+        <img src="Henry Briggs.webp" alt="Henry Briggs" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <p>
+            He collaborated with Napier and encouraged the refinement of logarithmic ideas, helping transform them from an
+            invention into a universal method. His publication of <i>Arithmetica Logarithmica</i> (1624) provided highly
+            accurate <b>logarithmic tables</b> of base-10 logarithms, which were used by astronomers, surveyors, and engineers
+            for centuries. These tables simplified multiplication, division, powers, and roots:
+            \[
+            \log_{10}(ab) = \log_{10}(a) + \log_{10}(b), \quad \sqrt[n]{a} = 10^{\tfrac{1}{n}\log_{10}(a)}.
+            \]
+        </p>
+        
+        <p>
+            As a professor of geometry at <b>Gresham College</b> in London, Briggs influenced a generation of mathematicians by
+            emphasizing <b>clarity</b>, <b>efficiency</b>, and <b>practical application</b>. He advocated for mathematical
+            notation that was simple and accessible, ensuring that logarithms spread rapidly across Europe.
+        </p>
+        
+        <p>
+            Briggs’ dedication exemplified the transition of mathematics from <b>abstract theory</b> to <b>practical
+                computation</b>. His work laid important groundwork for later computational innovations, bridging the gap
+            between theoretical insight and the applied needs of science and industry.
+        </p>
+        
+        <h4>Facts:</h4>
+        <ul>
+            <li>Born in <b>Yorkshire</b>, England.</li>
+            <li>Collaborated with <b>John Napier</b> on logarithmic refinement.</li>
+            <li>Published <i>Arithmetica Logarithmica</i> in <b>1624</b>.</li>
+            <li>Served as <b>professor of geometry</b> at Gresham College, London.</li>
+            <li>His <b>logarithmic tables</b> remained in widespread use for centuries.</li>
+        </ul>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

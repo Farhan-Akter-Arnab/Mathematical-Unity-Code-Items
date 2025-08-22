@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Ibn ar-Rushd (Averroes)</h3>
+        <h4>Andalusian Polymath: Philosopher, Jurist, Physician, and Natural Scientist</h4>
+        <p>Ibn ar-Rushd (1126 – 1198 CE), also known as Averroes, was a towering figure of the Islamic Golden Age. Born
+            in
+            Córdoba and later exiled to Lucena before being rehabilitated, he served as both Chief Judge and physician
+            under the
+            Almohad Caliphate. He authored over a hundred works across philosophy, theology, medicine, astronomy, and
+            jurisprudence.:contentReference[oaicite:0]{index=0}</p>
+        <img src="Ibn ar Rushd.webp" alt="Ibn ar-Rushd" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Philosophy and Logic</h4>
+        <p>As "The Commentator," he wrote influential summaries and commentaries on Aristotle and Plato. His major
+            philosophical
+            works include:<br>
+        <ul>
+            <li><i>The Incoherence of the Incoherence</i> — a rebuttal to al-Ghazali’s critique of
+                philosophy.:contentReference[oaicite:1]{index=1}</li>
+            <li><i>On the Harmony of Religions and Philosophy</i> — arguing that philosophy complements Islamic faith,
+                and that
+                the Qur’an should sometimes be interpreted allegorically.:contentReference[oaicite:2]{index=2}</li>
+        </ul>
+        </p>
+        <p>He firmly defended the compatibility of reason and religion. One commentator summarized his view well:
+            philosophy is
+            “nothing other than to look into creation … to be guided to the
+            Creator.”:contentReference[oaicite:3]{index=3}</p>
+
+        <h4>Astronomy and Natural Philosophy</h4>
+        <p>Ibn ar-Rushd challenged the Ptolemaic system, rejecting eccentrics and epicycles in favor of Aristotelian
+            concentric
+            spheres. He emphasized that astronomy must align with physical reality, not just predictive
+            calculation.:contentReference[oaicite:4]{index=4}</p>
+        <p>At age 25, he made several observatory-based discoveries: a previously unseen star near Marrakech, sunspots
+            (thought
+            to be planetary transits), and lunar surface irregularities explained through thickness
+            variations.:contentReference[oaicite:5]{index=5}</p>
+
+        <h4>Medicine and Medical Writings</h4>
+        <p>In medicine, his work <i>Kitāb al-Kulliyyāt fi al-Ṭibb</i> (“Generalities on Medicine”)—known in Latin as the
+            <i>Colliget</i>—covered anatomy, pathology, pharmacology, clinical diagnosis, and hygiene. It was widely
+            used across
+            Europe until the early modern period.:contentReference[oaicite:6]{index=6}
+        </p>
+
+        <h4>Legacy and Influence</h4>
+        <ul>
+            <li>His commentaries introduced Aristotelian philosophy to medieval Europe, giving rise to “Averroism” in
+                Scholastic
+                thought.:contentReference[oaicite:7]{index=7}</li>
+            <li>He argued for the harmony of faith and reason and defended philosophy as an Islamic
+                science.:contentReference[oaicite:8]{index=8}</li>
+            <li>Despite early controversy and exile, his writings were rediscovered and celebrated by Christian scholars
+                like
+                Thomas Aquinas.:contentReference[oaicite:9]{index=9}</li>
+        </ul>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

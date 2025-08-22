@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Georg Cantor</h3>
+        <h4>Founder of Modern Set Theory and the Theory of Infinities</h4>
+        <p>Georg Ferdinand Ludwig Philipp Cantor (March 3, 1845 – January 6, 1918) was a German mathematician who revolutionized
+            mathematics by founding set theory and introducing the concept of transfinite numbers—types of infinity that are
+            distinct from one another. Born in Saint Petersburg, Russian Empire, Cantor spent most of his life in Germany and
+            held a professorship at the University of Halle :contentReference[oaicite:0]{index=0}.</p>
+        <img src="Georg Cantor.jpg" alt="Georg Cantor" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Countability and Uncountability</h4>
+        <p>Cantor introduced the notion of one-to-one correspondence (bijection) to formally compare the size—or
+            <em>cardinality</em>—of sets. He demonstrated that while the set of rational numbers is <strong>countably
+                infinite</strong> (same cardinality as the natural numbers), the set of real numbers is <strong>uncountably
+                infinite</strong>, meaning it cannot be matched one-to-one with the naturals
+            :contentReference[oaicite:1]{index=1}.</p>
+        
+        <h4>The Diagonal Argument</h4>
+        <p>In 1891, Cantor devised the ingenious <strong>diagonal argument</strong> to prove the uncountability of the real
+            numbers—that no sequence can enumerate all real numbers. Briefly, given any enumeration of real numbers, one
+            constructs a new real number differing in its decimal expansion at the diagonal positions, guaranteeing it isn't on
+            the list :contentReference[oaicite:2]{index=2}.</p>
+        
+        <h4>Transfinite Numbers: Cardinals and Ordinals</h4>
+        <p>Cantor extended the concept of numbers beyond the finite, defining:</p>
+        <ul>
+            <li><strong>Cardinal numbers</strong> (\( \aleph_0, \aleph_1, \aleph_2, \dots \)) to measure the size of (possibly
+                infinite) sets.</li>
+            <li><strong>Ordinal numbers</strong> to describe the order type of well-ordered sets.</li>
+        </ul>
+        <p>This laid the foundation for arithmetic operations on infinite quantities and established a hierarchy of infinities
+            :contentReference[oaicite:3]{index=3}.</p>
+        
+        <h4>Cantor’s Theorem and Paradox</h4>
+        <p>He also proved <strong>Cantor’s theorem</strong>: for any set \( A \), its power set (the set of all subsets of \( A
+            \)) has strictly greater cardinality than \( A \) itself. This yields an infinite ascending hierarchy of infinities
+            :contentReference[oaicite:4]{index=4}.</p>
+        <p>He further identified <strong>Cantor's paradox</strong>: the idea that the “set of all cardinalities” cannot be
+            itself a set, since its cardinality would then exceed itself. This paradox underscores the need for rigorous
+            axiomatic foundations in set theory :contentReference[oaicite:5]{index=5}.</p>
+        
+        <h4>Mathematical Legacy and Controversy</h4>
+        <p>Cantor's work faced strong opposition from contemporaries like Kronecker and Poincaré, who found the idea of actual
+            infinities philosophically troubling. He endured criticism and personal struggles, including recurrent mental health
+            issues :contentReference[oaicite:6]{index=6}.</p>
+        <p>Despite initial resistance, his theory became central to modern mathematics—forming the basis of logic, topology,
+            measure theory, and more—profoundly influencing subsequent generations of mathematicians and scientists
+            :contentReference[oaicite:7]{index=7}.</p>
+        
+        <h4>Honors and Final Years</h4>
+        <p>Cantor received the prestigious Sylvester Medal from the Royal Society in 1904 and an honorary doctorate from the
+            University of St. Andrews in 1912 :contentReference[oaicite:8]{index=8}. However, his final years were marked by
+            illness and institutionalization; he passed away in a sanatorium in Halle in early 1918
+            :contentReference[oaicite:9]{index=9}.</p>
+        
+        <h4>LaTeX Mathematical Highlights</h4>
+        <p>Here are some of Cantor’s core ideas, rendered with LaTeX:</p>
+        <ul>
+            <li><strong>Diagonal Argument</strong> (uncountability of reals):
+                \[
+                \forall (x_n),\;\exists x\;\text{such that }\forall n,\;x \neq x_n\;\text{(constructed by changing the nth digit
+                of }x_n\text{)}
+                \]
+            </li>
+            <li><strong>Cantor’s Theorem</strong>:
+                \[
+                \lvert A \rvert < \lvert \mathcal{P}(A) \rvert \] </li>
+        </ul>
+        
+        <h4>Legacy</h4>
+        <p>Georg Cantor transformed mathematics by rigorously defining and comparing different sizes of infinity. Despite
+            personal hardships and intense controversy, his vision gave rise to set theory—the foundational language of modern
+            mathematics—and expanded our understanding of the infinite. His work endures as one of the most profound and
+            transformative mathematical achievements.</p>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

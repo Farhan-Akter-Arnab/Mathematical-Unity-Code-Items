@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Meton of Athens</h3>
+        <h4>The Father of the Metonic Cycle</h4>
+        <p>
+            Meton of Athens (fl. 5th century BCE, around 432 BCE) was a Greek astronomer, mathematician, engineer, and surveyor.
+            He is best remembered for introducing the <b>Metonic cycle</b>, a 19-year period that reconciles the solar year with
+            the lunar month. This discovery became a cornerstone of ancient calendars and is still relevant in modern
+            timekeeping.
+        </p>
+        <img src="Meton.jpg" alt="Meton of Athens" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Background</h4>
+        <p>
+            Meton lived in Athens during the classical period and worked alongside his colleague <b>Euctemon</b>. He observed
+            the heavens from the Pnyx Hill in Athens, where a solar observatory (<i>Heliopolis</i>) was established to make
+            precise astronomical measurements.
+        </p>
+        <p>
+            His work focused on understanding the relationship between the solar year \((365.24\ \text{days})\) and the lunar
+            month \((29.53\ \text{days})\), which was essential for building accurate calendars used in festivals, agriculture,
+            and religious life.
+        </p>
+        
+        <h4>Key Contributions</h4>
+        <ul>
+            <li>
+                <b>(a) The Metonic Cycle</b><br>
+                Meton discovered that:
+                <br>
+                \[
+                19\ \text{solar years} \approx 235\ \text{lunar months}
+                \]
+                <p>Mathematically:</p>
+                \[
+                19 \times 365.24 \approx 6939.6\ \text{days}
+                \]
+                \[
+                235 \times 29.53 \approx 6939.7\ \text{days}
+                \]
+                <p>
+                    The two values are almost equal, differing by only a few hours. This allowed him to align lunar and solar
+                    calendars, making it possible to predict eclipses and set consistent dates for festivals.
+                </p>
+            </li>
+        
+            <li>
+                <b>(b) The Callippic Cycle</b><br>
+                Later, his cycle was refined by <b>Callippus</b>, who combined four Metonic cycles (76 years) and corrected the
+                small discrepancy. This refinement highlighted how influential Meton’s work was in shaping future Greek
+                astronomy.
+            </li>
+        
+            <li>
+                <b>(c) Calendar Reform</b><br>
+                Meton proposed reforms to the Attic calendar of Athens, inserting “intercalary months” based on his cycle to
+                keep lunar months in sync with the solar year. His reforms influenced not only Greek but also Jewish and
+                Babylonian calendars.
+            </li>
+        </ul>
+        
+        <h4>Influence and Legacy</h4>
+        <ul>
+            <li>
+                <b>In Antiquity:</b> The Metonic cycle was inscribed on the <b>Antikythera Mechanism</b>, the ancient Greek
+                “astronomical computer.”
+            </li>
+            <li>
+                <b>In the Jewish Calendar:</b> The Hebrew calendar still uses the Metonic cycle to fix the dates of Passover and
+                other festivals.
+            </li>
+            <li>
+                <b>In Christianity:</b> The cycle plays a key role in determining the date of Easter.
+            </li>
+            <li>
+                <b>In Astronomy:</b> His work demonstrated the power of mathematical cycles to track celestial phenomena long
+                before modern astronomy.
+            </li>
+        </ul>
+        
+        <h4>Legacy</h4>
+        <p>
+            Meton of Athens is remembered as the master calendar-maker of antiquity. His 19-year cycle provided a practical
+            solution to harmonizing the Sun, Moon, and Earth’s rhythms, ensuring that human rituals and agriculture stayed in
+            step with the heavens.
+        </p>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

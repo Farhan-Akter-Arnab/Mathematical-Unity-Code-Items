@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Carl Friedrich Gauss</h3>
+        <h4>The Prince of Mathematicians</h4>
+
+        <p>Carl Friedrich Gauss (1777–1855) was a German mathematician, astronomer, and physicist whose work shaped
+            numerous
+            fields, including number theory, statistics, analysis, geometry, geodesy, magnetism, and astronomy. Born in
+            Brunswick, in the Duchy of Brunswick-Wolfenbüttel, Gauss displayed extraordinary talent from a young age.
+            His
+            intellectual brilliance earned him the title “Prince of Mathematicians,” and his discoveries have left a
+            lasting
+            legacy across both theoretical and applied sciences.</p>
+        <img src="Carl Friedrich Gauss.webp" alt="Carl Friedrich Gauss" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Early Genius</h4>
+        <p>One of the most famous anecdotes from Gauss’s childhood occurred when he was about eight years old. His
+            teacher,
+            hoping to keep the class occupied, asked students to sum the integers from 1 to 100. While others began
+            laboriously
+            adding them one by one, Gauss immediately recognized a pattern: pairing the first and last numbers (1 + 100
+            = 101),
+            the second and second-to-last (2 + 99 = 101), and so on. With 50 such pairs, each summing to 101, the total
+            became
+            \( 50 \times 101 = 5050 \). This insight corresponds to the well-known formula for the sum of the first \( n
+            \)
+            positive integers:</p>
+        <p>\[
+            S = \frac{n(n+1)}{2}
+            \]</p>
+        <p>This story is often cited as an example of Gauss’s natural mathematical intuition and ability to detect
+            structure
+            where others saw only brute calculation.</p>
+
+        <h4>Astronomy and Ceres</h4>
+        <p>In 1801, the Italian astronomer Giuseppe Piazzi discovered a new celestial body, later named “Ceres,”
+            orbiting
+            between Mars and Jupiter. Unfortunately, after a short period of observation, Ceres disappeared behind the
+            Sun, and
+            astronomers feared it would be lost forever. Using an innovative method of orbital calculation that he
+            devised
+            himself, Gauss predicted the exact location where Ceres would reappear months later. When astronomers looked
+            in
+            Gauss’s predicted position, they found it almost immediately. This triumph not only demonstrated his genius
+            but also
+            revolutionized astronomical computation, enabling more precise predictions of planetary and asteroid
+            movements.</p>
+
+        <h4>Mapping Germany</h4>
+        <p>Gauss made significant contributions to geodesy — the science of measuring Earth’s shape and surface. In the
+            early
+            19th century, he was tasked with creating a detailed map of the Kingdom of Hanover. To accomplish this, he
+            built
+            custom surveying instruments and invented new error-minimization techniques, including the <em>method of
+                least
+                squares</em>, which remains a cornerstone of modern data analysis. Gauss personally traversed forests,
+            hills,
+            and plains to take accurate measurements, combining his theoretical skill with practical fieldwork. This
+            project not
+            only improved cartography but also advanced statistical and computational methods.</p>
+
+        <h4>Later Years and Influence</h4>
+        <p>Although Gauss was a devoted researcher, he was not known for enjoying formal teaching. He preferred to work
+            privately and mentored only a select few students. However, one of his protégés was none other than Bernhard
+            Riemann, who would revolutionize geometry and profoundly influence physics through his work on curved space
+            — a
+            foundation for Einstein’s general relativity. Gauss recognized Riemann’s talent early, offering guidance and
+            support
+            to his groundbreaking ideas, thus passing the torch to the next generation of mathematical giants.</p>
+
+        <p>Gauss’s work continues to underpin vast areas of modern science and engineering, from GPS navigation to
+            financial
+            modeling. His blend of deep theory, practical application, and precision craftsmanship ensures that his
+            influence
+            will remain for centuries to come.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Philo of Alexandria</h3>
+        <h4>The Philosopher of Faith and Reason</h4>
+        <p>
+            Philo of Alexandria (c. 20 BCE – 50 CE), also known as <b>Philo Judaeus</b>, was a Hellenistic Jewish philosopher
+            who lived in Alexandria, Egypt. He sought to <b>synthesize Greek philosophy—especially Platonism and Stoicism—
+                with Jewish theology</b>, creating one of the earliest bridges between faith and reason. His writings explored
+            logic, metaphysics, ethics, and allegorical interpretation, influencing Jewish thought, early Christianity, and
+            later Islamic philosophy. By introducing the concept of the <i>Logos</i> as a divine intermediary, he laid the
+            intellectual groundwork for ideas that shaped religious and philosophical traditions for centuries.
+        </p>
+        <img src="Philo.jpg" alt="Philo" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Philosophy and Teachings</h4>
+        <ul>
+            <li><b>Allegorical Interpretation of Scripture</b> — Philo argued that the Hebrew Bible should not always
+                be read literally but symbolically, with stories like <i>Genesis</i> representing deeper truths about creation,
+                the cosmos, and the soul.</li>
+        
+            <li><b>The Logos (Divine Reason)</b> — He introduced the concept of the <i>Logos</i>, or Divine Word:
+                <ul>
+                    <li>God is utterly transcendent and beyond human comprehension.</li>
+                    <li>The Logos is God’s instrument of creation and revelation.</li>
+                    <li>The Logos serves as a rational bridge between the infinite God and the finite world.</li>
+                </ul>
+                This concept later inspired <b>Christian theology</b>, where the Logos was identified with Christ.
+            </li>
+        
+            <li><b>Mathematical and Philosophical Harmony</b> — Influenced by Plato and the Stoics, Philo believed that
+                <b>numbers, order, and proportion</b> reflected divine wisdom. For him, mathematics symbolized eternal truths
+                and revealed the rational structure of the universe, showing that both <i>reason and revelation</i> expressed
+                the same cosmic order.
+            </li>
+        </ul>
+        
+        <h4>Ethics and the Soul</h4>
+        <p>
+            Philo taught that the human soul is divided between passions and reason. Virtue arises from following reason,
+            aligning the soul with divine law. He emphasized <b>self-control, justice, piety, and wisdom</b>, echoing both
+            Jewish and Greek ethical ideals. Happiness, in his view, came from transcending bodily desires and living
+            according to divine reason.
+        </p>
+        
+        <h4>Historical Role</h4>
+        <p>
+            Philo was also an active community leader. In 40 CE, during rising tensions between Jews and Romans, he
+            led an embassy to Emperor Caligula to defend Jewish rights in Alexandria. Though politically unsuccessful,
+            this mission revealed his stature as both a philosopher and a statesman.
+        </p>
+        
+        <h4>Legacy</h4>
+        <ul>
+            <li><b>Christianity</b> — Early Church Fathers such as Clement of Alexandria and Origen drew heavily on his
+                writings, especially his concept of the Logos.</li>
+            <li><b>Judaism</b> — While rabbinic Judaism did not adopt his allegorical method, modern Jewish philosophy
+                regards him as a foundational figure in Jewish intellectual history.</li>
+            <li><b>Philosophy</b> — His integration of Platonism, Stoicism, and Jewish theology created a framework that
+                bridged Greek philosophy with Abrahamic religion.</li>
+        </ul>
+        
+        <h4>Facts</h4>
+        <ul>
+            <li>Born in Alexandria, Egypt.</li>
+            <li>Belonged to a wealthy, educated Jewish family.</li>
+            <li>Introduced the concept of the Logos as divine reason.</li>
+            <li>Applied allegorical interpretation to the Hebrew Bible.</li>
+            <li>Influenced Christian, Jewish, and Islamic philosophy.</li>
+        </ul>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

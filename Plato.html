@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Plato (c. 428–348 BCE)</h3>
+        <h4>Greek Philosopher, Founder of the Academy, and Teacher of Aristotle</h4>
+        <p>Plato (c. 428–348 BCE) Plato was a student of Socrates and the teacher of Aristotle. He founded the Academy
+            in
+            Athens, the first institution of higher learning in the Western world. His most famous works include The
+            Republic,
+            where he outlines his ideas on justice and ideal government. Plato believed in the world of Forms—perfect,
+            unchanging ideas that exist beyond the physical world.</p>
+        <img src="Plato.jpg" alt="Plato" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Major Works and Dialogues</h4>
+        <p>Plato wrote most of his philosophy in the form of dialogues, where characters (often Socrates) explore
+            philosophical
+            questions through conversation. Key works include:</p>
+        <ul>
+            <li><em>The Republic</em> — political philosophy, justice, the philosopher-king, and the tripartite soul.
+            </li>
+            <li><em>Phaedo</em> — on the immortality of the soul and Socrates’ final arguments.</li>
+            <li><em>Symposium</em> — discussions on love (eros) and the ascent to the Form of Beauty.</li>
+            <li><em>Timaeus</em> — cosmology and a model of a rationally ordered universe.</li>
+            <li><em>Laws</em> — Plato’s later, more pragmatic treatment of legislation and civic life.</li>
+        </ul>
+
+        <h4>The Theory of Forms and Key Ideas</h4>
+        <p>Plato’s Theory of Forms holds that the visible world is an imperfect copy of a higher reality of eternal,
+            changeless
+            Forms (Ideas). Knowledge, for Plato, is the intellectual grasp of those Forms—true opinion grounded by
+            rational
+            insight. His famous <em>Allegory of the Cave</em> (in <em>The Republic</em>) illustrates how prisoners
+            perceive
+            shadows as reality and must be led out to grasp the light of true being and knowledge.</p>
+
+        <h4>The Academy</h4>
+        <p>Plato founded the Academy in Athens (around 387 BCE), a center for philosophical, mathematical, and
+            scientific study.
+            The Academy attracted students from across the Greek world and persisted as an institution of higher
+            learning for
+            many centuries. Plato emphasized mathematics within the Academy—famously associating mathematical training
+            with the
+            development of rational thought and insisting on geometry as central to philosophical education.</p>
+
+        <h4>Plato’s Influence on Philosophy and Science</h4>
+        <p>Plato’s work shaped the course of Western thought. His student Aristotle developed systematic logic and
+            natural
+            philosophy in part through engagement with Platonic ideas. Plato’s emphasis on the role of reason, the
+            importance of
+            an ordered soul and state, and the interplay between ethics and knowledge influenced later traditions such
+            as
+            Neoplatonism, Medieval Scholasticism, and Renaissance humanism.</p>
+
+        <h4>Legacy</h4>
+        <p>Plato’s Academy, his dialogues, and his metaphysical system left a lasting imprint on intellectual history.
+            His
+            insistence on philosophical inquiry, dialectic, and the search for universal truths helped establish the
+            foundations
+            for Western philosophy, political theory, and the role of mathematics in rational inquiry. Through his
+            writings,
+            Plato continues to be read, taught, and debated across the world.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>

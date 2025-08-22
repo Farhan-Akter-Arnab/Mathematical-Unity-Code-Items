@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>George Boole</h3>
+        <h4>Pioneer of Boolean Algebra and Symbolic Logic</h4>
+        <p>George Boole (November 2, 1815 – December 8, 1864) was an English mathematician, logician, and educator whose
+            creation of <strong>Boolean algebra</strong> became the cornerstone of the digital age. His work connected the
+            realms of mathematics, logic, and philosophy, laying the foundation for modern computer science.</p>
+        <img src="George Boole.webp" alt="George Boole" class="img-fluid" style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Early Life and Education</h4>
+        <p>Born in Lincoln, England, Boole was largely self-taught, mastering Latin, Greek, mathematics, and science through his
+            own efforts. He began teaching at age 16 to support his family and published his first mathematics paper in 1841
+            ([history-computer.com](https://history-computer.com/george-boole-complete-biography/?utm_source=chatgpt.com),
+            [wikipedia.org](https://en.wikipedia.org/wiki/George_Boole?utm_source=chatgpt.com)).</p>
+        
+        <h4>Mathematical Logic and Boolean Algebra</h4>
+        <p>In his 1847 pamphlet <em>The Mathematical Analysis of Logic</em> and his 1854 book <em>An Investigation of the Laws
+                of Thought</em>, Boole introduced an algebraic system for logic. He represented logical statements with
+            algebraic symbols, using operations analogous to addition, multiplication, and negation.</p>
+        <p>This system—now called <strong>Boolean algebra</strong>—describes the rules for combining truth values (<em>true</em>
+            and <em>false</em>) ([britannica.com](https://www.britannica.com/science/Boolean-algebra?utm_source=chatgpt.com),
+            [en.wikipedia.org](https://en.wikipedia.org/wiki/Boolean_algebra?utm_source=chatgpt.com)).</p>
+        
+        <h4>Boolean Algebra in LaTeX</h4>
+        <p>Boole’s logic uses a binary set \( \{0, 1\} \), where \( 1 \) denotes "true" and \( 0 \) denotes "false". Common
+            operations include:</p>
+        <ul>
+            <li><strong>Conjunction</strong> (AND): \( a \land b \)
+                \[
+                a \cdot b =
+                \begin{cases}
+                1 & \text{if } a = 1 \text{ and } b = 1 \\
+                0 & \text{otherwise}
+                \end{cases}
+                \]
+            </li>
+            <li><strong>Disjunction</strong> (OR): \( a \lor b \)
+                \[
+                a + b =
+                \begin{cases}
+                1 & \text{if } a = 1 \text{ or } b = 1 \\
+                0 & \text{otherwise}
+                \end{cases}
+                \]
+            </li>
+            <li><strong>Negation</strong> (NOT): \( \lnot a \)
+                \[
+                \overline{a} =
+                \begin{cases}
+                1 & \text{if } a = 0 \\
+                0 & \text{if } a = 1
+                \end{cases}
+                \]
+            </li>
+        </ul>
+        
+        <h4>Impact on Modern Technology</h4>
+        <p>Although Boole worked long before computers, his algebra underpins all modern digital circuits. Every logical gate in
+            a computer—AND, OR, NOT—is a physical implementation of Boolean principles
+            ([cs.stanford.edu](https://cs.stanford.edu/people/eroberts/courses/soco/projects/2005-06/logic/boole.html?utm_source=chatgpt.com)).
+        </p>
+        
+        <h4>Academic Career and Honors</h4>
+        <p>In 1849, Boole was appointed the first professor of mathematics at Queen’s College, Cork (now University College
+            Cork) in Ireland. He was recognized by the Royal Society and became a respected figure in both mathematics and
+            philosophy ([ucc.ie](https://www.ucc.ie/en/research/boole/?utm_source=chatgpt.com)).</p>
+        
+        <h4>Death</h4>
+        <p>In 1864, Boole died at age 49 from pneumonia, reportedly contracted after walking to a lecture in heavy rain and
+            teaching in wet clothes ([en.wikipedia.org](https://en.wikipedia.org/wiki/George_Boole?utm_source=chatgpt.com)).</p>
+        
+        <h4>Legacy</h4>
+        <p>George Boole’s work bridged human reasoning and mathematics, enabling the design of modern digital computers and
+            programming languages. His name lives on in the term <em>Boolean</em>, a tribute to his profound influence on logic,
+            mathematics, and computer science.</p>
+
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

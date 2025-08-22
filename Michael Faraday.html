@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Michael Faraday</h3>
+        <h4>Pioneering Experimental Physicist and Chemist</h4>
+        <p>Michael Faraday (1791–1867) was a British scientist whose experiments and discoveries laid the groundwork for
+            modern
+            electromagnetism and electrochemistry. Born in Newington Butts, England, Faraday came from a humble
+            background and
+            had minimal formal education. Through curiosity, determination, and apprenticeship with a bookbinder, he
+            gained
+            access to scientific literature and eventually secured a position as a laboratory assistant to Sir Humphry
+            Davy at
+            the Royal Institution.</p>
+        <img src="Michael Faraday.jpeg" alt="Michael Faraday" class="img-fluid"
+            style="max-width: 300px; max-height: 400px; float:right;">
+        <h4>Contributions to Electromagnetism</h4>
+        <p>Faraday’s most celebrated work involved the study of electricity and magnetism. He discovered electromagnetic
+            induction, demonstrating that a changing magnetic field could induce an electric current in a conductor.
+            This
+            principle is now mathematically expressed as:</p>
+        \[
+        \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+        \]
+        <p>This fundamental law, known as Faraday’s law of induction, became a cornerstone of classical electromagnetism
+            and was
+            later incorporated into James Clerk Maxwell’s equations.</p>
+
+        <h4>Electrochemistry</h4>
+        <p>Faraday also made pioneering contributions to electrochemistry. He formulated the laws of electrolysis,
+            quantifying
+            the relationship between the amount of electric charge passed through a substance and the amount of chemical
+            change
+            produced. These can be expressed as:</p>
+        \[
+        m = \frac{Q \cdot M}{n \cdot F}
+        \]
+        <p>where \( m \) is the mass of the substance deposited, \( Q \) is the total electric charge, \( M \) is the
+            molar
+            mass, \( n \) is the number of electrons involved in the reaction, and \( F \) is Faraday’s constant.</p>
+
+        <h4>Magnetism and the Faraday Cage</h4>
+        <p>Faraday discovered that magnetic fields could influence materials and also invented the Faraday cage — a
+            device that
+            shields sensitive equipment from external electric fields. He showed that charges reside only on the
+            external
+            surface of conductors, an insight that is fundamental in electromagnetism.</p>
+
+        <h4>Other Contributions and Legacy</h4>
+        <p>Faraday’s work extended beyond physics and chemistry. He introduced concepts such as lines of force, which
+            helped
+            visualize electromagnetic fields, and he worked on diamagnetism and electrostatic phenomena. Despite having
+            little
+            formal education, he was a brilliant experimentalist and an excellent communicator, inspiring generations of
+            scientists. His discoveries form the practical basis for electric motors, transformers, and generators,
+            making him
+            one of the most influential figures in science history.</p>
+
+    </div>
+    <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+    <br><br>
+    <div class="footer">
+        <img src="Mathematical Unity.jpeg" height="150" id="horse">
+        <p>All rights reserved by the Mathematical Unity</p>
+        <p>Contact: +8801400044645</p>
+        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                Riyadiyat]</a></p>
+    </div>
+    </div>
+</body>
+
+</html>
