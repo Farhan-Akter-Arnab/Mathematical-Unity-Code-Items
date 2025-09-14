@@ -4,6 +4,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
+    background-attachment: fixed;
     font-weight: 900;
     font-size: larger;
     font-style: normal;
