@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Materials</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>International Mathematical Olympiad (IMO)</h3>
+        <h4>The Premier Global Contest for Pre-University Problem Solvers</h4>
+        
+        <!-- Intro -->
+        <p class="intro">
+            The <b>International Mathematical Olympiad</b> (IMO) is the oldest and most prestigious annual mathematics
+            competition for high-school students worldwide. Established in 1959, the IMO brings together the brightest
+            young problem solvers from more than a hundred countries for a celebration of mathematical creativity,
+            rigorous thinking, and international fellowship.
+        </p>
+        
+        <!-- Timelapse banner (JS will populate time elapsed since July 1959) -->
+        <div id="elapsedBanner" aria-live="polite"></div>
+        
+        <!-- First section with left-floating image -->
+        <div class="section">
+            <img src="IMO.webp" alt="IMO Logo" class="float-left" />
+            <ul class="quick-facts">
+                <li><b>Founded:</b> July 1959</li>
+                <li><b>Scope:</b> Pre-university (typically up to age 20) international contest</li>
+                <li><b>Typical Dates:</b> July (annual)</li>
+                <li><b>Format:</b> Two 4.5-hour exam days, 3 problems each day</li>
+                <li><b>Participants:</b> Up to 6 students per national team</li>
+            </ul>
+        
+            <p>
+                At its core the IMO is a contest of proof — participants tackle challenging olympiad problems
+                in geometry, algebra, number theory, and combinatorics. Unlike routine exercises, IMO problems
+                reward deep insight, elegant reasoning, and clear presentation of arguments. National delegations
+                select and train teams through local and national olympiad systems, culminating in intensive
+                training camps before the international event.
+            </p>
+        </div>
+        
+        <!-- Second section with right-floating image -->
+        <div class="section">
+            <img src="imo.jpg" alt="IMO Ceremony" class="float-right" />
+            <h4>Origins & Purpose</h4>
+            <p>
+                The IMO began as a regional initiative and quickly grew into a global institution whose purpose
+                is twofold: to stimulate mathematical talent among young people, and to foster international
+                cooperation and friendly competition. Over time the IMO has become an incubator of future
+                mathematicians, scientists, educators, and technologists.
+            </p>
+        
+            <p style="text-align:center;">
+                \( \text{Typical IMO problem topics: Algebra, Number Theory, Geometry, Combinatorics} \)
+            </p>
+        </div>
+        
+        <!-- Third section with left-floating image -->
+        <div class="section">
+            <h4>Structure & Examination Format</h4>
+            <p>
+                The IMO exam consists of two days of testing. Each day contestants receive a paper with three
+                problems and have 4.5 hours to present full solutions. Problems are graded on a detailed rubric;
+                partial credit is awarded for correct, well-explained steps. The total maximum score per contestant
+                is 42 points (each problem worth 7 points).
+            </p>
+            <p>
+                Teams are accompanied by leaders and mentors who coordinate selection and translations, and who
+                later form the international jury that selects problems and finalizes scores. The host country
+                organizes cultural events alongside the contest to promote cross-cultural exchange.
+            </p>
+        </div>
+        
+        <!-- Fourth section with right-floating image -->
+        <div class="section">
+            <h4>Scoring, Medals & Awards</h4>
+            <p>
+                Medals (gold, silver, bronze) and honorable mentions are awarded according to fixed proportions;
+                typically about half of contestants receive a medal. In addition to individual recognitions,
+                some IMOs present special prizes for particularly elegant solutions, and teams gain honor by
+                strong collective performance.
+            </p>
+        </div>
+        
+        <!-- Fifth section (no image) -->
+        <div class="section">
+            <h4>Notable Participants & Records</h4>
+            <p>
+                Many IMO alumni have become prominent researchers, professors, and leaders in STEM fields.
+                Records and milestones — such as perfect scores, highest cumulative country rankings, and youngest
+                medallists — are celebrated within the global olympiad community and often inspire future students.
+            </p>
+        </div>
+        
+        <!-- Sixth section with left image -->
+        <div class="section">
+            <h4>Hosting & Global Rotation</h4>
+            <p>
+                The IMO is hosted by a different country each year. Host nations handle problem selection, logistics,
+                venues, and cultural programs. Hosting duties rotate across continents and provide opportunities
+                for local mathematical communities to showcase their traditions while welcoming international visitors.
+            </p>
+        </div>
+        
+        <!-- Seventh section with right image -->
+        <div class="section">
+            <h4>Problem Style & Training</h4>
+            <p>
+                IMO-style problems emphasize rigorous proofs: contestants must justify every claim and structure
+                solutions with clarity. Training for the IMO commonly involves problem classes, mock contests,
+                and guided mentorship — activities that strengthen logical thinking and expose students to creative
+                mathematical strategies.
+            </p>
+        </div>
+        
+        <!-- Eighth section -->
+        <div class="section">
+            <h4>Relation to National Olympiads (e.g., BdMO)</h4>
+            <p>
+                National olympiad systems serve as feeders to the IMO: local contests, regional rounds, and national
+                training camps identify talented students and prepare them for international competition. Programs
+                like BdMO cultivate regional talent and help national selectors prepare strong, well-trained teams.
+            </p>
+        </div>
+        
+        <!-- Ninth section -->
+        <div class="section">
+            <h4>Challenges & Future Prospects</h4>
+            <p>
+                Contemporary challenges include ensuring equitable access to training, bridging disparities between
+                countries with differing resources, and maintaining rigorous, fair selection processes. Future prospects
+                center on broader outreach, digital training platforms, and collaborations that expand opportunities for
+                underrepresented regions.
+            </p>
+        </div>
+        
+        <!-- Closing & legacy -->
+        <p class="closing">
+            The IMO has, for decades, celebrated young mathematical talent while forging connections across nations.
+            Beyond medals and rankings, its lasting legacy is a worldwide community of problem solvers and mentors
+            who advance mathematical thinking and inspire generations of students to explore the beauty of proof.
+        </p>
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();
+        
+
+            // timelapse.js
+            // Calculates elapsed years and months since April 2001
+            (function () {
+                "use strict";
+
+                const start = new Date(1959, 7, 1); // April 2001 (month index 3)
+                const banner = document.getElementById("elapsedBanner");
+                const special = ["8", "10", "24"]; // numbers to highlight
+
+                function plural(n, one, many) {
+                    return n === 1 ? one : many;
+                }
+
+                function highlight(text) {
+                    const re = new RegExp("\\b(" + special.join("|") + ")\\b", "g");
+                    return text.replace(re, '<span class="orange">$1</span>');
+                }
+
+                function render() {
+                    const now = new Date();
+                    const months = now.getFullYear() * 12 + now.getMonth() - (start.getFullYear() * 12 + start.getMonth());
+                    const y = Math.floor(months / 12);
+                    const m = months % 12;
+
+                    let text = `( ${y} ${plural(y, "year", "years")} ${m} ${plural(m, "month", "months")} )`;
+                    text = highlight(text);
+
+                    banner.innerHTML = text;
+                    banner.title = `${y} ${plural(y, "year", "years")} ${m} ${plural(m, "month", "months")} since April 2001`;
+                }
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    render();
+                    setInterval(render, 1000 * 60 * 60 * 24); // update once per day
+                });
+            })();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

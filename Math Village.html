@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Unity ‒ Materials</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="scientists.html">Scientists</a>
+            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
+            <a href="materials.html" class="active">Materials</a>
+            <a href="login.html">Login</a>
+        </div>
+        <div id="Mathematical_Clock" onload="showTime()"></div>
+        <h1>Welcome to the Mathematical World!</h1>
+        <h3>Mathematical Village!</h3>
+        <p>It is natural to become highly astonished, because no one ever has let most of the readers to know that such a
+            mathematical village exists in this world. Please do not worry, as there are already two such mathematical villages
+            in the world. Both of them are situated in Turkey. These two villages are
+            <b><code>Nesin Mathematical Village</code></b>, and <b><code>Cakilarasi Mathematical Village</code></b>.</p>
+        <dl>
+            <dt>Nesin Mathematical Village</dt>
+            <dd>
+                <p><abbr title="Turkish: Nesin Matematik Köyü"><b>Nesin Mathematical Village</b></abbr> is the most important of
+                    the mathematical villages in Turkey. It is a educational and research centre devoted for
+                    <code>mathematics</code>, situated 800 m from Sirince village in Selcuk District of Izmir Province in
+                    Western Turkey.</p>
+                <img src="250px-Nesin_Matematik_Köyü_Bina.jpg" style="float: right;">
+                <p>It was launched in 2007 by Ali Nesin, a veteran mathematics professor, who heads up education non-profit
+                    Nesin Foundation established by his father, humorist writer Aziz Nesin (1915–1995). The Nesin Mathematics
+                    Village hosts numerous mathematical activities, mostly taken in summer. Courses range from <abbr
+                        title="Unfortunately, not for us">high-school to graduate university courses</abbr>, where courses are
+                    delivered mainly in Turkish, and may be in English for undergraduate or postgraduate courses.</p>
+                <img src="Ali Nesin.jpeg" style="float: left; width: 324px; height: auto; margin-right: 10px;">
+                <p>Ali Nesin's mathematical research area is "Groups of finite Morley rank". He is also the responsible editor
+                    of the journal named Matematik Dünyası, which has been published quarterly since 2003 and owned by the
+                    Turkish Mathematical Society. In addition, he has lecture notes on set theory and analysis accepted by the
+                    Turkish Academy of Sciences.</p>
+                <img src="Matematik_Köyü_Ali_Nesin_Ders_Anlatırken_2007.jpg" style="float: right;">
+                <p>As like other mathematical incidents, Nesin Mathematical Village was <b style="color:red;">not</b> spare of
+                    struggle. In July 2007, Tekin Karadağ, the president of the Şirince Environment and Nature Association,
+                    slated this village to be demolished because of it being "an illegal construction", with objectives of being
+                    a rump foundation in a remote forest in the midst of remoteness in nature. Fortunately, Allah Ta'ala saved
+                    this mathematical village. Harun Abuş, Director of Development and City Planning of Selçuk Municipality,
+                    declared that at this moment Nesin Mathematics Village is "not on the demolition calendar".</p>
+            </dd>
+            <dt>Cakilarasi Mathematical Village</dt>
+            <dd>
+                <p><abbr title="Turkish: Çakılarası Matematik Köyü"><b>The Çakılarası Mathematics Village</b></abbr> is the second
+                    educational and research institute devoted to mathematics in Turkey. This village is located in Sarıcakaya,
+                    <abbr title="The city of Osman Ghazi !">Eskişehir.</abbr></p>
+                <img src="Çakılarası Matematik Koyu.jpg" style="float: right; height: 124px;">
+                <p>As like Nesin Mathematical Village, Çakılarası Mathematical Village is also situated in a remote area, offering
+                    courses only to graduate students. They have a scheduled time of just 20 hours in total every week. The students
+                    must bring their own bed sheets for sleep. They have their breakfast and lunch as watermelon-cheese-bread. They
+                    learn mathematics within nature as well.</p>
+            </dd>
+            </dl>
+        </div>
+        <script>
+        function showTime() {
+            var date = new Date();
+            var h = date.getHours();
+            var min = date.getMinutes();
+            var s = date.getSeconds();
+            var tar = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var day = date.getDay();
+            var day_ord = "Sunday";
+            var session = "AM";
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = "PM";
+            }
+            if (day == 0) {
+                day_ord = "Sunday";
+            }
+            if (day == 1) {
+                day_ord = "Monday";
+            }
+            if (day == 2) {
+                day_ord = "Tuesday";
+            }
+            if (day == 3) {
+                day_ord = "Wednesday";
+            }
+            if (day == 4) {
+                day_ord = "Thursday";
+            }
+            if (day == 5) {
+                day_ord = "Friday";
+            }
+            if (day == 6) {
+                day_ord = "Saturday";
+            }
+            h = (h < 10) ? "0" + h : h;
+            min = (min < 10) ? "0" + min : min;
+            s = (s < 10) ? "0" + s : s;
+            tar = (tar < 10) ? "0" + tar : tar;
+            month = (month < 10) ? "0" + month : month;
+            year = (year < 10) ? "0" + year : year;
+
+            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+            document.getElementById("Mathematical_Clock").innerText = time;
+            setTimeout(showTime, 1000);
+        }
+        showTime();</script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
+    </div>
+</body>
+
+</html>
