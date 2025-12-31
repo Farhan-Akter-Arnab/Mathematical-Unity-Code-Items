@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,185 +26,292 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Mahāvīra (c. 9th century CE)</h3>
-        <h4>Indian Mathematician and Jain Scholar</h4>
 
-        <p>
-            Mahāvīra, also known as Mahāvīrācārya, was a prominent mathematician of 9th-century India, likely active in
-            <b>Karnataka</b> under the patronage of the Rashtrakuta dynasty during King <b>Amoghavarsha’s</b> reign
-            (814–878
-            CE).
-            He was influenced by the intellectual climate of Jain scholars, engaging deeply with <b>mathematics,
-                astronomy,
-                logic,</b> and <b>philosophy</b>.
-            His landmark work, <i>Gaṇitasārasaṅgraha</i> (The Compendium of the Essence of Mathematics), composed
-            around 850
-            CE, became foundational for medieval Indian mathematics.
-        </p>
-        <img src="Mahavira.jpeg" alt="Mahavira" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Systematic Structure of Mathematics</h4>
-        <p>
-            In <i>Gaṇitasārasaṅgraha</i>, Mahāvīra organized mathematics into nine chapters covering:
-            operations with numbers, fractions, rules of zero, series, geometry, permutations and combinations, and
-            practical
-            problem-solving.
-            This comprehensive treatise refined and extended the works of Aryabhata, Brahmagupta, and Bhaskara I.
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Mahāvīra (c. 9th century CE)</h3>
+            <h4>Indian Mathematician and Jain Scholar</h4>
 
-        <h4>Zero and Negative Numbers</h4>
-        <p>
-            Mahāvīra extended the use of <b>zero</b> and explained arithmetic operations involving it.
-            For example, subtracting a number from itself yields zero.
-            He refined Brahmagupta’s earlier rules and emphasized practical applications.
-        </p>
+            <p>
+                Mahāvīra, also known as Mahāvīrācārya, was a prominent mathematician of 9th-century India, likely active
+                in
+                <b>Karnataka</b> under the patronage of the Rashtrakuta dynasty during King <b>Amoghavarsha’s</b> reign
+                (814–878
+                CE).
+                He was influenced by the intellectual climate of Jain scholars, engaging deeply with <b>mathematics,
+                    astronomy,
+                    logic,</b> and <b>philosophy</b>.
+                His landmark work, <i>Gaṇitasārasaṅgraha</i> (The Compendium of the Essence of Mathematics), composed
+                around 850
+                CE, became foundational for medieval Indian mathematics.
+            </p>
+            <img src="Mahavira.jpeg" alt="Mahavira" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Systematic Structure of Mathematics</h4>
+            <p>
+                In <i>Gaṇitasārasaṅgraha</i>, Mahāvīra organized mathematics into nine chapters covering:
+                operations with numbers, fractions, rules of zero, series, geometry, permutations and combinations, and
+                practical
+                problem-solving.
+                This comprehensive treatise refined and extended the works of Aryabhata, Brahmagupta, and Bhaskara I.
+            </p>
 
-        <h4>Fractions and Decimals</h4>
-        <p>
-            He provided clear procedures for operations with fractions — addition, subtraction, multiplication, and
-            division —
-            making fractional arithmetic accessible to students, merchants, and scholars.
-        </p>
+            <h4>Zero and Negative Numbers</h4>
+            <p>
+                Mahāvīra extended the use of <b>zero</b> and explained arithmetic operations involving it.
+                For example, subtracting a number from itself yields zero.
+                He refined Brahmagupta’s earlier rules and emphasized practical applications.
+            </p>
 
-        <h4>Geometry and Mensuration</h4>
-        <p>
-            Mahāvīra gave rules for calculating areas and volumes of geometric figures such as triangles,
-            quadrilaterals,
-            circles, spheres, and cones.
-            For example, the area of a triangle is:
-        </p>
-        <p>
-            \[
-            A = \frac{1}{2} \times \text{base} \times \text{height}
-            \]
-        </p>
+            <h4>Fractions and Decimals</h4>
+            <p>
+                He provided clear procedures for operations with fractions — addition, subtraction, multiplication, and
+                division —
+                making fractional arithmetic accessible to students, merchants, and scholars.
+            </p>
 
-        <h4>Series and Progressions</h4>
-        <p>
-            He studied <b>arithmetic</b> and <b>geometric progressions</b>. For instance, the sum of an arithmetic
-            series is:
-        </p>
-        <p>
-            \[
-            S_n = \frac{n}{2} (a + l)
-            \]
-        </p>
-        <p>
-            where <i>a</i> is the first term, <i>l</i> is the last term, and <i>n</i> is the number of terms.
-        </p>
+            <h4>Geometry and Mensuration</h4>
+            <p>
+                Mahāvīra gave rules for calculating areas and volumes of geometric figures such as triangles,
+                quadrilaterals,
+                circles, spheres, and cones.
+                For example, the area of a triangle is:
+            </p>
+            <p>
+                \[
+                A = \frac{1}{2} \times \text{base} \times \text{height}
+                \]
+            </p>
 
-        <h4>Permutations and Combinations</h4>
-        <p>
-            Mahāvīra discussed arrangements and selections of objects, anticipating combinatorial reasoning and building
-            on
-            <b>Pingala’s</b> earlier work on prosody.
-            He included practical examples like:
-        </p>
-        <ul>
-            <li>“Find the number of combinations possible when choosing r items out of n.”</li>
-            <li>“Given the sum of the first and last terms of an arithmetic progression and the number of terms, find
-                the total
-                sum.”</li>
-        </ul>
+            <h4>Series and Progressions</h4>
+            <p>
+                He studied <b>arithmetic</b> and <b>geometric progressions</b>. For instance, the sum of an arithmetic
+                series is:
+            </p>
+            <p>
+                \[
+                S_n = \frac{n}{2} (a + l)
+                \]
+            </p>
+            <p>
+                where <i>a</i> is the first term, <i>l</i> is the last term, and <i>n</i> is the number of terms.
+            </p>
 
-        <h4>Legacy</h4>
-        <ul>
-            <li><b>Educational Influence:</b> <i>Gaṇitasārasaṅgraha</i> became a standard textbook in Indian
-                mathematics for
-                centuries.</li>
-            <li><b>Impact on Later Scholars:</b> Influenced mathematicians such as Bhāskara II (1114–1185 CE).</li>
-            <li><b>Advancement of Mathematical Knowledge:</b> Refined zero, fractions, series, geometry, and
-                combinatorics,
-                preserving and clarifying classical Indian mathematics.</li>
-            <li><b>Transmission of Knowledge:</b> Mahāvīra ensured continuity of Indian mathematical traditions through
-                the
-                medieval period.</li>
-        </ul>
+            <h4>Permutations and Combinations</h4>
+            <p>
+                Mahāvīra discussed arrangements and selections of objects, anticipating combinatorial reasoning and
+                building
+                on
+                <b>Pingala’s</b> earlier work on prosody.
+                He included practical examples like:
+            </p>
+            <ul>
+                <li>“Find the number of combinations possible when choosing r items out of n.”</li>
+                <li>“Given the sum of the first and last terms of an arithmetic progression and the number of terms,
+                    find
+                    the total
+                    sum.”</li>
+            </ul>
 
-        <h4>Conclusion</h4>
-        <p>
-            Mahāvīra exemplifies the Jain tradition of systematic and rigorous mathematics, blending practical
-            computation,
-            geometric reasoning, and combinatorial insight.
-            His treatise stands as a cornerstone in the continuity and enrichment of Indian mathematical knowledge.
-        </p>
+            <h4>Legacy</h4>
+            <ul>
+                <li><b>Educational Influence:</b> <i>Gaṇitasārasaṅgraha</i> became a standard textbook in Indian
+                    mathematics for
+                    centuries.</li>
+                <li><b>Impact on Later Scholars:</b> Influenced mathematicians such as Bhāskara II (1114–1185 CE).</li>
+                <li><b>Advancement of Mathematical Knowledge:</b> Refined zero, fractions, series, geometry, and
+                    combinatorics,
+                    preserving and clarifying classical Indian mathematics.</li>
+                <li><b>Transmission of Knowledge:</b> Mahāvīra ensured continuity of Indian mathematical traditions
+                    through
+                    the
+                    medieval period.</li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Conclusion</h4>
+            <p>
+                Mahāvīra exemplifies the Jain tradition of systematic and rigorous mathematics, blending practical
+                computation,
+                geometric reasoning, and combinatorial insight.
+                His treatise stands as a cornerstone in the continuity and enrichment of Indian mathematical knowledge.
+            </p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,133 +26,492 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="east-asian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>East Asian Mathematicians</h3>
-        <p>
-            This section highlights the exceptional mathematicians of East Asia — from early Chinese and
-            Korean scholars to modern Japanese and Chinese innovators. Their work spans number theory, algebra,
-            geometry, and calculus, with contributions that have shaped both regional and global mathematical
-            development across centuries.
-        </p>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>East Asian Mathematicians</h3>
+            <p>
+                East Asia cultivated mathematical traditions that matured into lasting contributions to arithmetic,
+                algebra,
+                geometry,
+                astronomy, and computation. Scholars across China, Korea, and Japan pursued order through
+                calculation—tracing numerical
+                patterns, refining algorithms, and modeling natural phenomena. From early masters who systematized
+                counting
+                methods and
+                approximated π to later innovators who advanced series, equations, and proto-calculus, these
+                mathematicians
+                forged
+                practical yet profound approaches to reasoning that influenced regional science and ultimately enriched
+                the
+                global
+                history of mathematics worldwide.
+            </p>
 
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><a href="Liu Hui.html"><b>1. Liu Hui</b> (c. 225–295)</a></div>
-            <div class="math-card"><a href="Zhang Heng.html"><b>2. Zhang Heng</b> (78–139)</a></div>
-            <div class="math-card"><a href="Zu Chongzhi.html"><b>3. Zu Chongzhi</b> (429–500)</a></div>
+            <div class="Math-grid">
 
-            <!-- Row 2 -->
-            <div class="math-card"><a href="Yang Hui.html"><b>4. Yang Hui</b> (1238–1298)</a></div>
-            <div class="math-card"><a href="Qin Jiushao.html"><b>5. Qin Jiushao</b> (c. 1202–1261)</a></div>
-            <div class="math-card"><a href="Wang Zhenyi.html"><b>6. Wang Zhenyi</b> (1768–1797)</a></div>
+                <a href="Liu Hui.html" class="math-card">
+                    <img src="Liu Hui.webp" alt="Liu Hui">
+                    <div class="math-card-body">
+                        <h3>1. Liu Hui</h3>
+                        <p class="dates">(c. 225–295)</p>
+                        <p class="desc">Liu Hui (c. 225 – c. 295 AD) was a brilliant Chinese mathematician whose work
+                            profoundly influenced the development of
+                            ancient Chinese mathematics.</p>
+                    </div>
+                </a>
 
-            <!-- Row 3 -->
-            <div class="math-card"><a href="Takebe Katahiro.html"><b>7. Takebe Katahiro</b> (1664–1739)</a></div>
-            <div class="math-card"><a href="Ajima Naonobu.html"><b>8. Ajima Naonobu</b> (1732–1798)</a></div>
-            <div class="math-card"><a href="Li Shanlan.html"><b>9. Li Shanlan</b> (1810–1882)</a></div>
+                <a href="Zhang Heng.html" class="math-card">
+                    <img src="Zhang Heng.webp" alt="Zhang Heng">
+                    <div class="math-card-body">
+                        <h3>2. Zhang Heng</h3>
+                        <p class="dates">(78–139)</p>
+                        <p class="desc">Zhang Heng (AD 78–139) was a Chinese polymath whose scientific and literary
+                            achievements spanned astronomy, mechanics,
+                            seismology, and poetry.</p>
+                    </div>
+                </a>
 
-            <!-- Row 4 -->
-            <div class="math-card"><a href="Xu Guangqi.html"><b>10. Xu Guangqi</b> (1562–1633)</a></div>
-            <div class="math-card"><a href="Choi Seok-jeong.html"><b>11. Choi Seok-jeong</b> (1646–1715)</a></div>
-            <div class="math-card"><a href="Kiyoshi Ito.html"><b>12. Kiyoshi Ito</b> (1915–2008)</a></div>
+                <a href="Zu Chongzhi.html" class="math-card">
+                    <img src="Zu Chongzhi.webp" alt="Zu Chongzhi">
+                    <div class="math-card-body">
+                        <h3>3. Zu Chongzhi</h3>
+                        <p class="dates">(429–500)</p>
+                        <p class="desc">Zu Chongzhi (429–500 AD) was a Chinese mathematician, astronomer, and engineer
+                            whose
+                            contributions left a lasting mark
+                            on the scientific tradition of ancient China.</p>
+                    </div>
+                </a>
 
-            <!-- Row 5 -->
-            <div class="math-card"><a href="Takakazu Seki.html"><b>13. Takakazu Seki</b> (1642–1708)</a></div>
-            <div class="math-card"><a href="Nam Pyong-gil.html"><b>14. Nam Pyong-gil</b> (1832–?)</a></div>
-            <div class="math-card"><a href="Kikuchi Dairoku.html"><b>15. Kikuchi Dairoku</b> (1855–1917)</a></div>
+                <a href="Yang Hui.html" class="math-card">
+                    <img src="Yang Hui.jpg" alt="Yang Hui">
+                    <div class="math-card-body">
+                        <h3>4. Yang Hui</h3>
+                        <p class="dates">(1238–1298)</p>
+                        <p class="desc">Yang Hui (c. 1238–1298) was a Chinese mathematician of the Southern Song
+                            dynasty,
+                            celebrated for his writings on
+                            combinatorics, magic squares, and algebra.</p>
+                    </div>
+                </a>
 
-            <!-- Row 6 -->
-            <div class="math-card"><a href="Ogura Kinnosuke.html"><b>16. Ogura Kinnosuke</b> (1860–1921)</a></div>
-            <div class="math-card"><a href="Kawaguchi Ekai.html"><b>17. Kawaguchi Ekai</b> (1866–1945)</a></div>
-            <div class="math-card"><a href="Mochizuki Shuntoku.html"><b>18. Mochizuki Shuntoku</b> (1870–1940)</a></div>
+                <a href="Qin Jiushao.html" class="math-card">
+                    <img src="Qin Jiushao.jpg" alt="Qin Jiushao">
+                    <div class="math-card-body">
+                        <h3>5. Qin Jiushao</h3>
+                        <p class="dates">(c. 1202–1261)</p>
+                        <p class="desc">Qin Jiushao (c. 1202–1261) was a remarkably versatile scholar of the Southern
+                            Song
+                            dynasty, excelling in mathematics,
+                            meteorology, invention, and administration.</p>
+                    </div>
+                </a>
 
-            <!-- Row 7 -->
-            <div class="math-card"><a href="Horiuchi Annick.html"><b>19. Horiuchi Annick</b> (1880–1950)</a></div>
-            <div class="math-card"><a href="Aida Yasuaki.html"><b>20. Aida Yasuaki</b> (1747–1817)</a></div>
-            <div class="math-card"><a href="Minggatu.html"><b>21. Minggatu</b> (1692–1765)</a></div>
+                <a href="Wang Zhenyi.html" class="math-card">
+                    <img src="Wang Zhenyi.jpeg" alt="Wang Zhenyi">
+                    <div class="math-card-body">
+                        <h3>6. Wang Zhenyi</h3>
+                        <p class="dates">(1768–1797)</p>
+                        <p class="desc">ang Zhenyi (1768–1797) was an extraordinary mathematician, astronomer, and poet
+                            of
+                            the Qing dynasty, renowned for
+                            breaking gender barriers in the male-dominated intellectual world of 18th-century China.</p>
+                    </div>
+                </a>
 
-            <!-- Row 8 -->
-            <div class="math-card"><a href="Zhu Zaiyu.html"><b>22. Zhu Zaiyu</b> (1536–1611)</a></div>
-            <div class="math-card"><a href="Kenko Seki.html"><b>23. Kenko Seki</b> (1642–1708)</a></div>
-            <div class="math-card"><a href="Rimhak Ree.html"><b>24. Rimhak Ree</b> (1922–2005)</a></div>
+                <a href="Takebe Katahiro.html" class="math-card">
+                    <img src="Takebe Katahiro.jpeg" alt="Takebe Katahiro">
+                    <div class="math-card-body">
+                        <h3>7. Takebe Katahiro</h3>
+                        <p class="dates">(1664–1739)</p>
+                        <p class="desc">Takebe Katahiro (1664–1739) was a brilliant Japanese mathematician of the Edo
+                            period
+                            and a direct disciple of Seki
+                            Takakazu.</p>
+                    </div>
+                </a>
+
+                <a href="Ajima Naonobu.html" class="math-card">
+                    <img src="Ajima Naonobu.webp" alt="Ajima Naonobu">
+                    <div class="math-card-body">
+                        <h3>8. Ajima Naonobu</h3>
+                        <p class="dates">(1732–1798)</p>
+                        <p class="desc">Ajima Naonobu (1732–1798) was a prominent mathematician of Japan’s Edo period,
+                            recognized for his groundbreaking work in
+                            geometry, infinite series, and integral methods.</p>
+                    </div>
+                </a>
+
+                <a href="Li Shanlan.html" class="math-card">
+                    <img src="Li Shanlan.jpg" alt="Li Shanlan">
+                    <div class="math-card-body">
+                        <h3>9. Li Shanlan</h3>
+                        <p class="dates">(1810–1882)</p>
+                        <p class="desc">Li Shanlan (1810–1882) was a Chinese mathematician and translator during the
+                            Qing
+                            Dynasty who played a crucial role in
+                            introducing Western mathematical knowledge into China.</p>
+                    </div>
+                </a>
+
+                <a href="Xu Guangqi.html" class="math-card">
+                    <img src="Xu Guangqi.webp" alt="Xu Guangqi">
+                    <div class="math-card-body">
+                        <h3>10. Xu Guangqi</h3>
+                        <p class="dates">(1562–1633)</p>
+                        <p class="desc">Xu Guangqi (1562–1633) was a Chinese polymath of the Ming Dynasty who made
+                            significant contributions to mathematics,
+                            astronomy, and agriculture.</p>
+                    </div>
+                </a>
+
+                <a href="Choi Seok-jeong.html" class="math-card">
+                    <img src="Choi Seok-jeong.webp" alt="Choi Seok-jeong">
+                    <div class="math-card-body">
+                        <h3>11. Choi Seok-jeong</h3>
+                        <p class="dates">(1646–1715)</p>
+                        <p class="desc">Choi Seok-jeong (1646–1715) was a Korean mathematician and high-ranking Joseon
+                            official whose 1700 treatise Gusuryak
+                            (“Nine­-Number Manual”) introduced the first known use of orthogonal Latin squares,
+                            predating
+                            Euler by over 60 years.</p>
+                    </div>
+                </a>
+
+                <a href="Kiyoshi Ito.html" class="math-card">
+                    <img src="Kiyoshi Ito.webp" alt="Kiyoshi Ito">
+                    <div class="math-card-body">
+                        <h3>12. Kiyoshi Ito</h3>
+                        <p class="dates">(1915–2008)</p>
+                        <p class="desc">Kiyoshi Itō (1915–2008) was a brilliant Japanese mathematician who transformed
+                            the
+                            landscape of probability theory and
+                            stochastic processes.</p>
+                    </div>
+                </a>
+
+                <a href="Takakazu Seki.html" class="math-card">
+                    <img src="Takakazu Seki.jpg" alt="Takakazu Seki">
+                    <div class="math-card-body">
+                        <h3>13. Takakazu Seki</h3>
+                        <p class="dates">(1642–1708)</p>
+                        <p class="desc">Takakazu Seki (1642–1708), often hailed as the “Newton of Japan,” was the
+                            leading
+                            figure of Wasan, the Japanese school
+                            of mathematics that flourished independently from European traditions.</p>
+                    </div>
+                </a>
+
+                <a href="Nam Pyong-gil.html" class="math-card">
+                    <img src="Nam Pyong-gil.jpg" alt="Nam Pyong-gil">
+                    <div class="math-card-body">
+                        <h3>14. Nam Pyong-gil</h3>
+                        <p class="dates">(1832–?)</p>
+                        <p class="desc">Nam Pyong-gil (1820–1869) was a Korean mathematician of the late Joseon Dynasty
+                            who
+                            played a pivotal role in bridging
+                            traditional East Asian mathematics with modern approaches influenced by the West.</p>
+                    </div>
+                </a>
+
+                <a href="Kikuchi Dairoku.html" class="math-card">
+                    <img src="Kikuchi Dairoku.jpeg" alt="Kikuchi Dairoku">
+                    <div class="math-card-body">
+                        <h3>15. Kikuchi Dairoku</h3>
+                        <p class="dates">(1855–1917)</p>
+                        <p class="desc">Kikuchi Dairoku (1855–1917) was a Japanese mathematician, educator, and
+                            statesman
+                            who became one of the first Japanese
+                            scholars to receive formal training in mathematics abroad.</p>
+                    </div>
+                </a>
+
+                <a href="Ogura Kinnosuke.html" class="math-card">
+                    <img src="Ogura Kinnosuki.jpeg" alt="Ogura Kinnosuke">
+                    <div class="math-card-body">
+                        <h3>16. Ogura Kinnosuke</h3>
+                        <p class="dates">(1860–1921)</p>
+                        <p class="desc">gura Kinnosuke (1882–1962) was a Japanese mathematician and historian of
+                            mathematics
+                            who made lasting contributions to
+                            the study of number theory and the history of East Asian mathematics.</p>
+                    </div>
+                </a>
+
+                <a href="Kawaguchi Ekai.html" class="math-card">
+                    <img src="Kawaguchi Ekai.jpg" alt="Kawaguchi Ekai">
+                    <div class="math-card-body">
+                        <h3>17. Kawaguchi Ekai</h3>
+                        <p class="dates">(1866–1945)</p>
+                        <p class="desc">Kawaguchi Ekai (1866–1945) was a Japanese Buddhist monk, scholar, and explorer
+                            who
+                            also contributed to the spread of
+                            scientific thought in Japan.</p>
+                    </div>
+                </a>
+
+                <a href="Mochizuki Shuntoku.html" class="math-card">
+                    <img src="Mathematics Arslan Khan.JPG" alt="Mochizuki Shuntoku">
+                    <div class="math-card-body">
+                        <h3>18. Mochizuki Shuntoku</h3>
+                        <p class="dates">(1870–1940)</p>
+                        <p class="desc">Mochizuki Shuntoku (1698–1743) was a Japanese mathematician of the Edo period
+                            who
+                            contributed to the advancement of
+                            algebraic methods and the popularization of wazan.</p>
+                    </div>
+                </a>
+
+                <a href="Horiuchi Annick.html" class="math-card">
+                    <img src="Horiuchi Annick.jpeg" alt="Horiuchi Annick">
+                    <div class="math-card-body">
+                        <h3>19. Horiuchi Annick</h3>
+                        <p class="dates">(1880–1950)</p>
+                        <p class="desc">Annick Horiuchi (born 1957) is a French-Japanese historian of mathematics who
+                            has
+                            specialized in the study of Japanese
+                            Wasan and its relation to global mathematics.</p>
+                    </div>
+                </a>
+
+                <a href="Aida Yasuaki.html" class="math-card">
+                    <img src="Aida Yasuaki.webp" alt="Aida Yasuaki">
+                    <div class="math-card-body">
+                        <h3>20. Aida Yasuaki</h3>
+                        <p class="dates">(1747–1817)</p>
+                        <p class="desc">Aida Yasuaki (1747–1817) was a prominent Japanese mathematician of the Edo
+                            period,
+                            best remembered for his contributions
+                            to wazan (traditional Japanese mathematics).</p>
+                    </div>
+                </a>
+
+                <a href="Minggatu.html" class="math-card">
+                    <img src="Minggatu.webp" alt="Minggatu">
+                    <div class="math-card-body">
+                        <h3>21. Minggatu</h3>
+                        <p class="dates">(1692–1765)</p>
+                        <p class="desc">Minggatu (c. 1692–1763), also known as Ming Antu, was a Mongolian astronomer and
+                            mathematician who served at the Qing
+                            Imperial Observatory.</p>
+                    </div>
+                </a>
+
+                <a href="Zhu Zaiyu.html" class="math-card">
+                    <img src="Zhu Zaiyu.webp" alt="Zhu Zaiyu">
+                    <div class="math-card-body">
+                        <h3>22. Zhu Zaiyu</h3>
+                        <p class="dates">(1536–1611)</p>
+                        <p class="desc">Zhu Zaiyu (1536–1611), a Ming dynasty prince and polymath, made groundbreaking
+                            contributions at the nexus of
+                            mathematics, physics, and music theory.</p>
+                    </div>
+                </a>
+
+                <a href="Kenko Seki.html" class="math-card">
+                    <img src="Kenko Seki.webp" alt="Kenko Seki">
+                    <div class="math-card-body">
+                        <h3>23. Kenko Seki</h3>
+                        <p class="dates">(1642–1708)</p>
+                        <p class="desc">Kenkō Seki (1642–1708) was a pioneering Japanese mathematician of the Edo
+                            period,
+                            often regarded as the father of
+                            Japanese mathematics, or wasan.</p>
+                    </div>
+                </a>
+
+                <a href="Rimhak Ree.html" class="math-card">
+                    <img src="Rimhak Ree.webp" alt="Rimhak Ree">
+                    <div class="math-card-body">
+                        <h3>24. Rimhak Ree</h3>
+                        <p class="dates">(1922–2005)</p>
+                        <p class="desc">Rimhak Ree (1922–2005) was a pioneering Korean mathematician whose work
+                            profoundly
+                            impacted group theory.</p>
+                    </div>
+                </a>
+
+            </div>
+
+
+
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

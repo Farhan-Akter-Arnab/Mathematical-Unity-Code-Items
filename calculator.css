@@ -1,81 +1,142 @@
-*   {
+/* Reset & Basic Styles */
+* {
     box-sizing: border-box;
+    font-family: 'Orbitron', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     padding: 0;
     margin: 0;
-    align-content: center;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Wrapper */
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(11, 11, 39);
+    padding: 10px;
+    /* Small padding so it doesn't touch screen edges */
+}
+
+/* CONTAINER: Now fluid width */
+.container {
+    width: 100%;
+    /* Occupy full available width */
+    max-width: 100%;
+    /* Removed the 500px limit */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Try to fill vertical space if needed */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Calculator specific styles */
+.calculator {
+    width: 100%;
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.display {
+    background: #181818;
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+#history {
+    color: #9aa0a6;
+    font-size: 0.9rem;
+    min-height: 18px;
+    text-align: right;
+    word-wrap: break-word;
+}
+
+#screen {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 2.5rem;
+    text-align: right;
+    caret-color: #8ab4f8;
+    /* MAKES CURSOR VISIBLE */
+    cursor: text;
+}
+
+/* GRID FIX: Prevents overflow on small screens, expands on large ones */
+.keys {
+    display: grid;
+    /* minmax(0, 1fr) ensures columns don't force width wider than screen */
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 8px;
+}
+
+button {
+    width: 100%;
+    padding: 15px 0;
+    /* Vertical padding defines height */
+    border: none;
+    border-radius: 8px;
+    background: #2b2f36;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    /* Center text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover {
+    background: #3a3f47;
+}
+
+button:active {
+    background: #454a54;
+    transform: scale(0.98);
+}
+
+.operator {
+    background: #353a40;
+    color: #8ab4f8;
+}
+
+.equals {
+    background: #8ab4f8;
+    color: black;
+}
+
+.ac {
+    background: #5f6368;
+}
+
+/* RESPONSIVE TWEAKS */
+@media (max-width: 600px) {
+    #screen {
+        font-size: 2rem;
     }
-    ::placeholder {
-        color: rgb(231, 241, 255);
-        opacity: 0.3;
-        align-content: center;
-    }
-    .wrapper {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        align-content: center;
-        background-color: rgb(11, 11, 39);
-        transition: 0.8s all;
-    }
-    h1 {
-        text-align: center;
-        margin-bottom: 1.5%;
-        color: #fff;
-    }
-    .container {
-        width: 300 px;
-    }
-    .result {
-        width: 59.1%;
-    }
-    input {
-        padding: 25px;
-        color: rgb(255, 255, 255);
-        font-size: 1em;
-        cursor: pointer;
-        width: 70px;
-        background-color: rgb(0, 81, 187);
-        border: none;
-        outline: none;
-        border-radius: 4px;
-    }
-    .row{
-        margin-bottom: 3px;
-        width:66.6%;
-    }
-    input[type="text"] {
-        background-color: rgb(39, 67, 90);
-        width: 218 px;
-    }
-    input[type="button"]:hover {
-        background-color: rgb(160, 160, 160);
-        color: #fff;
-    }
+
     button {
-        border: none;
-        background-color: rgb(36, 36, 40);
-        padding: 8px;
-        color: white;
-        margin: 2px;
-        cursor: pointer;
-        outline: none;
-        border-radius: 4px;
-        font-size: 0.8em;
-        font-weight: 200;
+        padding: 12px 0;
+        font-size: 0.9rem;
     }
-    .clear-button {
-        color: #fff;
-        font-weight: bolder;
-        background-color: rgb(255, 42, 42);
-        width: 97.5%;
-    }
-    .bottom-buttons {
-        display: flex;
-        margin-left: -2.3px;
-    }
-    .fab {
-        font-size: 1.1em;
-    }
+}

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,145 +26,256 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Radhanath Sikdar (1813–1870)</h3>
-        <h4>Mathematician and Geodetic Surveyor of Mount Everest</h4>
 
-        <p>
-            Radhanath Sikdar was an Indian mathematician and surveyor born in <b>Jorasanko, Calcutta</b> on 5 October
-            1813.
-            He studied at <b>Hindu College</b> (now Presidency University), where his talent in <b>mathematics</b> was
-            nurtured
-            by John Tytler.
-            Sikdar was also associated with the reformist “<b>Young Bengal</b>” circle around Henry Derozio.
-        </p>
-        <img src="Radhanath Sikder.webp" alt="Radhanath Sikdar" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Great Trigonometrical Survey (GTS)</h4>
-        <p>
-            In 1831, Sikdar joined the <b>Great Trigonometrical Survey of India</b> as a computer, working under
-            Surveyor
-            General <b>George Everest</b> and later <b>Andrew Waugh</b>.
-            By 1851, he rose to Chief Computer, performing critical geodetic reductions and computations that formed the
-            backbone of the Survey’s accuracy.
-            Everest described him as “a hardy, energetic young man.”
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Radhanath Sikdar (1813–1870)</h3>
+            <h4>Mathematician and Geodetic Surveyor of Mount Everest</h4>
 
-        <h4>Measuring the World’s Highest Peak</h4>
-        <p>
-            Using triangulation data from multiple stations, Sikdar concluded in 1852 that Peak XV was the tallest
-            mountain on
-            Earth.
-            Andrew Waugh announced this in 1856, naming it <b>Mount Everest</b> after his predecessor.
-            Sikdar’s computed height was approximately 29,000 ft; Waugh added 2 ft for official publication (29,002 ft).
-            Modern measurements confirm his precision: 8,848 m (29,029 ft) in 1955 and 8,848.86 m (29,032 ft) in 2020.
-        </p>
+            <p>
+                Radhanath Sikdar was an Indian mathematician and surveyor born in <b>Jorasanko, Calcutta</b> on 5
+                October
+                1813.
+                He studied at <b>Hindu College</b> (now Presidency University), where his talent in <b>mathematics</b>
+                was
+                nurtured
+                by John Tytler.
+                Sikdar was also associated with the reformist “<b>Young Bengal</b>” circle around Henry Derozio.
+            </p>
+            <img src="Radhanath Sikder.webp" alt="Radhanath Sikdar" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Great Trigonometrical Survey (GTS)</h4>
+            <p>
+                In 1831, Sikdar joined the <b>Great Trigonometrical Survey of India</b> as a computer, working under
+                Surveyor
+                General <b>George Everest</b> and later <b>Andrew Waugh</b>.
+                By 1851, he rose to Chief Computer, performing critical geodetic reductions and computations that formed
+                the
+                backbone of the Survey’s accuracy.
+                Everest described him as “a hardy, energetic young man.”
+            </p>
 
-        <h4>Mathematical Contributions</h4>
-        <p>
-            Sikdar’s work involved meticulous <b>geodetic computation</b>: reducing angular observations, applying
-            corrections
-            for refraction, altitude, and curvature,
-            and solving <b>spherical-trigonometry triangles</b> to convert sighted angles and baselines into peak
-            heights.
-            His expertise exemplifies the <b>computational geometry and astronomy</b> tradition of the GTS.
-        </p>
+            <h4>Measuring the World’s Highest Peak</h4>
+            <p>
+                Using triangulation data from multiple stations, Sikdar concluded in 1852 that Peak XV was the tallest
+                mountain on
+                Earth.
+                Andrew Waugh announced this in 1856, naming it <b>Mount Everest</b> after his predecessor.
+                Sikdar’s computed height was approximately 29,000 ft; Waugh added 2 ft for official publication (29,002
+                ft).
+                Modern measurements confirm his precision: 8,848 m (29,029 ft) in 1955 and 8,848.86 m (29,032 ft) in
+                2020.
+            </p>
 
-        <h4>Other Scholarly and Civic Work</h4>
-        <ul>
-            <li>Contributed technical chapters to the 1851 <i>Survey Manual</i>.</li>
-            <li>Co-founded the Bengali monthly <i>Māsik Patrikā</i> in 1854 to promote women’s education.</li>
-            <li>Protested injustice against survey workers (fined in 1843) demonstrating civic engagement.</li>
-            <li>Retired in 1862 and taught mathematics at the <b>General Assembly’s Institution</b> (now Scottish Church
-                College).</li>
-        </ul>
+            <h4>Mathematical Contributions</h4>
+            <p>
+                Sikdar’s work involved meticulous <b>geodetic computation</b>: reducing angular observations, applying
+                corrections
+                for refraction, altitude, and curvature,
+                and solving <b>spherical-trigonometry triangles</b> to convert sighted angles and baselines into peak
+                heights.
+                His expertise exemplifies the <b>computational geometry and astronomy</b> tradition of the GTS.
+            </p>
 
-        <h4>Legacy</h4>
-        <p>
-            Radhanath Sikdar exemplifies the <b>Indian mathematical backbone</b> of the Great Trigonometrical Survey.
-            His precise spherical-trigonometry calculations, careful error corrections, and large-scale numerical
-            computations
-            were critical in establishing Mount Everest’s height.
-            Without Sikdar’s expertise, the Survey’s discoveries and the famous “29,002 ft” figure would not have been
-            possible.
-            He remains celebrated as a pioneering mathematician and geodetic surveyor of India.
-        </p>
+            <h4>Other Scholarly and Civic Work</h4>
+            <ul>
+                <li>Contributed technical chapters to the 1851 <i>Survey Manual</i>.</li>
+                <li>Co-founded the Bengali monthly <i>Māsik Patrikā</i> in 1854 to promote women’s education.</li>
+                <li>Protested injustice against survey workers (fined in 1843) demonstrating civic engagement.</li>
+                <li>Retired in 1862 and taught mathematics at the <b>General Assembly’s Institution</b> (now Scottish
+                    Church
+                    College).</li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Legacy</h4>
+            <p>
+                Radhanath Sikdar exemplifies the <b>Indian mathematical backbone</b> of the Great Trigonometrical
+                Survey.
+                His precise spherical-trigonometry calculations, careful error corrections, and large-scale numerical
+                computations
+                were critical in establishing Mount Everest’s height.
+                Without Sikdar’s expertise, the Survey’s discoveries and the famous “29,002 ft” figure would not have
+                been
+                possible.
+                He remains celebrated as a pioneering mathematician and geodetic surveyor of India.
+            </p>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,141 +26,486 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="greek">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>
-            Greek Mathematics: From Cosmos to Calculation
-        </h3>
-        <p>
-            Ancient Greece nurtured mathematical thought that blossomed into the foundations of geometry, logic,
-            astronomy, and
-            philosophical analysis.
-            Greek mathematicians were driven by a quest for rational order—seeking patterns in the heavens, rigor in
-            proofs, and
-            harmony in numbers.
-            From natural philosophers like Thales, who sought to explain the world without myth, to Archimedes, who
-            mastered
-            geometry and invented machinery,
-            these thinkers built the pillars of logical inquiry and quantitative reasoning that continue to underpin
-            modern
-            science.
-        </p>
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><a href="Thales.html">1. Thales (c. 624–c. 546 BCE) </a></div>
-            <div class="math-card"> <a href="Anaximander.html">2. Anaximander (c. 610–c. 546 BCE)</a></div>
-            <div class="math-card"> <a href="Pythagoras.html">3. Pythagoras (c. 570–c. 495 BCE)</a></div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>
+                Greek Mathematics: From Cosmos to Calculation
+            </h3>
+            <p>
+                Ancient Greece nurtured mathematical thought that blossomed into the foundations of geometry, logic,
+                astronomy, and
+                philosophical analysis.
+                Greek mathematicians were driven by a quest for rational order—seeking patterns in the heavens, rigor in
+                proofs, and
+                harmony in numbers.
+                From natural philosophers like Thales, who sought to explain the world without myth, to Archimedes, who
+                mastered
+                geometry and invented machinery,
+                these thinkers built the pillars of logical inquiry and quantitative reasoning that continue to underpin
+                modern
+                science.
+            </p>
+            <div class="Math-grid">
 
-            <!-- Row 2 -->
-            <div class="math-card"> <a href="Anaxagoras.html">4. Anaxagoras (c. 500–c. 428 BCE)</a></div>
-            <div class="math-card"> <a href="Socrates.html">5. Socrates (c. 470–399 BCE)</a></div>
-            <div class="math-card"> <a href="Democritus.html">6. Democritus (c. 460–c. 370 BCE)</a></div>
+                <a href="Thales.html" class="math-card">
+                    <img src="Thales.webp" alt="Thales">
+                    <div class="math-card-body">
+                        <h3>1. Thales</h3>
+                        <p class="dates">(c. 624–c. 546 BCE)</p>
+                        <p class="desc">Thales of Miletus (c. 624 BCE – c. 546 BCE) is usually considered the first
+                            mathematician in history and a founder of
+                            Greek science and philosophy.</p>
+                    </div>
+                </a>
 
-            <!-- Row 3 -->
-            <div class="math-card"> <a href="Plato.html">7. Plato (c. 428–348 BCE)</a></div>
-            <div class="math-card"> <a href="Aristotle.html">8. Aristotle (384–322 BCE)</a></div>
-            <div class="math-card"> <a href="Euclid.html">9. Euclid (fl. c. 300 BCE)</a></div>
+                <a href="Anaximander.html" class="math-card">
+                    <img src="Anaximander.jpeg" alt="Anaximander">
+                    <div class="math-card-body">
+                        <h3>2. Anaximander</h3>
+                        <p class="dates">(c. 610–c. 546 BCE)</p>
+                        <p class="desc">Anaximander (c. 610 BCE – c. 546 BCE) was a Pre-Socratic Greek philosopher,
+                            astronomer, and cartographer, and a student
+                            of Thales of Miletus.</p>
+                    </div>
+                </a>
 
-            <!-- Row 4 -->
-            <div class="math-card"> <a href="Eratosthenes.html">10. Eratosthenes (c. 276–c. 194 BCE)</a></div>
-            <div class="math-card"> <a href="Archimedes.html">11. Archimedes (c. 287–c. 212 BCE)</a></div>
-            <div class="math-card"> <a href="Hippasus.html">12. Hippasus (5th century BCE)</a></div>
+                <a href="Pythagoras.html" class="math-card">
+                    <img src="Pythagoras.webp" alt="Pythagoras">
+                    <div class="math-card-body">
+                        <h3>3. Pythagoras</h3>
+                        <p class="dates">(c. 570–c. 495 BCE)</p>
+                        <p class="desc">Pythagoras (c. 570–495 BCE) is best known for the Pythagorean Theorem, a
+                            fundamental
+                            principle in mathematics relating
+                            the sides of a right triangle.</p>
+                    </div>
+                </a>
 
-            <!-- Row 5 -->
-            <div class="math-card"> <a href="Zeno of Elea.html">13. Zeno of Elea (c. 490–c. 430 BCE)</a></div>
-            <div class="math-card"> <a href="Theodosius.html">14. Theodosius (c. 160–c. 100 BCE)</a></div>
-            <div class="math-card"> <a href="Aristarchus.html">15. Aristarchus (c. 310–c. 230 BCE)</a></div>
+                <a href="Anaxagoras.html" class="math-card">
+                    <img src="Anaxagoras.jpeg" alt="Anaxagoras">
+                    <div class="math-card-body">
+                        <h3>4. Anaxagoras</h3>
+                        <p class="dates">(c. 500–c. 428 BCE)</p>
+                        <p class="desc">Anaxagoras was a philosopher from Clazomenae, a city in Asia Minor (modern-day
+                            Turkey).</p>
+                    </div>
+                </a>
 
-            <!-- Row 6 -->
-            <div class="math-card"> <a href="Callippus.html">16. Callippus (c. 370–c. 300 BCE)</a></div>
-            <div class="math-card"> <a href="Meton of Athens.html">17. Meton (fl. c. 432 BCE)</a></div>
-            <div class="math-card"> <a href="Apollonius.html">18. Apollonius (c. 262 BCE – c. 190 BCE)</a></div>
+                <a href="Socrates.html" class="math-card">
+                    <img src="Socrates.jpg" alt="Socrates">
+                    <div class="math-card-body">
+                        <h3>5. Socrates</h3>
+                        <p class="dates">(c. 470–399 BCE)</p>
+                        <p class="desc">Socrates (c. 470 – 399 BCE) is often regarded as the father of Western
+                            philosophy
+                            and one of the most influential
+                            thinkers in history.</p>
+                    </div>
+                </a>
 
-            <!-- Row 7 -->
-            <div class="math-card"> <a href="Hippocrates.html">19. Hippocrates (c. 460–c. 370 BCE)</a></div>
-            <div class="math-card"> <a href="Xenocrates.html">20. Xenocrates (c. 396–314 BCE)</a></div>
-            <div class="math-card"> <a href="Diogenes.html">21. Diogenes (c. 412–c. 323 BCE)</a></div>
+                <a href="Democritus.html" class="math-card">
+                    <img src="Democritus.webp" alt="Democritus">
+                    <div class="math-card-body">
+                        <h3>6. Democritus</h3>
+                        <p class="dates">(c. 460–c. 370 BCE)</p>
+                        <p class="desc">Democritus (c. 460–370 BCE) was a pioneering pre-Socratic philosopher best known
+                            for
+                            developing an early theory of
+                            atomism—the concept that all matter is composed of tiny, indivisible particles called atoms.
+                        </p>
+                    </div>
+                </a>
 
-            <!-- Row 8 -->
-            <div class="math-card"> <a href="Leucippus.html">22. Leucippus (5th century BCE)</a></div>
-            <div class="math-card"> <a href="Philo.html">23. Philo of Alexandria (c. 20 BCE–50 CE)</a></div>
-            <div class="math-card"> <a href="Theophrastus.html">24. Theophrastus (c. 371–c. 287 BCE)</a></div>
+                <a href="Plato.html" class="math-card">
+                    <img src="Plato.jpg" alt="Plato">
+                    <div class="math-card-body">
+                        <h3>7. Plato</h3>
+                        <p class="dates">(c. 428–348 BCE)</p>
+                        <p class="desc">Plato (c. 428–348 BCE) Plato was a student of Socrates and the teacher of
+                            Aristotle.
+                            He founded the Academy in Athens,
+                            the first institution of higher learning in the Western world.</p>
+                    </div>
+                </a>
+
+                <a href="Aristotle.html" class="math-card">
+                    <img src="Aristotle.webp" alt="Aristotle">
+                    <div class="math-card-body">
+                        <h3>8. Aristotle</h3>
+                        <p class="dates">(384–322 BCE)</p>
+                        <p class="desc">Aristotle (384–322 BCE), a student of Plato and tutor to Alexander the Great,
+                            made
+                            foundational contributions across a
+                            wide range of fields including logic, science, ethics, politics, and metaphysics.</p>
+                    </div>
+                </a>
+
+                <a href="Euclid.html" class="math-card">
+                    <img src="Euclid.jpeg" alt="Euclid">
+                    <div class="math-card-body">
+                        <h3>9. Euclid</h3>
+                        <p class="dates">(fl. c. 300 BCE)</p>
+                        <p class="desc">Euclid (c. 300 BCE) was a Greek mathematician who lived and worked in
+                            Alexandria,
+                            Egypt during the reign of Ptolemy I.</p>
+                    </div>
+                </a>
+
+                <a href="Eratosthenes.html" class="math-card">
+                    <img src="Eratosthenes.jpg" alt="Eratosthenes">
+                    <div class="math-card-body">
+                        <h3>10. Eratosthenes</h3>
+                        <p class="dates">(c. 276–c. 194 BCE)</p>
+                        <p class="desc">Eratosthenes was born in Cyrene, a city in modern-day Libya, and later became
+                            the
+                            chief librarian at the Library of
+                            Alexandria in Egypt — one of the most important centers of knowledge in the ancient world.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="Archimedes.html" class="math-card">
+                    <img src="Archimedes.jpeg" alt="Archimedes">
+                    <div class="math-card-body">
+                        <h3>11. Archimedes</h3>
+                        <p class="dates">(c. 287–c. 212 BCE)</p>
+                        <p class="desc">Archimedes of Syracuse was one of the most brilliant scientists, mathematicians,
+                            and
+                            inventors of the ancient world.</p>
+                    </div>
+                </a>
+
+                <a href="Hippasus.html" class="math-card">
+                    <img src="Hippasus.webp" alt="Hippasus">
+                    <div class="math-card-body">
+                        <h3>12. Hippasus</h3>
+                        <p class="dates">(5th century BCE)</p>
+                        <p class="desc">Hippasus of Metapontum (c. 5th century BCE) was a Greek philosopher and
+                            mathematician, believed to have been a follower
+                            of Pythagoras.</p>
+                    </div>
+                </a>
+
+                <a href="Zeno of Elea.html" class="math-card">
+                    <img src="Zeno of Elea.jpg" alt="Zeno of Elea">
+                    <div class="math-card-body">
+                        <h3>13. Zeno of Elea</h3>
+                        <p class="dates">(c. 490–c. 430 BCE)</p>
+                        <p class="desc">Zeno of Elea was a Greek philosopher and a devoted student of Parmenides, the
+                            great
+                            thinker of the Eleatic school.</p>
+                    </div>
+                </a>
+
+                <a href="Theodosius.html" class="math-card">
+                    <img src="Theodosius.jpeg" alt="Theodosius">
+                    <div class="math-card-body">
+                        <h3>14. Theodosius</h3>
+                        <p class="dates">(c. 160–c. 100 BCE)</p>
+                        <p class="desc">Theodosius of Bithynia (c. 160 BCE – c. 100 BCE) was a Greek mathematician and
+                            astronomer, best remembered for his
+                            pioneering work in spherical geometry.</p>
+                    </div>
+                </a>
+
+                <a href="Aristarchus.html" class="math-card">
+                    <img src="Aristarchus.webp" alt="Aristarchus">
+                    <div class="math-card-body">
+                        <h3>15. Aristarchus</h3>
+                        <p class="dates">(c. 310–c. 230 BCE)</p>
+                        <p class="desc">Aristarchus of Samos (c. 310 BCE – c. 230 BCE) was a Greek astronomer and
+                            mathematician, best known for being the first
+                            to propose a heliocentric model of the universe — placing the Sun at the center and the
+                            Earth
+                            orbiting around it.</p>
+                    </div>
+                </a>
+
+                <a href="Callippus.html" class="math-card">
+                    <img src="Callippus.jpeg" alt="Callippus">
+                    <div class="math-card-body">
+                        <h3>16. Callippus</h3>
+                        <p class="dates">(c. 370–c. 300 BCE)</p>
+                        <p class="desc">Callippus (c. 370 BCE – c. 300 BCE) was a Greek astronomer and mathematician,
+                            remembered for refining the work of Meton
+                            of Athens and creating the Callippic Cycle — a more accurate system for reconciling the
+                            solar
+                            year with the lunar
+                            calendar.</p>
+                    </div>
+                </a>
+
+                <a href="Meton of Athens.html" class="math-card">
+                    <img src="Meton.jpg" alt="Meton of Athens">
+                    <div class="math-card-body">
+                        <h3>17. Meton</h3>
+                        <p class="dates">(fl. c. 432 BCE)</p>
+                        <p class="desc">Meton of Athens (fl. 5th century BCE, around 432 BCE) was a Greek astronomer,
+                            mathematician, engineer, and surveyor.</p>
+                    </div>
+                </a>
+
+                <a href="Apollonius.html" class="math-card">
+                    <img src="Apollonius.jpg" alt="Apollonius">
+                    <div class="math-card-body">
+                        <h3>18. Apollonius</h3>
+                        <p class="dates">(c. 262 BCE – c. 190 BCE)</p>
+                        <p class="desc">Apollonius of Perga was a Greek mathematician renowned for his groundbreaking
+                            work
+                            in geometry, especially his
+                            systematic study of conic sections.</p>
+                    </div>
+                </a>
+
+                <a href="Hippocrates.html" class="math-card">
+                    <img src="Hippocrates.jpg" alt="Hippocrates">
+                    <div class="math-card-body">
+                        <h3>19. Hippocrates</h3>
+                        <p class="dates">(c. 460–c. 370 BCE)</p>
+                        <p class="desc">Hippocrates of Chios (c. 470–410 BC) was an early Greek mathematician whose work
+                            marked a turning point in the
+                            systematic study of geometry.</p>
+                    </div>
+                </a>
+
+                <a href="Xenocrates.html" class="math-card">
+                    <img src="Xenocrates.jpeg" alt="Xenocrates">
+                    <div class="math-card-body">
+                        <h3>20. Xenocrates</h3>
+                        <p class="dates">(c. 396–314 BCE)</p>
+                        <p class="desc">Xenocrates (c. 396 BCE – 314 BCE) was an ancient Greek philosopher,
+                            mathematician,
+                            and one of Plato’s closest students.</p>
+                    </div>
+                </a>
+
+                <a href="Diogenes.html" class="math-card">
+                    <img src="Diogenes.webp" alt="Diogenes">
+                    <div class="math-card-body">
+                        <h3>21. Diogenes</h3>
+                        <p class="dates">(c. 412–c. 323 BCE)</p>
+                        <p class="desc">Diogenes of Sinope (c. 412 BCE – c. 323 BCE) was a Greek philosopher and one of
+                            the
+                            most notorious figures of classical
+                            antiquity.</p>
+                    </div>
+                </a>
+
+                <a href="Leucippus.html" class="math-card">
+                    <img src="Leucippus.webp" alt="Leucippus">
+                    <div class="math-card-body">
+                        <h3>22. Leucippus</h3>
+                        <p class="dates">(5th century BCE)</p>
+                        <p class="desc">Leucippus (c. 5th century BCE) was a Greek philosopher, traditionally regarded
+                            as
+                            the originator of atomism, one of the
+                            earliest scientific theories of matter.</p>
+                    </div>
+                </a>
+
+                <a href="Philo.html" class="math-card">
+                    <img src="Philo.jpg" alt="Philo of Alexandria">
+                    <div class="math-card-body">
+                        <h3>23. Philo of Alexandria</h3>
+                        <p class="dates">(c. 20 BCE–50 CE)</p>
+                        <p class="desc">Philo of Alexandria (c. 20 BCE – 50 CE), also known as Philo Judaeus, was a
+                            Hellenistic Jewish philosopher who lived in
+                            Alexandria, Egypt.</p>
+                    </div>
+                </a>
+
+                <a href="Theophrastus.html" class="math-card">
+                    <img src="Theophrastus.webp" alt="Theophrastus">
+                    <div class="math-card-body">
+                        <h3>24. Theophrastus</h3>
+                        <p class="dates">(c. 371–c. 287 BCE)</p>
+                        <p class="desc">Theophrastus (c. 371 BCE – c. 287 BCE) was a Greek philosopher and scientist,
+                            best
+                            known as the successor of Aristotle
+                            and as the “Father of Botany.”</p>
+                    </div>
+                </a>
+
+            </div>
+
+
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,178 +26,292 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="greek">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Anaximander of Miletus</h3>
-        <h4>The Boundless Philosopher</h4>
-        <p>
-            Anaximander (c. 610 BCE – c. 546 BCE) was a Pre-Socratic Greek philosopher, astronomer, and cartographer,
-            and a
-            student of <b>Thales of Miletus</b>. He is often credited as one of the earliest thinkers to attempt a
-            scientific
-            explanation of the cosmos without relying on myth. His ideas about the origin of the universe, the Earth’s
-            position
-            in space, and the principle of the <i>apeiron</i> (the boundless) make him one of the founders of natural
-            philosophy.
-        </p>
-        <img src="Anaximander.jpeg" alt="Anaximander" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Background</h4>
-        <p>
-            Anaximander was born in Miletus, a wealthy Ionian city, where early Greek science and philosophy flourished.
-            Like
-            his teacher Thales, he sought natural explanations for phenomena rather than divine myths. He is said to
-            have been
-            politically active and may have even designed the first map of the known world.
-        </p>
 
-        <h4>Key Contributions</h4>
-        <ul>
-            <li>
-                <b>(a) The Apeiron</b><br>
-                Anaximander proposed that the origin (\(\text{archê}\)) of all things is not a specific element like
-                water (as
-                Thales believed), but something indefinite, eternal, and infinite — the <i>apeiron</i> (“boundless” or
-                “infinite”).<br><br>
-                From the <i>apeiron</i>, opposites such as hot/cold, wet/dry separate to form the cosmos.<br><br>
-                This was one of the earliest abstract principles in philosophy.
-            </li>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Anaximander of Miletus</h3>
+            <h4>The Boundless Philosopher</h4>
+            <p>
+                Anaximander (c. 610 BCE – c. 546 BCE) was a Pre-Socratic Greek philosopher, astronomer, and
+                cartographer,
+                and a
+                student of <b>Thales of Miletus</b>. He is often credited as one of the earliest thinkers to attempt a
+                scientific
+                explanation of the cosmos without relying on myth. His ideas about the origin of the universe, the
+                Earth’s
+                position
+                in space, and the principle of the <i>apeiron</i> (the boundless) make him one of the founders of
+                natural
+                philosophy.
+            </p>
+            <img src="Anaximander.jpeg" alt="Anaximander" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Background</h4>
+            <p>
+                Anaximander was born in Miletus, a wealthy Ionian city, where early Greek science and philosophy
+                flourished.
+                Like
+                his teacher Thales, he sought natural explanations for phenomena rather than divine myths. He is said to
+                have been
+                politically active and may have even designed the first map of the known world.
+            </p>
 
-            <li>
-                <b>(b) Cosmology</b><br>
-                Anaximander believed the Earth floats unsupported in space, not held by anything — a radical idea at the
-                time.<br><br>
-                He thought the Earth was cylindrical in shape, like a drum, with humans living on the flat top.<br><br>
-                He explained celestial bodies as fiery rings encased in air, with holes through which light escapes
-                (appearing
-                as the Sun, Moon, and stars).
-            </li>
+            <h4>Key Contributions</h4>
+            <ul>
+                <li>
+                    <b>(a) The Apeiron</b><br>
+                    Anaximander proposed that the origin (\(\text{archê}\)) of all things is not a specific element like
+                    water (as
+                    Thales believed), but something indefinite, eternal, and infinite — the <i>apeiron</i> (“boundless”
+                    or
+                    “infinite”).<br><br>
+                    From the <i>apeiron</i>, opposites such as hot/cold, wet/dry separate to form the cosmos.<br><br>
+                    This was one of the earliest abstract principles in philosophy.
+                </li>
 
-            <li>
-                <b>(c) Astronomy & Instruments</b><br>
-                He is credited with introducing the <b>gnomon</b> (a sundial-like device) to Greece, allowing
-                measurement of
-                solstices and equinoxes.<br><br>
-                He proposed a model of the heavens where the Sun, Moon, and stars are located on concentric circles
-                around Earth
-                at different distances.
-            </li>
+                <li>
+                    <b>(b) Cosmology</b><br>
+                    Anaximander believed the Earth floats unsupported in space, not held by anything — a radical idea at
+                    the
+                    time.<br><br>
+                    He thought the Earth was cylindrical in shape, like a drum, with humans living on the flat
+                    top.<br><br>
+                    He explained celestial bodies as fiery rings encased in air, with holes through which light escapes
+                    (appearing
+                    as the Sun, Moon, and stars).
+                </li>
 
-            <li>
-                <b>(d) Biology & Evolutionary Thought</b><br>
-                Anaximander speculated about the origin of life:<br><br>
-                Life began in moisture, heated by the Sun.<br><br>
-                Humans originally came from fish-like creatures, since human infants are too helpless to survive
-                alone.<br><br>
-                This makes him one of the earliest thinkers to propose a kind of evolutionary theory.
-            </li>
-        </ul>
+                <li>
+                    <b>(c) Astronomy & Instruments</b><br>
+                    He is credited with introducing the <b>gnomon</b> (a sundial-like device) to Greece, allowing
+                    measurement of
+                    solstices and equinoxes.<br><br>
+                    He proposed a model of the heavens where the Sun, Moon, and stars are located on concentric circles
+                    around Earth
+                    at different distances.
+                </li>
 
-        <h4>Influence and Legacy</h4>
-        <ul>
-            <li>
-                <b>On Greek Philosophy:</b> His idea of the <i>apeiron</i> influenced later philosophers such as
-                Anaximenes,
-                Aristotle, and the Stoics.
-            </li>
-            <li>
-                <b>On Science:</b> His theory of a self-suspended Earth anticipated later astronomical reasoning.
-            </li>
-            <li>
-                <b>On Cartography:</b> He drew one of the earliest maps of the world, making geography a field of study.
-            </li>
-            <li>
-                <b>On Biology:</b> His idea of life arising from water influenced later naturalists like Empedocles and
-                even
-                foreshadows Darwinian thinking.
-            </li>
-        </ul>
+                <li>
+                    <b>(d) Biology & Evolutionary Thought</b><br>
+                    Anaximander speculated about the origin of life:<br><br>
+                    Life began in moisture, heated by the Sun.<br><br>
+                    Humans originally came from fish-like creatures, since human infants are too helpless to survive
+                    alone.<br><br>
+                    This makes him one of the earliest thinkers to propose a kind of evolutionary theory.
+                </li>
+            </ul>
 
-        <h4>Legacy</h4>
-        <p>
-            Anaximander was a true pioneer, bridging myth and science. By proposing the <i>apeiron</i> as the eternal
-            source of
-            all things, and by imagining the Earth floating in space, he moved philosophy toward abstraction and
-            scientific
-            inquiry. His vision of the cosmos laid foundations for both philosophy and astronomy, making him one of the
-            great
-            minds of early Greek thought.
-        </p>
+            <h4>Influence and Legacy</h4>
+            <ul>
+                <li>
+                    <b>On Greek Philosophy:</b> His idea of the <i>apeiron</i> influenced later philosophers such as
+                    Anaximenes,
+                    Aristotle, and the Stoics.
+                </li>
+                <li>
+                    <b>On Science:</b> His theory of a self-suspended Earth anticipated later astronomical reasoning.
+                </li>
+                <li>
+                    <b>On Cartography:</b> He drew one of the earliest maps of the world, making geography a field of
+                    study.
+                </li>
+                <li>
+                    <b>On Biology:</b> His idea of life arising from water influenced later naturalists like Empedocles
+                    and
+                    even
+                    foreshadows Darwinian thinking.
+                </li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Legacy</h4>
+            <p>
+                Anaximander was a true pioneer, bridging myth and science. By proposing the <i>apeiron</i> as the
+                eternal
+                source of
+                all things, and by imagining the Earth floating in space, he moved philosophy toward abstraction and
+                scientific
+                inquiry. His vision of the cosmos laid foundations for both philosophy and astronomy, making him one of
+                the
+                great
+                minds of early Greek thought.
+            </p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

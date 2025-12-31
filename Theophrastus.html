@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,175 +26,288 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="greek">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Theophrastus</h3>
-        <h4>The Father of Botany</h4>
-        <p>
-            Theophrastus (c. 371 BCE – c. 287 BCE) was a Greek philosopher and scientist, best known as the successor of
-            Aristotle and as the <b>“Father of Botany.”</b>
-            Born in Eresos on the island of Lesbos, he became one of Aristotle’s most distinguished students at the
-            Lyceum in
-            Athens. After Aristotle’s death, Theophrastus became the head of the Lyceum and led it for over three
-            decades,
-            turning it into one of the greatest centers of learning in the ancient world.
-        </p>
-        <img src="Theophrastus.webp" alt="Theophrastus" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Contributions to Botany</h4>
-        <p>
-            Theophrastus wrote two foundational works on plants: <i>Historia Plantarum</i> (“Inquiry into Plants”) and
-            <i>De
-                Causis Plantarum</i> (“On the Causes of Plants”).
-            In these texts, he described more than <b>500 plant species</b>, classifying them by structure,
-            reproduction, and
-            practical uses. His systematic observations included:
-        </p>
-        <ul>
-            <li>Differences between trees, shrubs, and herbs</li>
-            <li>Classification of plants as annuals, perennials, and biennials</li>
-            <li>Methods of plant reproduction (from seeds, cuttings, grafting)</li>
-            <li>Effects of climate and soil on plant growth</li>
-            <li>Medicinal and agricultural uses of plants</li>
-        </ul>
-        <p>
-            These works became the <b>first scientific studies of botany</b> and remained authoritative references for
-            nearly
-            1,500 years.
-        </p>
 
-        <h4>Philosophy and Science</h4>
-        <p>
-            As Aristotle’s student, Theophrastus extended his teacher’s work in <b>natural philosophy, logic, and
-                ethics</b>.
-            He studied physics, meteorology, zoology, and human behavior. One of his surviving works, <i>Characters</i>,
-            presented short portrayals of personality types such as “The Boastful Man” and “The Flatterer.” This became
-            the
-            foundation for the literary tradition of character writing and influenced later psychology and literature.
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Theophrastus</h3>
+            <h4>The Father of Botany</h4>
+            <p>
+                Theophrastus (c. 371 BCE – c. 287 BCE) was a Greek philosopher and scientist, best known as the
+                successor of
+                Aristotle and as the <b>“Father of Botany.”</b>
+                Born in Eresos on the island of Lesbos, he became one of Aristotle’s most distinguished students at the
+                Lyceum in
+                Athens. After Aristotle’s death, Theophrastus became the head of the Lyceum and led it for over three
+                decades,
+                turning it into one of the greatest centers of learning in the ancient world.
+            </p>
+            <img src="Theophrastus.webp" alt="Theophrastus" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Contributions to Botany</h4>
+            <p>
+                Theophrastus wrote two foundational works on plants: <i>Historia Plantarum</i> (“Inquiry into Plants”)
+                and
+                <i>De
+                    Causis Plantarum</i> (“On the Causes of Plants”).
+                In these texts, he described more than <b>500 plant species</b>, classifying them by structure,
+                reproduction, and
+                practical uses. His systematic observations included:
+            </p>
+            <ul>
+                <li>Differences between trees, shrubs, and herbs</li>
+                <li>Classification of plants as annuals, perennials, and biennials</li>
+                <li>Methods of plant reproduction (from seeds, cuttings, grafting)</li>
+                <li>Effects of climate and soil on plant growth</li>
+                <li>Medicinal and agricultural uses of plants</li>
+            </ul>
+            <p>
+                These works became the <b>first scientific studies of botany</b> and remained authoritative references
+                for
+                nearly
+                1,500 years.
+            </p>
 
-        <h4>Influence in Other Sciences</h4>
-        <ul>
-            <li><b>Mineralogy:</b> In <i>On Stones</i>, one of the earliest works in geology, he described properties of
-                gems,
-                metals, and crystals.</li>
-            <li><b>Medicine:</b> He explored the medicinal applications of plants, laying the groundwork for
-                pharmacology.</li>
-            <li><b>Logic and Metaphysics:</b> He refined Aristotelian theories and offered his own insights into
-                causality and
-                reasoning.</li>
-        </ul>
+            <h4>Philosophy and Science</h4>
+            <p>
+                As Aristotle’s student, Theophrastus extended his teacher’s work in <b>natural philosophy, logic, and
+                    ethics</b>.
+                He studied physics, meteorology, zoology, and human behavior. One of his surviving works,
+                <i>Characters</i>,
+                presented short portrayals of personality types such as “The Boastful Man” and “The Flatterer.” This
+                became
+                the
+                foundation for the literary tradition of character writing and influenced later psychology and
+                literature.
+            </p>
 
-        <h4>Leadership of the Lyceum</h4>
-        <p>
-            When Aristotle fled Athens in 322 BCE, Theophrastus became head of the <b>Lyceum (Peripatetic School)</b>.
-            Under his
-            leadership, the school expanded greatly, attracting thousands of students.
-            He preserved Aristotle’s research traditions while also expanding them, ensuring their survival and
-            influence across
-            generations.
-        </p>
+            <h4>Influence in Other Sciences</h4>
+            <ul>
+                <li><b>Mineralogy:</b> In <i>On Stones</i>, one of the earliest works in geology, he described
+                    properties of
+                    gems,
+                    metals, and crystals.</li>
+                <li><b>Medicine:</b> He explored the medicinal applications of plants, laying the groundwork for
+                    pharmacology.</li>
+                <li><b>Logic and Metaphysics:</b> He refined Aristotelian theories and offered his own insights into
+                    causality and
+                    reasoning.</li>
+            </ul>
 
-        <h4>Legacy</h4>
-        <p>
-            Theophrastus was deeply admired in his lifetime. Ancient accounts record that when he died around 287 BCE,
-            <b>thousands of Athenians attended his funeral</b> — a remarkable tribute to his influence as both a
-            philosopher and
-            scientist.
-        </p>
-        <p>
-            Today, he is most celebrated as the <b>founder of botany</b> for his systematic classification of plants,
-            but his
-            intellectual contributions reached into mineralogy, medicine, and ethics.
-            His works bridged Aristotle’s philosophy with later Hellenistic science, making him one of the most
-            versatile and
-            influential thinkers of antiquity.
-        </p>
+            <h4>Leadership of the Lyceum</h4>
+            <p>
+                When Aristotle fled Athens in 322 BCE, Theophrastus became head of the <b>Lyceum (Peripatetic
+                    School)</b>.
+                Under his
+                leadership, the school expanded greatly, attracting thousands of students.
+                He preserved Aristotle’s research traditions while also expanding them, ensuring their survival and
+                influence across
+                generations.
+            </p>
 
-        <h4>Facts</h4>
-        <ul>
-            <li>Born in Eresos, Lesbos</li>
-            <li>Student and successor of Aristotle</li>
-            <li>Wrote <i>Historia Plantarum</i> and <i>De Causis Plantarum</i></li>
-            <li>Described over 500 plant species</li>
-            <li>Head of the Lyceum for 30+ years</li>
-            <li>Known as the “Father of Botany”</li>
-        </ul>
+            <h4>Legacy</h4>
+            <p>
+                Theophrastus was deeply admired in his lifetime. Ancient accounts record that when he died around 287
+                BCE,
+                <b>thousands of Athenians attended his funeral</b> — a remarkable tribute to his influence as both a
+                philosopher and
+                scientist.
+            </p>
+            <p>
+                Today, he is most celebrated as the <b>founder of botany</b> for his systematic classification of
+                plants,
+                but his
+                intellectual contributions reached into mineralogy, medicine, and ethics.
+                His works bridged Aristotle’s philosophy with later Hellenistic science, making him one of the most
+                versatile and
+                influential thinkers of antiquity.
+            </p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Facts</h4>
+            <ul>
+                <li>Born in Eresos, Lesbos</li>
+                <li>Student and successor of Aristotle</li>
+                <li>Wrote <i>Historia Plantarum</i> and <i>De Causis Plantarum</i></li>
+                <li>Described over 500 plant species</li>
+                <li>Head of the Lyceum for 30+ years</li>
+                <li>Known as the “Father of Botany”</li>
+            </ul>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

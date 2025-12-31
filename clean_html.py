@@ -11,15 +11,18 @@ def clean_html_file(file_path):
 
     # Remove square-braced references and 'oaicite'
     cleaned_content = re.sub(r'\[.*?oaicite.*?\]', '', content)  # Remove 'oaicite' references
-    cleaned_content = re.sub(r'\[.*?\]', '', cleaned_content)   # Remove generic square-braced references
+    cleaned_content1 = re.sub(r'\[.*?\]', '', cleaned_content)   # Remove generic square-braced references
+    cleaned_content2 = re.sub(r'\[.*?:contentReference{index=0}*?\]', '', cleaned_content1)  # Remove specific contentReference patterns
 
     # Restore preserved script tags
     for script in scripts:
         cleaned_content = cleaned_content.replace(script, script)
+        cleaned_content1 = cleaned_content1.replace(script, script)
+        cleaned_content2 = cleaned_content2.replace(script, script)
 
     # Write the cleaned content back to the file
     with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(cleaned_content)
+        file.write(cleaned_content2)
 
 def clean_all_html_files(directory):
     for root, _, files in os.walk(directory):

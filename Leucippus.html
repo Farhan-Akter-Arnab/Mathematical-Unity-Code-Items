@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,162 +26,265 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="greek">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Leucippus</h3>
-        <h4>The Founder of Atomism</h4>
-        <p>
-            Leucippus (c. 5th century BCE) was a Greek philosopher, traditionally regarded as the
-            <strong>originator of atomism</strong>, one of the earliest scientific theories of matter.
-            Very little is known about his life — some ancient sources even doubted whether he truly existed
-            or confused him with his student <strong>Democritus</strong>. Nevertheless, most historians agree
-            that Leucippus laid the foundation of atomism, a theory that profoundly shaped the history of science.
-        </p>
-        <img src="Leucippus.webp" alt="Leucippus" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>The Theory of Atomism</h4>
-        <p>
-            Leucippus proposed that the universe is composed of two fundamental realities:
-        </p>
-        <ul>
-            <li><strong>Atoms</strong>: tiny, indivisible, eternal particles that form everything</li>
-            <li><strong>Void (Empty Space)</strong>: the space in which atoms move and interact</li>
-        </ul>
-        <p>
-            This was revolutionary, since philosophers such as Parmenides and Zeno denied the existence of void.
-            Leucippus argued instead that <em>without empty space, motion would be impossible</em>.
-            He described atoms as infinite in number, varied in shape and size, indivisible, indestructible,
-            and in constant motion.
-        </p>
 
-        <h4>The Formation of the Universe</h4>
-        <p>
-            Rejecting mythological explanations, Leucippus explained nature mechanistically:
-        </p>
-        <ul>
-            <li>Atoms move randomly in the void.</li>
-            <li>Through collisions, they join into larger structures.</li>
-            <li>Over time, these clusters form the objects, materials, and living beings of the world.</li>
-        </ul>
-        <p>
-            This naturalistic explanation was among the first attempts to describe the cosmos without
-            appealing to divine intervention.
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Leucippus</h3>
+            <h4>The Founder of Atomism</h4>
+            <p>
+                Leucippus (c. 5th century BCE) was a Greek philosopher, traditionally regarded as the
+                <strong>originator of atomism</strong>, one of the earliest scientific theories of matter.
+                Very little is known about his life — some ancient sources even doubted whether he truly existed
+                or confused him with his student <strong>Democritus</strong>. Nevertheless, most historians agree
+                that Leucippus laid the foundation of atomism, a theory that profoundly shaped the history of science.
+            </p>
+            <img src="Leucippus.webp" alt="Leucippus" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>The Theory of Atomism</h4>
+            <p>
+                Leucippus proposed that the universe is composed of two fundamental realities:
+            </p>
+            <ul>
+                <li><strong>Atoms</strong>: tiny, indivisible, eternal particles that form everything</li>
+                <li><strong>Void (Empty Space)</strong>: the space in which atoms move and interact</li>
+            </ul>
+            <p>
+                This was revolutionary, since philosophers such as Parmenides and Zeno denied the existence of void.
+                Leucippus argued instead that <em>without empty space, motion would be impossible</em>.
+                He described atoms as infinite in number, varied in shape and size, indivisible, indestructible,
+                and in constant motion.
+            </p>
 
-        <h4>Determinism and Causality</h4>
-        <p>
-            Leucippus is credited with an early form of <strong>determinism</strong>, holding that
-            events follow necessity and natural law rather than chance. One of his rare surviving statements is:
-        </p>
-        <blockquote>
-            “Nothing occurs at random, but everything from reason and by necessity.”
-        </blockquote>
-        <p>
-            This principle influenced later philosophy and science by asserting that the universe operates in a
-            predictable,
-            rational order.
-        </p>
+            <h4>The Formation of the Universe</h4>
+            <p>
+                Rejecting mythological explanations, Leucippus explained nature mechanistically:
+            </p>
+            <ul>
+                <li>Atoms move randomly in the void.</li>
+                <li>Through collisions, they join into larger structures.</li>
+                <li>Over time, these clusters form the objects, materials, and living beings of the world.</li>
+            </ul>
+            <p>
+                This naturalistic explanation was among the first attempts to describe the cosmos without
+                appealing to divine intervention.
+            </p>
 
-        <h4>Influence on Democritus and Later Thinkers</h4>
-        <p>
-            Although Leucippus introduced atomism, it was his student <strong>Democritus</strong> who elaborated
-            it into a full philosophical system, including explanations of thought and the soul. Centuries later,
-            the Roman poet <strong>Lucretius</strong> revived atomism in his work <em>On the Nature of Things</em>.
-            In the modern era, atomism inspired the foundations of physics and chemistry, culminating in
-            <strong>John Dalton’s atomic theory</strong> (19th century).
-        </p>
+            <h4>Determinism and Causality</h4>
+            <p>
+                Leucippus is credited with an early form of <strong>determinism</strong>, holding that
+                events follow necessity and natural law rather than chance. One of his rare surviving statements is:
+            </p>
+            <blockquote>
+                “Nothing occurs at random, but everything from reason and by necessity.”
+            </blockquote>
+            <p>
+                This principle influenced later philosophy and science by asserting that the universe operates in a
+                predictable,
+                rational order.
+            </p>
 
-        <h4>Legacy</h4>
-        <p>
-            Though none of his works survive in full, Leucippus is remembered as the first thinker to propose
-            that the world is composed of <strong>invisible building blocks</strong> moving through empty space.
-            This concept anticipated modern science by more than 2,000 years, securing his place as the
-            <strong>founder of atomism</strong> and a pioneer of natural philosophy.
-        </p>
+            <h4>Influence on Democritus and Later Thinkers</h4>
+            <p>
+                Although Leucippus introduced atomism, it was his student <strong>Democritus</strong> who elaborated
+                it into a full philosophical system, including explanations of thought and the soul. Centuries later,
+                the Roman poet <strong>Lucretius</strong> revived atomism in his work <em>On the Nature of Things</em>.
+                In the modern era, atomism inspired the foundations of physics and chemistry, culminating in
+                <strong>John Dalton’s atomic theory</strong> (19th century).
+            </p>
 
-        <h4>Facts</h4>
-        <ul>
-            <li>Greek philosopher of the 5th century BCE.</li>
-            <li>Founded the atomic theory of matter.</li>
-            <li>Introduced the concepts of <em>atoms</em> and <em>void</em>.</li>
-            <li>Advocated determinism: “Nothing occurs at random.”</li>
-            <li>Teacher of Democritus, who expanded his theory.</li>
-        </ul>
+            <h4>Legacy</h4>
+            <p>
+                Though none of his works survive in full, Leucippus is remembered as the first thinker to propose
+                that the world is composed of <strong>invisible building blocks</strong> moving through empty space.
+                This concept anticipated modern science by more than 2,000 years, securing his place as the
+                <strong>founder of atomism</strong> and a pioneer of natural philosophy.
+            </p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Facts</h4>
+            <ul>
+                <li>Greek philosopher of the 5th century BCE.</li>
+                <li>Founded the atomic theory of matter.</li>
+                <li>Introduced the concepts of <em>atoms</em> and <em>void</em>.</li>
+                <li>Advocated determinism: “Nothing occurs at random.”</li>
+                <li>Teacher of Democritus, who expanded his theory.</li>
+            </ul>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

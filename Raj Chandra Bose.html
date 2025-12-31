@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,187 +26,306 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Raj Chandra Bose</h3>
-        <h4>Pioneer of Combinatorics, Statistics, and Coding Theory</h4>
-        <p>
-            Raj Chandra Bose (1901 – 1987) was a distinguished Indian mathematician whose work bridged pure and applied
-            mathematics. He was born on <b>June 19, 1901</b>, in Hoshangabad, Central Provinces (now Madhya Pradesh),
-            India.
-            Initially pursuing physics at <b>Presidency College, Calcutta</b>, he later shifted his interest to
-            mathematics
-            under the guidance of the eminent statistician <b>P. C. Mahalanobis</b>, founder of the <b>Indian
-                Statistical
-                Institute (ISI)</b>. Soon after joining ISI, Bose established himself as a brilliant problem-solver in
-            the
-            emerging fields of <b>combinatorics</b>, <b>design theory</b>, and <b>statistics</b>.
-        </p>
-        <img src="Raj Chandra Bose.webp" alt="Raj Chandra Bose" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Mathematical Contributions</h4>
-        <p>
-            Bose’s earliest influential work was in <b>finite geometry</b> and <b>combinatorial design theory</b>, where
-            he
-            formalized the principles of <b>Balanced Incomplete Block Designs (BIBDs)</b>. These designs became critical
-            tools
-            for conducting large-scale statistical experiments in agriculture, medicine, and industry, enabling
-            efficiency while
-            ensuring accuracy.
-        </p>
 
-        <p>
-            A BIBD with parameters \((v, b, r, k, \lambda)\) satisfies the standard relations:
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Raj Chandra Bose</h3>
+            <h4>Pioneer of Combinatorics, Statistics, and Coding Theory</h4>
+            <p>
+                Raj Chandra Bose (1901 – 1987) was a distinguished Indian mathematician whose work bridged pure and
+                applied
+                mathematics. He was born on <b>June 19, 1901</b>, in Hoshangabad, Central Provinces (now Madhya
+                Pradesh),
+                India.
+                Initially pursuing physics at <b>Presidency College, Calcutta</b>, he later shifted his interest to
+                mathematics
+                under the guidance of the eminent statistician <b>P. C. Mahalanobis</b>, founder of the <b>Indian
+                    Statistical
+                    Institute (ISI)</b>. Soon after joining ISI, Bose established himself as a brilliant problem-solver
+                in
+                the
+                emerging fields of <b>combinatorics</b>, <b>design theory</b>, and <b>statistics</b>.
+            </p>
+            <img src="Raj Chandra Bose.webp" alt="Raj Chandra Bose" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Mathematical Contributions</h4>
+            <p>
+                Bose’s earliest influential work was in <b>finite geometry</b> and <b>combinatorial design theory</b>,
+                where
+                he
+                formalized the principles of <b>Balanced Incomplete Block Designs (BIBDs)</b>. These designs became
+                critical
+                tools
+                for conducting large-scale statistical experiments in agriculture, medicine, and industry, enabling
+                efficiency while
+                ensuring accuracy.
+            </p>
 
-        <p>
-            \[
-            v \cdot r = b \cdot k
-            \]
-            \[
-            r (k - 1) = \lambda (v - 1)
-            \]
-            \[
-            \lambda v (v - 1) = b k (k - 1)
-            \]
-        </p>
+            <p>
+                A BIBD with parameters \((v, b, r, k, \lambda)\) satisfies the standard relations:
+            </p>
 
-        <p>
-            Here:
-        <ul>
-            <li><b>v</b> = number of treatments</li>
-            <li><b>b</b> = number of blocks</li>
-            <li><b>r</b> = number of times each treatment is repeated</li>
-            <li><b>k</b> = size of each block</li>
-            <li><b>\(\lambda\)</b> = number of times each pair of treatments occurs together</li>
-        </ul>
-        </p>
+            <p>
+                \[
+                v \cdot r = b \cdot k
+                \]
+                \[
+                r (k - 1) = \lambda (v - 1)
+                \]
+                \[
+                \lambda v (v - 1) = b k (k - 1)
+                \]
+            </p>
 
-        <p>
-            Another landmark achievement was in <b>coding theory</b>, where Bose co-developed algebraic error-correcting
-            codes
-            that laid the foundation for the <b>BCH (Bose–Chaudhuri–Hocquenghem) codes</b>. The algebraic basis of such
-            cyclic
-            codes can be expressed as follows: choose a polynomial \( g(x) \) dividing \( x^n - 1 \) in the polynomial
-            ring over
-            the finite field \( GF(q) \). The cyclic code generated by \( g(x) \) is:
-        </p>
+            <p>
+                Here:
+            <ul>
+                <li><b>v</b> = number of treatments</li>
+                <li><b>b</b> = number of blocks</li>
+                <li><b>r</b> = number of times each treatment is repeated</li>
+                <li><b>k</b> = size of each block</li>
+                <li><b>\(\lambda\)</b> = number of times each pair of treatments occurs together</li>
+            </ul>
+            </p>
 
-        <p>
-            \[
-            C = \{ m(x) g(x) \;|\; m(x) \in GF(q), \; \deg(m(x)g(x)) < n \} \] </p>
+            <p>
+                Another landmark achievement was in <b>coding theory</b>, where Bose co-developed algebraic
+                error-correcting
+                codes
+                that laid the foundation for the <b>BCH (Bose–Chaudhuri–Hocquenghem) codes</b>. The algebraic basis of
+                such
+                cyclic
+                codes can be expressed as follows: choose a polynomial \( g(x) \) dividing \( x^n - 1 \) in the
+                polynomial
+                ring over
+                the finite field \( GF(q) \). The cyclic code generated by \( g(x) \) is:
+            </p>
 
-                <p>
-                    In many practical BCH constructions, one takes \( n = q^m - 1 \) and a generator polynomial whose
-                    roots are
-                    consecutive powers of a primitive element of \( GF(q^m) \).
-                </p>
+            <p>
+                \[
+                C = \{ m(x) g(x) \;|\; m(x) \in GF(q), \; \deg(m(x)g(x)) < n \} \] </p>
 
-                <h4>Legacy and Impact</h4>
-                <p>
-                    In 1959, Bose moved to the <b>United States</b>, serving as professor of statistics and mathematics
-                    at the
-                    <b>University of North Carolina</b> and later at <b>Colorado State University</b>. There, he
-                    mentored
-                    generations of mathematicians and engineers, influencing diverse applications of mathematics in
-                    science and
-                    technology.
-                </p>
+                    <p>
+                        In many practical BCH constructions, one takes \( n = q^m - 1 \) and a generator polynomial
+                        whose
+                        roots are
+                        consecutive powers of a primitive element of \( GF(q^m) \).
+                    </p>
 
-                <p>
-                    His pioneering insights earned him <b>international recognition</b>, making him one of the few
-                    Indian
-                    mathematicians of his era to achieve global prominence in <b>combinatorics</b>, <b>statistics</b>,
-                    and
-                    <b>coding theory</b>. Bose’s work demonstrated that mathematics could transcend abstraction and
-                    drive
-                    practical innovation in fields such as <b>communication systems</b> and <b>data transmission</b>.
-                </p>
+                    <h4>Legacy and Impact</h4>
+                    <p>
+                        In 1959, Bose moved to the <b>United States</b>, serving as professor of statistics and
+                        mathematics
+                        at the
+                        <b>University of North Carolina</b> and later at <b>Colorado State University</b>. There, he
+                        mentored
+                        generations of mathematicians and engineers, influencing diverse applications of mathematics in
+                        science and
+                        technology.
+                    </p>
 
-                <p>
-                    Raj Chandra Bose passed away on <b>October 31, 1987</b>, in Colorado, USA. Today, his name lives on
-                    in
-                    <b>Bose–Chaudhuri codes</b>, <b>design theory</b>, and in the thriving mathematical community that
-                    continues
-                    to build upon his groundbreaking methods. He remains a shining example of how a mathematician can
-                    bridge
-                    theory and practice, leaving behind a legacy that powers much of modern communication technology.
-                </p>
+                    <p>
+                        His pioneering insights earned him <b>international recognition</b>, making him one of the few
+                        Indian
+                        mathematicians of his era to achieve global prominence in <b>combinatorics</b>,
+                        <b>statistics</b>,
+                        and
+                        <b>coding theory</b>. Bose’s work demonstrated that mathematics could transcend abstraction and
+                        drive
+                        practical innovation in fields such as <b>communication systems</b> and <b>data
+                            transmission</b>.
+                    </p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+                    <p>
+                        Raj Chandra Bose passed away on <b>October 31, 1987</b>, in Colorado, USA. Today, his name lives
+                        on
+                        in
+                        <b>Bose–Chaudhuri codes</b>, <b>design theory</b>, and in the thriving mathematical community
+                        that
+                        continues
+                        to build upon his groundbreaking methods. He remains a shining example of how a mathematician
+                        can
+                        bridge
+                        theory and practice, leaving behind a legacy that powers much of modern communication
+                        technology.
+                    </p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

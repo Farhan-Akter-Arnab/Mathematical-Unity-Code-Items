@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,150 +26,261 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="renaissance">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Gottfried Wilhelm Leibniz (1646 – 1716)</h3>
-        <h4>Co-Inventor of Calculus and Pioneer of Symbolic Logic</h4>
 
-        <p>
-            Leibniz co-invented <b>calculus</b> independently of Newton, but his elegant notation—the <b>integral
-                sign</b>
-            \(\int\) (from the Latin <i>summa</i>) and the <b>differential</b> \(d\)—became the global standard. His
-            formulation
-            shaped the way generations of mathematicians think about change, motion, and infinitesimal processes. For
-            example:
-            \[
-            \int_a^b f(x)\,dx \quad \text{represents the area under a curve,}
-            \]
-            while
-            \[
-            \frac{dy}{dx} \quad \text{denotes the instantaneous rate of change.}
-            \]
-        </p>
-        <img src="Gottfried Wilhelm Leibniz.webp" alt="Gottfried Wilhelm Leibniz" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <p>
-            He viewed mathematics not merely as numbers and operations but as a <i>universal language of reasoning</i>
-            capable
-            of representing all rational thought. This vision led him to develop early ideas in <b>symbolic logic</b>
-            and
-            <b>combinatorial analysis</b>, anticipating formal systems that would later inspire <b>Boolean algebra</b>
-            and
-            <b>modern computing theory</b>.
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Gottfried Wilhelm Leibniz (1646 – 1716)</h3>
+            <h4>Co-Inventor of Calculus and Pioneer of Symbolic Logic</h4>
 
-        <p>
-            Leibniz also designed and constructed <b>mechanical calculators</b> capable of performing addition,
-            subtraction,
-            multiplication, and division. These machines were among the earliest steps toward automated computation. His
-            dream
-            of a <b>“universal calculus”</b> for reasoning foreshadowed the development of <b>algorithms</b>,
-            <b>computer
-                science</b>, and even <b>artificial intelligence</b>.
-        </p>
+            <p>
+                Leibniz co-invented <b>calculus</b> independently of Newton, but his elegant notation—the <b>integral
+                    sign</b>
+                \(\int\) (from the Latin <i>summa</i>) and the <b>differential</b> \(d\)—became the global standard. His
+                formulation
+                shaped the way generations of mathematicians think about change, motion, and infinitesimal processes.
+                For
+                example:
+                \[
+                \int_a^b f(x)\,dx \quad \text{represents the area under a curve,}
+                \]
+                while
+                \[
+                \frac{dy}{dx} \quad \text{denotes the instantaneous rate of change.}
+                \]
+            </p>
+            <img src="Gottfried Wilhelm Leibniz.webp" alt="Gottfried Wilhelm Leibniz" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <p>
+                He viewed mathematics not merely as numbers and operations but as a <i>universal language of
+                    reasoning</i>
+                capable
+                of representing all rational thought. This vision led him to develop early ideas in <b>symbolic
+                    logic</b>
+                and
+                <b>combinatorial analysis</b>, anticipating formal systems that would later inspire <b>Boolean
+                    algebra</b>
+                and
+                <b>modern computing theory</b>.
+            </p>
 
-        <p>
-            He applied mathematics widely, to <b>physics</b>, <b>engineering</b>, <b>law</b>, and even <b>theology</b>,
-            believing that the precision of mathematics could illuminate truth in all fields. His optimism is famously
-            captured
-            in the phrase, <i>“We live in the best of all possible worlds.”</i>
-        </p>
+            <p>
+                Leibniz also designed and constructed <b>mechanical calculators</b> capable of performing addition,
+                subtraction,
+                multiplication, and division. These machines were among the earliest steps toward automated computation.
+                His
+                dream
+                of a <b>“universal calculus”</b> for reasoning foreshadowed the development of <b>algorithms</b>,
+                <b>computer
+                    science</b>, and even <b>artificial intelligence</b>.
+            </p>
 
-        <p>
-            Leibniz’s legacy influenced not only mathematicians like <b>Leonhard Euler</b> and <b>Joseph-Louis
-                Lagrange</b> but
-            also philosophers and scientists for centuries. By treating mathematics as a formal, symbolic language, he
-            laid
-            foundations for <b>logic</b>, <b>algebra</b>, and <b>computation</b> that continue to resonate in modern
-            science and
-            technology.
-        </p>
+            <p>
+                He applied mathematics widely, to <b>physics</b>, <b>engineering</b>, <b>law</b>, and even
+                <b>theology</b>,
+                believing that the precision of mathematics could illuminate truth in all fields. His optimism is
+                famously
+                captured
+                in the phrase, <i>“We live in the best of all possible worlds.”</i>
+            </p>
 
-        <h4>Facts:</h4>
-        <ul>
-            <li>Born in <b>Leipzig</b>, Germany.</li>
-            <li>Introduced the <b>integral sign</b> \(\int\) and the <b>differential</b> \(d\).</li>
-            <li>Built advanced <b>mechanical calculators</b> capable of complex operations.</li>
-            <li>Envisioned <b>universal reasoning systems</b> that anticipated algorithms and AI.</li>
-            <li>Maintained a lifelong intellectual rivalry with <b>Isaac Newton</b>.</li>
-            <li>His writings influenced both <b>mathematics</b> and <b>philosophy</b>, bridging the two disciplines.
-            </li>
-        </ul>
+            <p>
+                Leibniz’s legacy influenced not only mathematicians like <b>Leonhard Euler</b> and <b>Joseph-Louis
+                    Lagrange</b> but
+                also philosophers and scientists for centuries. By treating mathematics as a formal, symbolic language,
+                he
+                laid
+                foundations for <b>logic</b>, <b>algebra</b>, and <b>computation</b> that continue to resonate in modern
+                science and
+                technology.
+            </p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Facts:</h4>
+            <ul>
+                <li>Born in <b>Leipzig</b>, Germany.</li>
+                <li>Introduced the <b>integral sign</b> \(\int\) and the <b>differential</b> \(d\).</li>
+                <li>Built advanced <b>mechanical calculators</b> capable of complex operations.</li>
+                <li>Envisioned <b>universal reasoning systems</b> that anticipated algorithms and AI.</li>
+                <li>Maintained a lifelong intellectual rivalry with <b>Isaac Newton</b>.</li>
+                <li>His writings influenced both <b>mathematics</b> and <b>philosophy</b>, bridging the two disciplines.
+                </li>
+            </ul>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

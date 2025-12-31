@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,165 +26,276 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Mādhava of Sangamagrama</h3>
-        <h4>Founder of the Kerala School and Pioneer of Infinite Series</h4>
-        <p>Mādhava of Sangamagrama (c. 1340 – c. 1425 CE) was a pioneering mathematician and astronomer from Kerala,
-            India. He
-            is best known as the founder of the Kerala School of Mathematics and Astronomy, which flourished from the
-            14th to
-            16th century CE. His most groundbreaking contributions were in the realm of infinite series and the early
-            development of calculus, long before Newton and Leibniz.</p>
-        <img src="Madhava.webp" alt="Madhava" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Birth and Background</h4>
-        <ul>
-            <li>Born: Circa 1340 CE</li>
-            <li>Place: Sangamagrama (identified with modern-day Irinjalakuda in Thrissur, Kerala)</li>
-            <li>Language: Wrote in Sanskrit and Malayalam (using the Grantha script)</li>
-            <li>Cultural Context: Lived in a scholarly Brahmin family with deep interest in Vedic astronomy (Jyotisha)
-                and
-                Ganita (mathematics).</li>
-        </ul>
 
-        <h4>Major Contributions</h4>
-        <h5>Infinite Series and Early Calculus</h5>
-        <p>Mādhava is credited with discovering infinite series expansions of trigonometric functions, such as sine,
-            cosine, and
-            arctangent. These were later formalized in Europe as Taylor and Maclaurin series.</p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Mādhava of Sangamagrama</h3>
+            <h4>Founder of the Kerala School and Pioneer of Infinite Series</h4>
+            <p>Mādhava of Sangamagrama (c. 1340 – c. 1425 CE) was a pioneering mathematician and astronomer from Kerala,
+                India. He
+                is best known as the founder of the Kerala School of Mathematics and Astronomy, which flourished from
+                the
+                14th to
+                16th century CE. His most groundbreaking contributions were in the realm of infinite series and the
+                early
+                development of calculus, long before Newton and Leibniz.</p>
+            <img src="Madhava.webp" alt="Madhava" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Birth and Background</h4>
+            <ul>
+                <li>Born: Circa 1340 CE</li>
+                <li>Place: Sangamagrama (identified with modern-day Irinjalakuda in Thrissur, Kerala)</li>
+                <li>Language: Wrote in Sanskrit and Malayalam (using the Grantha script)</li>
+                <li>Cultural Context: Lived in a scholarly Brahmin family with deep interest in Vedic astronomy
+                    (Jyotisha)
+                    and
+                    Ganita (mathematics).</li>
+            </ul>
 
-        <ul>
-            <li><b>π (Pi) Series Expansion:</b><br>
-                He gave a series for π:<br>
-                \<br>
-                (Now known as the Gregory–Leibniz series, but Mādhava discovered it over 250 years earlier.)</li>
-            <li><b>Sine and Cosine Series:</b><br>
-                He derived the series for sine and cosine functions:<br>
-                \<br>
-                \</li>
-            <li>He also developed error terms for approximations—what would now be called remainder terms in series
-                expansions.
-            </li>
-        </ul>
+            <h4>Major Contributions</h4>
+            <h5>Infinite Series and Early Calculus</h5>
+            <p>Mādhava is credited with discovering infinite series expansions of trigonometric functions, such as sine,
+                cosine, and
+                arctangent. These were later formalized in Europe as Taylor and Maclaurin series.</p>
 
-        <h5>Geometry and Trigonometry</h5>
-        <ul>
-            <li>Extended and refined trigonometric tables, using a circle of radius 3438 units (as per Indian
-                tradition).</li>
-            <li>Used trigonometry in accurate astronomical computations.</li>
-        </ul>
+            <ul>
+                <li><b>π (Pi) Series Expansion:</b><br>
+                    He gave a series for π:<br>
+                    \<br>
+                    (Now known as the Gregory–Leibniz series, but Mādhava discovered it over 250 years earlier.)</li>
+                <li><b>Sine and Cosine Series:</b><br>
+                    He derived the series for sine and cosine functions:<br>
+                    \<br>
+                    \</li>
+                <li>He also developed error terms for approximations—what would now be called remainder terms in series
+                    expansions.
+                </li>
+            </ul>
 
-        <h5>Astronomy</h5>
-        <ul>
-            <li>Worked on planetary motion and epicyclic models.</li>
-            <li>Calculated solar and lunar eclipses using advanced mathematics.</li>
-            <li>Improved upon traditional Ptolemaic models with more accurate sine functions.</li>
-        </ul>
+            <h5>Geometry and Trigonometry</h5>
+            <ul>
+                <li>Extended and refined trigonometric tables, using a circle of radius 3438 units (as per Indian
+                    tradition).</li>
+                <li>Used trigonometry in accurate astronomical computations.</li>
+            </ul>
 
-        <h4>Works and Legacy</h4>
-        <p>Though no extant text survives directly authored by Mādhava, his contributions are preserved through later
-            scholars
-            of the Kerala School, such as:</p>
-        <ul>
-            <li>Nilakantha Somayaji (<i>Tantrasangraha</i>)</li>
-            <li>Jyesthadeva (<i>Yuktibhāṣā</i>, the first known text to provide a rigorous foundation for calculus)</li>
-        </ul>
-        <p>His teachings and methods were passed orally and through palm-leaf manuscripts.</p>
+            <h5>Astronomy</h5>
+            <ul>
+                <li>Worked on planetary motion and epicyclic models.</li>
+                <li>Calculated solar and lunar eclipses using advanced mathematics.</li>
+                <li>Improved upon traditional Ptolemaic models with more accurate sine functions.</li>
+            </ul>
 
-        <h4>Legacy and Importance</h4>
-        <ul>
-            <li>Founder of the Kerala School of Mathematics, which continued his work for two centuries.</li>
-            <li>His techniques predated Newtonian calculus by over 250 years.</li>
-            <li>Seen today as one of the world’s earliest mathematicians to approach the concept of limit, convergence,
-                and
-                infinite processes.</li>
-            <li>Recognized posthumously for inventing calculus-like ideas in a fully Indian context, with no influence
-                from
-                Western mathematics.</li>
-        </ul>
+            <h4>Works and Legacy</h4>
+            <p>Though no extant text survives directly authored by Mādhava, his contributions are preserved through
+                later
+                scholars
+                of the Kerala School, such as:</p>
+            <ul>
+                <li>Nilakantha Somayaji (<i>Tantrasangraha</i>)</li>
+                <li>Jyesthadeva (<i>Yuktibhāṣā</i>, the first known text to provide a rigorous foundation for calculus)
+                </li>
+            </ul>
+            <p>His teachings and methods were passed orally and through palm-leaf manuscripts.</p>
 
-        <h4>Philosophical and Cultural Impact</h4>
-        <p>Mādhava and his school blended scientific reasoning with spiritual and philosophical inquiry, rooted in the
-            Indian
-            tradition of combining astronomy, mathematics, and cosmology. He remains a key figure in showing that
-            advanced
-            mathematical ideas can develop independently in different civilizations.</p>
+            <h4>Legacy and Importance</h4>
+            <ul>
+                <li>Founder of the Kerala School of Mathematics, which continued his work for two centuries.</li>
+                <li>His techniques predated Newtonian calculus by over 250 years.</li>
+                <li>Seen today as one of the world’s earliest mathematicians to approach the concept of limit,
+                    convergence,
+                    and
+                    infinite processes.</li>
+                <li>Recognized posthumously for inventing calculus-like ideas in a fully Indian context, with no
+                    influence
+                    from
+                    Western mathematics.</li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Philosophical and Cultural Impact</h4>
+            <p>Mādhava and his school blended scientific reasoning with spiritual and philosophical inquiry, rooted in
+                the
+                Indian
+                tradition of combining astronomy, mathematics, and cosmology. He remains a key figure in showing that
+                advanced
+                mathematical ideas can develop independently in different civilizations.</p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

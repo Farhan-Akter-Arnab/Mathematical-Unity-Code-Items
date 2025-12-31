@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,177 +26,291 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="muslim">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Ibn Sina (Avicenna)</h3>
-        <h4>Polymath of Philosophy, Medicine, and Natural Science</h4>
-        <p>Ibn Sina (980 – 1037 CE), known in the West as Avicenna, was a Persian polymath whose achievements span
-            philosophy,
-            medicine, astronomy, mathematics, physics, and more. Born near Bukhara under the Samanid dynasty, he became
-            a
-            renowned physician and philosopher, authoring over 450 works—approximately 240 survive today.<br>
-            The <b>Book of Healing</b> (<i>Kitāb al‑Shifāʾ</i>, c. 1027 CE) is a vast encyclopedia covering logic,
-            natural
-            sciences, mathematics, and metaphysics, while his <b>Canon of Medicine</b> (<i>Al‑Qānūn fī al‑Ṭibb</i>,
-            1025 CE)
-            became the standard medical reference in both the Islamic world and medieval Europe.</p>
-        <img src="Ibn Sina.jpeg" alt="Ibn Sina" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Astronomy and Mathematics</h4>
-        <p>Ibn Sina made important contributions to mathematical astronomy and optics. He clearly distinguished
-            <i>mathematical
-                astronomy</i> from astrology, and critically examined Ptolemaic models when they contradicted observed
-            phenomena.
-        </p>
-        <p>Notable achievements include:</p>
-        <ul>
-            <li>Reported observing a possible <b>transit of Venus</b> or a sunspot on May 24, 1032, using it to argue
-                that Venus
-                can come between Earth and the Sun.</li>
-            <li>Described the <b>supernova SN 1006</b>, noting how its brightness varied over months — one of the
-                earliest known
-                supernova observations.</li>
-            <li>Devised precision instruments for angular measurements, anticipating the <i>vernier principle</i>, for
-                determining celestial longitude based on lunar culmination.</li>
-        </ul>
 
-        <h4>Philosophy of Science and Physics</h4>
-        <p>In <i>The Book of Healing</i>, Ibn Sina promoted a scientific method combining <b>observation</b>,
-            <b>rational
-                logic</b>, and <b>experimentation</b>. He advocated deriving universal principles from empirical data
-            and reason
-            — a key development in the evolution of the scientific method.
-        </p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Ibn Sina (Avicenna)</h3>
+            <h4>Polymath of Philosophy, Medicine, and Natural Science</h4>
+            <p>Ibn Sina (980 – 1037 CE), known in the West as Avicenna, was a Persian polymath whose achievements span
+                philosophy,
+                medicine, astronomy, mathematics, physics, and more. Born near Bukhara under the Samanid dynasty, he
+                became
+                a
+                renowned physician and philosopher, authoring over 450 works—approximately 240 survive today.<br>
+                The <b>Book of Healing</b> (<i>Kitāb al‑Shifāʾ</i>, c. 1027 CE) is a vast encyclopedia covering logic,
+                natural
+                sciences, mathematics, and metaphysics, while his <b>Canon of Medicine</b> (<i>Al‑Qānūn fī al‑Ṭibb</i>,
+                1025 CE)
+                became the standard medical reference in both the Islamic world and medieval Europe.</p>
+            <img src="Ibn Sina.jpeg" alt="Ibn Sina" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Astronomy and Mathematics</h4>
+            <p>Ibn Sina made important contributions to mathematical astronomy and optics. He clearly distinguished
+                <i>mathematical
+                    astronomy</i> from astrology, and critically examined Ptolemaic models when they contradicted
+                observed
+                phenomena.
+            </p>
+            <p>Notable achievements include:</p>
+            <ul>
+                <li>Reported observing a possible <b>transit of Venus</b> or a sunspot on May 24, 1032, using it to
+                    argue
+                    that Venus
+                    can come between Earth and the Sun.</li>
+                <li>Described the <b>supernova SN 1006</b>, noting how its brightness varied over months — one of the
+                    earliest known
+                    supernova observations.</li>
+                <li>Devised precision instruments for angular measurements, anticipating the <i>vernier principle</i>,
+                    for
+                    determining celestial longitude based on lunar culmination.</li>
+            </ul>
 
-        <p>He introduced a concept similar to inertia, proposing that motion continues due to an imparted <i>mayl</i>
-            (impetus),
-            which only ceases due to external resistance. This idea foreshadows Newton’s First Law of Motion. In modern
-            terms,
-            he essentially stated:</p>
-        <p>
-            \[
-            \text{If } F = 0, \text{ then } v = \text{constant}
-            \]
-        </p>
-        <p>This was centuries before Galileo and Newton formalized it.</p>
+            <h4>Philosophy of Science and Physics</h4>
+            <p>In <i>The Book of Healing</i>, Ibn Sina promoted a scientific method combining <b>observation</b>,
+                <b>rational
+                    logic</b>, and <b>experimentation</b>. He advocated deriving universal principles from empirical
+                data
+                and reason
+                — a key development in the evolution of the scientific method.
+            </p>
 
-        <h4>Medical and Metaphysical Works</h4>
-        <p>His <i>Canon of Medicine</i> was a comprehensive synthesis of Greco-Roman, Persian, and Indian medicine. It
-            introduced:
-        <ul>
-            <li>Systematic clinical trials</li>
-            <li>Diagnosis through observation</li>
-            <li>Quarantine for infectious diseases</li>
-            <li>Descriptions of ailments like diabetes, tuberculosis, and cataracts</li>
-        </ul>
-        It remained in use as a textbook across Europe until the 17th century.</p>
+            <p>He introduced a concept similar to inertia, proposing that motion continues due to an imparted
+                <i>mayl</i>
+                (impetus),
+                which only ceases due to external resistance. This idea foreshadows Newton’s First Law of Motion. In
+                modern
+                terms,
+                he essentially stated:
+            </p>
+            <p>
+                \[
+                \text{If } F = 0, \text{ then } v = \text{constant}
+                \]
+            </p>
+            <p>This was centuries before Galileo and Newton formalized it.</p>
 
-        <p>In metaphysics, he formulated the <b>doctrine of emanation</b>—arguing that all beings proceed from the
-            Necessary
-            Existent (God), through a hierarchy of intelligences. This model heavily influenced both Islamic
-            philosophers and
-            later Scholastics like Thomas Aquinas.</p>
+            <h4>Medical and Metaphysical Works</h4>
+            <p>His <i>Canon of Medicine</i> was a comprehensive synthesis of Greco-Roman, Persian, and Indian medicine.
+                It
+                introduced:
+            <ul>
+                <li>Systematic clinical trials</li>
+                <li>Diagnosis through observation</li>
+                <li>Quarantine for infectious diseases</li>
+                <li>Descriptions of ailments like diabetes, tuberculosis, and cataracts</li>
+            </ul>
+            It remained in use as a textbook across Europe until the 17th century.</p>
 
-        <h4>Logical and Epistemological Innovations</h4>
-        <p>Ibn Sina developed advanced theories of cognition, introducing the concept of an <b>Active Intellect</b>—an
-            immaterial agent enabling humans to grasp abstract knowledge. He also proposed the famous <b>Floating
-                Man</b>
-            thought experiment:</p>
-        <blockquote>
-            <p>If a person were created fully formed but suspended in air, cut off from all sensory input, he would
-                still be
-                aware of his own existence.</p>
-        </blockquote>
-        <p>This was an early argument for <i>self-awareness</i> as independent of sensory perception, and thus for the
-            soul’s
-            immateriality.</p>
+            <p>In metaphysics, he formulated the <b>doctrine of emanation</b>—arguing that all beings proceed from the
+                Necessary
+                Existent (God), through a hierarchy of intelligences. This model heavily influenced both Islamic
+                philosophers and
+                later Scholastics like Thomas Aquinas.</p>
 
-        <h4>Legacy and Influence</h4>
-        <ul>
-            <li>Unified Greek, Persian, and Islamic intellectual traditions into one philosophical system</li>
-            <li>Helped lay the groundwork for modern logic, scientific reasoning, and metaphysical inquiry</li>
-            <li>His <i>Canon</i> remained the cornerstone of European medicine for centuries</li>
-            <li>Inspired key figures like Averroes, Aquinas, and Roger Bacon</li>
-        </ul>
+            <h4>Logical and Epistemological Innovations</h4>
+            <p>Ibn Sina developed advanced theories of cognition, introducing the concept of an <b>Active
+                    Intellect</b>—an
+                immaterial agent enabling humans to grasp abstract knowledge. He also proposed the famous <b>Floating
+                    Man</b>
+                thought experiment:</p>
+            <blockquote>
+                <p>If a person were created fully formed but suspended in air, cut off from all sensory input, he would
+                    still be
+                    aware of his own existence.</p>
+            </blockquote>
+            <p>This was an early argument for <i>self-awareness</i> as independent of sensory perception, and thus for
+                the
+                soul’s
+                immateriality.</p>
 
-        <p>Ibn Sina remains one of the greatest thinkers of the Islamic Golden Age, symbolizing the synthesis of
-            philosophy,
-            science, and medicine in medieval intellectual history.</p>
+            <h4>Legacy and Influence</h4>
+            <ul>
+                <li>Unified Greek, Persian, and Islamic intellectual traditions into one philosophical system</li>
+                <li>Helped lay the groundwork for modern logic, scientific reasoning, and metaphysical inquiry</li>
+                <li>His <i>Canon</i> remained the cornerstone of European medicine for centuries</li>
+                <li>Inspired key figures like Averroes, Aquinas, and Roger Bacon</li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <p>Ibn Sina remains one of the greatest thinkers of the Islamic Golden Age, symbolizing the synthesis of
+                philosophy,
+                science, and medicine in medieval intellectual history.</p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

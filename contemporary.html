@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,140 +26,484 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="contemporary">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Contemporary Mathematicians & Scientists</h3>
-        <p>
-            This section highlights the visionaries of the modern era — mathematicians, physicists, and computer
-            scientists
-            whose groundbreaking discoveries and innovations have redefined the boundaries of human knowledge. From
-            pioneering theories in mathematics and physics to revolutionary advances in computation and technology,
-            their
-            work continues to shape our understanding of the universe and drive progress in the digital age.
-        </p>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Contemporary Mathematicians & Scientists</h3>
+            <p>
+                This section highlights the visionaries of the modern era — mathematicians, physicists, and computer
+                scientists
+                whose groundbreaking discoveries and innovations have redefined the boundaries of human knowledge. From
+                pioneering theories in mathematics and physics to revolutionary advances in computation and technology,
+                their
+                work continues to shape our understanding of the universe and drive progress in the digital age.
+            </p>
 
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><a href="Alessandro Volta.html"><b>1. Alessandro Volta</b> (1745–1827)</a></div>
-            <div class="math-card"><a href="John Dalton.html"><b>2. John Dalton</b> (1766–1844)</a></div>
-            <div class="math-card"><a href="Hans Christian Ørsted.html"><b>3. Hans Christian Ørsted</b> (1777–1851)</a>
+            <div class="Math-grid">
+                <!-- Row 1 -->
+                <a href="Alessandro Volta.html" class="math-card">
+                    <img src="Alessandro Volta.webp" alt="Alessandro Volta">
+                    <div class="math-card-body">
+                        <h3>1. Alessandro Volta</h3>
+                        <p class="dates">(1745–1827)</p>
+                        <p class="desc">Alessandro Volta (1745–1827) was an Italian physicist and chemist born in Como,
+                            Lombardy.</p>
+                    </div>
+                </a>
+
+                <a href="John Dalton.html" class="math-card">
+                    <img src="John Dalton.webp" alt="John Dalton">
+                    <div class="math-card-body">
+                        <h3>2. John Dalton</h3>
+                        <p class="dates">(1766–1844)</p>
+                        <p class="desc">John Dalton (1766–1844) was an English chemist, meteorologist, and physicist,
+                            best
+                            known for formulating the modern
+                            atomic theory.</p>
+                    </div>
+                </a>
+
+                <a href="Hans Christian Ørsted.html" class="math-card">
+                    <img src="Hans Christian Ørsted.webp" alt="Hans Christian Ørsted">
+                    <div class="math-card-body">
+                        <h3>3. Hans Christian Ørsted</h3>
+                        <p class="dates">(1777–1851)</p>
+                        <p class="desc">Hans Christian Ørsted (1777–1851) was a Danish physicist and chemist, best known
+                            for
+                            discovering that electric currents
+                            generate magnetic fields — the phenomenon now known as Ørsted’s law.</p>
+                    </div>
+                </a>
+
+                <!-- Row 2 -->
+                <a href="Michael Faraday.html" class="math-card">
+                    <img src="Michael Faraday.jpeg" alt="Michael Faraday">
+                    <div class="math-card-body">
+                        <h3>4. Michael Faraday</h3>
+                        <p class="dates">(1791–1867)</p>
+                        <p class="desc">Michael Faraday (1791–1867) was a British scientist whose experiments and
+                            discoveries laid the groundwork for modern
+                            electromagnetism and electrochemistry.</p>
+                    </div>
+                </a>
+
+                <a href="Charles Babbage.html" class="math-card">
+                    <img src="Charles Babbage.jpg" alt="Charles Babbage">
+                    <div class="math-card-body">
+                        <h3>5. Charles Babbage</h3>
+                        <p class="dates">(1791–1871)</p>
+                        <p class="desc">Charles Babbage (1791–1871) was an English mathematician, engineer, philosopher,
+                            and
+                            inventor, best known for
+                            conceptualizing the first mechanical computer.</p>
+                    </div>
+                </a>
+
+                <a href="Ada Lovelace.html" class="math-card">
+                    <img src="Ada Lovelace.jpeg" alt="Ada Lovelace">
+                    <div class="math-card-body">
+                        <h3>6. Ada Lovelace</h3>
+                        <p class="dates">(1815–1852)</p>
+                        <p class="desc">Ada Lovelace (1815–1852), born Augusta Ada Byron, was an English mathematician
+                            and
+                            writer.</p>
+                    </div>
+                </a>
+
+                <!-- Row 3 -->
+                <a href="George Boole.html" class="math-card">
+                    <img src="George Boole.webp" alt="George Boole">
+                    <div class="math-card-body">
+                        <h3>7. George Boole</h3>
+                        <p class="dates">(1815–1864)</p>
+                        <p class="desc">George Boole (November 2, 1815 – December 8, 1864) was an English mathematician,
+                            logician, and educator whose creation
+                            of Boolean algebra became the cornerstone of the digital age.</p>
+                    </div>
+                </a>
+
+                <a href="James Clerk Maxwell.html" class="math-card">
+                    <img src="James Clerk Maxwell.png" alt="James Clerk Maxwell">
+                    <div class="math-card-body">
+                        <h3>8. James Clerk Maxwell</h3>
+                        <p class="dates">(1831–1879)</p>
+                        <p class="desc">James Clerk Maxwell (1831–1879) was a Scottish physicist and mathematician whose
+                            groundbreaking work unified
+                            electricity, magnetism, and light.</p>
+                    </div>
+                </a>
+
+                <a href="Wilhelm Rontgen.html" class="math-card">
+                    <img src="Wilhelm Rontgen.jpg" alt="Wilhelm Röntgen">
+                    <div class="math-card-body">
+                        <h3>9. Wilhelm Röntgen</h3>
+                        <p class="dates">(1845–1923)</p>
+                        <p class="desc">Wilhelm Conrad Röntgen (1845–1923) was a German physicist who discovered X-rays,
+                            a
+                            groundbreaking achievement that
+                            revolutionized medical imaging and physics.</p>
+                    </div>
+                </a>
+
+                <!-- Row 4 -->
+                <a href="Georg Cantor.html" class="math-card">
+                    <img src="Georg Cantor.jpg" alt="Georg Cantor">
+                    <div class="math-card-body">
+                        <h3>10. Georg Cantor</h3>
+                        <p class="dates">(1845–1918)</p>
+                        <p class="desc">Georg Ferdinand Ludwig Philipp Cantor (March 3, 1845 – January 6, 1918) was a
+                            German
+                            mathematician who revolutionized
+                            mathematics by founding set theory and introducing the concept of transfinite numbers—types
+                            of
+                            infinity that are
+                            distinct from one another.</p>
+                    </div>
+                </a>
+
+                <a href="Jagadish Chandra Bose.html" class="math-card">
+                    <img src="Jagadish Chandra Bose.jpg" alt="Jagadish Chandra Bose">
+                    <div class="math-card-body">
+                        <h3>11. Jagadish Chandra Bose</h3>
+                        <p class="dates">(1858–1937)</p>
+                        <p class="desc">Jagadish Chandra Bose (1858–1937) was an Indian polymath, physicist, biologist,
+                            and
+                            inventor.</p>
+                    </div>
+                </a>
+
+                <a href="Max Planck.html" class="math-card">
+                    <img src="Max Planck.webp" alt="Max Planck">
+                    <div class="math-card-body">
+                        <h3>12. Max Planck</h3>
+                        <p class="dates">(1858–1947)</p>
+                        <p class="desc">Max Planck (1858–1947) was a German theoretical physicist who originated quantum
+                            theory, fundamentally transforming our
+                            understanding of atomic and subatomic processes.</p>
+                    </div>
+                </a>
+
+                <!-- Row 5 -->
+                <a href="J. J. Thomson.html" class="math-card">
+                    <img src="J. J. Thomson.webp" alt="J. J. Thomson">
+                    <div class="math-card-body">
+                        <h3>13. J. J. Thomson</h3>
+                        <p class="dates">(1856–1940)</p>
+                        <p class="desc">Joseph John Thomson (1856–1940) was a British physicist who fundamentally
+                            changed
+                            our understanding of the atom.</p>
+                    </div>
+                </a>
+
+                <a href="Marie Curie.html" class="math-card">
+                    <img src="Marie Curie.webp" alt="Marie Curie">
+                    <div class="math-card-body">
+                        <h3>14. Marie Curie</h3>
+                        <p class="dates">(1867–1934)</p>
+                        <p class="desc">Marie Curie (1867–1934), born Maria Skłodowska in Warsaw, Poland, was a
+                            physicist
+                            and chemist renowned for her
+                            groundbreaking research on radioactivity.</p>
+                    </div>
+                </a>
+
+                <a href="Ernest Rutherford.html" class="math-card">
+                    <img src="Ernest Rutherford.jpeg" alt="Ernest Rutherford">
+                    <div class="math-card-body">
+                        <h3>15. Ernest Rutherford</h3>
+                        <p class="dates">(1871–1937)</p>
+                        <p class="desc">Ernest Rutherford (1871–1937) was a New Zealand-born physicist whose
+                            groundbreaking
+                            work on radioactivity and the
+                            structure of the atom earned him the title “Father of Nuclear Physics.”</p>
+                    </div>
+                </a>
+
+                <!-- Row 6 -->
+                <a href="Niels Bohr.html" class="math-card">
+                    <img src="Niels Bohr.webp" alt="Niels Bohr">
+                    <div class="math-card-body">
+                        <h3>16. Niels Bohr</h3>
+                        <p class="dates">(1885–1962)</p>
+                        <p class="desc">Niels Bohr (1885–1962) was a Danish physicist who made foundational
+                            contributions to
+                            understanding atomic structure and
+                            quantum theory.</p>
+                    </div>
+                </a>
+
+                <a href="Erwin Schrodinger.html" class="math-card">
+                    <img src="Erwin Schrodinger.jpg" alt="Erwin Schrödinger">
+                    <div class="math-card-body">
+                        <h3>17. Erwin Schrödinger</h3>
+                        <p class="dates">(1887–1961)</p>
+                        <p class="desc">Erwin Schrödinger (1887–1961) was an Austrian theoretical physicist who made
+                            foundational contributions to quantum
+                            mechanics.</p>
+                    </div>
+                </a>
+
+                <a href="Albert Einstein.html" class="math-card">
+                    <img src="Albert Einstein.jpeg" alt="Albert Einstein">
+                    <div class="math-card-body">
+                        <h3>18. Albert Einstein</h3>
+                        <p class="dates">(1879–1955)</p>
+                        <p class="desc">Albert Einstein (1879–1955) was a German-born theoretical physicist whose work
+                            revolutionized our understanding of
+                            space, time, and energy.</p>
+                    </div>
+                </a>
+
+                <!-- Row 7 -->
+                <a href="Werner Heisenberg.html" class="math-card">
+                    <img src="Werner Heisenberg.webp" alt="Werner Heisenberg">
+                    <div class="math-card-body">
+                        <h3>19. Werner Heisenberg</h3>
+                        <p class="dates">(1901–1976)</p>
+                        <p class="desc">Werner Heisenberg (1901–1976) was a German theoretical physicist and one of the
+                            key
+                            pioneers of quantum mechanics.</p>
+                    </div>
+                </a>
+
+                <a href="Paul Dirac.html" class="math-card">
+                    <img src="Paul Dirac.webp" alt="Paul Dirac">
+                    <div class="math-card-body">
+                        <h3>20. Paul Dirac</h3>
+                        <p class="dates">(1902–1984)</p>
+                        <p class="desc">Paul Adrien Maurice Dirac (1902–1984) was an English theoretical physicist and
+                            mathematician, renowned for his profound
+                            contributions to quantum mechanics, quantum electrodynamics, and the prediction of
+                            antimatter.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="Alan Turing.html" class="math-card">
+                    <img src="Alan Turing.jpg" alt="Alan Turing">
+                    <div class="math-card-body">
+                        <h3>21. Alan Turing</h3>
+                        <p class="dates">(1912–1954)</p>
+                        <p class="desc">Alan Mathison Turing (1912–1954) was an English mathematician, logician,
+                            cryptanalyst, and computer scientist.</p>
+                    </div>
+                </a>
+
+                <!-- Row 8 -->
+                <a href="Satyendra Nath Bose.html" class="math-card">
+                    <img src="Satyendra Nath Bose.jpg" alt="Satyendra Nath Bose">
+                    <div class="math-card-body">
+                        <h3>22. Satyendra Nath Bose</h3>
+                        <p class="dates">(1894–1974)</p>
+                        <p class="desc">Satyendra Nath Bose (1894–1974) was an Indian physicist and mathematician, best
+                            known for his groundbreaking work in
+                            quantum mechanics, particularly in the development of Bose-Einstein statistics.</p>
+                    </div>
+                </a>
+
+                <a href="Ali Nesin.html" class="math-card">
+                    <img src="Ali Nesin.jpeg" alt="Ali Nesin">
+                    <div class="math-card-body">
+                        <h3>23. Ali Nesin</h3>
+                        <p class="dates">(1956– )</p>
+                        <p class="desc">Ali Nesin (born 18 November 1956 in Istanbul, Turkey) is a Turkish mathematician
+                            renowned for his contributions to
+                            mathematical education and public outreach.</p>
+                    </div>
+                </a>
+
+                <a href="Chamok Hasan.html" class="math-card">
+                    <img src="Chamok Hasan.png" alt="Chamok Hasan">
+                    <div class="math-card-body">
+                        <h3>24. Chamok Hasan</h3>
+                        <p class="dates">(1986– )</p>
+                        <p class="desc">Chamok Hasan (born July 28, 1986, Kushtia, Bangladesh) is a multifaceted
+                            Bangladeshi
+                            engineer, educator, musician, and
+                            author.</p>
+                    </div>
+                </a>
             </div>
 
-            <!-- Row 2 -->
-            <div class="math-card"><a href="Michael Faraday.html"><b>4. Michael Faraday</b> (1791–1867)</a></div>
-            <div class="math-card"><a href="Charles Babbage.html"><b>5. Charles Babbage</b> (1791–1871)</a></div>
-            <div class="math-card"><a href="Ada Lovelace.html"><b>6. Ada Lovelace</b> (1815–1852)</a></div>
 
-            <!-- Row 3 -->
-            <div class="math-card"><a href="George Boole.html"><b>7. George Boole</b> (1815–1864)</a></div>
-            <div class="math-card"><a href="James Clerk Maxwell.html"><b>8. James Clerk Maxwell</b> (1831–1879)</a>
-            </div>
-            <div class="math-card"><a href="Wilhelm Rontgen.html"><b>9. Wilhelm Röntgen</b> (1845–1923)</a></div>
 
-            <!-- Row 4 -->
-            <div class="math-card"><a href="Georg Cantor.html"><b>10. Georg Cantor</b> (1845–1918)</a></div>
-            <div class="math-card"><a href="Jagadish Chandra Bose.html"><b>11. Jagadish Chandra Bose</b> (1858–1937)</a>
-            </div>
-            <div class="math-card"><a href="Max Planck.html"><b>12. Max Planck</b> (1858–1947)</a></div>
 
-            <!-- Row 5 -->
-            <div class="math-card"><a href="J. J. Thomson.html"><b>13. J. J. Thomson</b> (1856–1940)</a></div>
-            <div class="math-card"><a href="Marie Curie.html"><b>14. Marie Curie</b> (1867–1934)</a></div>
-            <div class="math-card"><a href="Ernest Rutherford.html"><b>15. Ernest Rutherford</b> (1871–1937)</a></div>
-
-            <!-- Row 6 -->
-            <div class="math-card"><a href="Niels Bohr.html"><b>16. Niels Bohr</b> (1885–1962)</a></div>
-            <div class="math-card"><a href="Erwin Schrodinger.html"><b>17. Erwin Schrödinger</b> (1887–1961)</a></div>
-            <div class="math-card"><a href="Albert Einstein.html"><b>18. Albert Einstein</b> (1879–1955)</a></div>
-
-            <!-- Row 7 -->
-            <div class="math-card"><a href="Werner Heisenberg.html"><b>19. Werner Heisenberg</b> (1901–1976)</a></div>
-            <div class="math-card"><a href="Paul Dirac.html"><b>20. Paul Dirac</b> (1902–1984)</a></div>
-            <div class="math-card"><a href="Alan Turing.html"><b>21. Alan Turing</b> (1912–1954)</a></div>
-
-            <!-- Row 8 -->
-            <div class="math-card"><a href="Satyendra Nath Bose.html"><b>22. Satyendra Nath Bose</b> (1894–1974)</a>
-            </div>
-            <div class="math-card"><a href="Ali Nesin.html"><b>23. Ali Nesin</b> (1956– )</a></div>
-            <div class="math-card"><a href="Chamok Hasan.html"><b>24. Chamok Hasan</b> (1986– )</a></div>
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

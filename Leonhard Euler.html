@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,167 +26,285 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="renaissance">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Leonhard Euler</h3>
-        <h4>One of History’s Most Prolific Mathematicians</h4>
-        <p>Leonhard Euler (1707–1783) was one of the most prolific and influential mathematicians in history. Born in
-            Basel,
-            Switzerland, in 1707, Euler spent much of his life working in Russia and Prussia, where he produced an
-            astonishing
-            volume of mathematical work that shaped countless fields, from number theory and graph theory to fluid
-            dynamics and
-            astronomy.</p>
-        <img src="Leonhard Euler.jpeg" alt="Leonhard Euler" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Early Life and Education</h4>
-        <p>Euler's mathematical talents were recognized early. He studied under Johann Bernoulli, one of the foremost
-            mathematicians of the time, and by his early twenties, Euler was already publishing groundbreaking papers.
-            In 1727,
-            he moved to the Imperial Academy in St. Petersburg, Russia, at the invitation of Empress Catherine I. There,
-            he
-            initially worked in physiology and naval science before turning fully to mathematics.</p>
-        <p>Later, Euler also served at the Berlin Academy under Frederick the Great, before eventually returning to St.
-            Petersburg for the remainder of his life.</p>
 
-        <h4>Mathematical Notation and Contributions</h4>
-        <p>Euler’s contributions are so vast it’s difficult to encapsulate them all. He introduced much of the modern
-            mathematical notation we still use today, including:</p>
-        <ul>
-            <li>The concept of a function written as \( f(x) \)</li>
-            <li>The use of \( e \) for the base of the natural logarithm</li>
-            <li>The symbol \( i \) for the square root of -1</li>
-        </ul>
-        <p>His clarity in notation helped make mathematics more precise and expressive, influencing how future
-            generations wrote
-            and understood mathematics.</p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Leonhard Euler</h3>
+            <h4>One of History’s Most Prolific Mathematicians</h4>
+            <p>Leonhard Euler (1707–1783) was one of the most prolific and influential mathematicians in history. Born
+                in
+                Basel,
+                Switzerland, in 1707, Euler spent much of his life working in Russia and Prussia, where he produced an
+                astonishing
+                volume of mathematical work that shaped countless fields, from number theory and graph theory to fluid
+                dynamics and
+                astronomy.</p>
+            <img src="Leonhard Euler.jpeg" alt="Leonhard Euler" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Early Life and Education</h4>
+            <p>Euler's mathematical talents were recognized early. He studied under Johann Bernoulli, one of the
+                foremost
+                mathematicians of the time, and by his early twenties, Euler was already publishing groundbreaking
+                papers.
+                In 1727,
+                he moved to the Imperial Academy in St. Petersburg, Russia, at the invitation of Empress Catherine I.
+                There,
+                he
+                initially worked in physiology and naval science before turning fully to mathematics.</p>
+            <p>Later, Euler also served at the Berlin Academy under Frederick the Great, before eventually returning to
+                St.
+                Petersburg for the remainder of his life.</p>
 
-        <h4>Euler’s Identity</h4>
-        <p>One of Euler’s most famous contributions is <strong>Euler’s identity</strong>:</p>
-        \[
-        e^{i\pi} + 1 = 0
-        \]
-        <p>This equation elegantly connects five of the most important constants in mathematics — \( e \), \( i \), \(
-            \pi \),
-            1, and 0 — in a single relationship. It is often described as a "mathematical poem" for its beauty and
-            simplicity.
-        </p>
+            <h4>Mathematical Notation and Contributions</h4>
+            <p>Euler’s contributions are so vast it’s difficult to encapsulate them all. He introduced much of the
+                modern
+                mathematical notation we still use today, including:</p>
+            <ul>
+                <li>The concept of a function written as \( f(x) \)</li>
+                <li>The use of \( e \) for the base of the natural logarithm</li>
+                <li>The symbol \( i \) for the square root of -1</li>
+            </ul>
+            <p>His clarity in notation helped make mathematics more precise and expressive, influencing how future
+                generations wrote
+                and understood mathematics.</p>
 
-        <h4>Achievements in Number Theory</h4>
-        <p>In number theory, Euler extended Fermat's work, introducing the <em>Euler totient function</em> and proving
-            numerous
-            results involving prime numbers. He also solved the famous Basel problem, determining that the infinite
-            series of
-            reciprocal squares converges to:</p>
-        \[
-        \frac{\pi^2}{6}
-        \]
-        <p>This result stunned the mathematical world and demonstrated Euler’s exceptional insight and creativity.</p>
+            <h4>Euler’s Identity</h4>
+            <p>One of Euler’s most famous contributions is <strong>Euler’s identity</strong>:</p>
+            \[
+            e^{i\pi} + 1 = 0
+            \]
+            <p>This equation elegantly connects five of the most important constants in mathematics — \( e \), \( i \),
+                \(
+                \pi \),
+                1, and 0 — in a single relationship. It is often described as a "mathematical poem" for its beauty and
+                simplicity.
+            </p>
 
-        <h4>Contributions to Physics and Applied Mathematics</h4>
-        <p>Beyond pure mathematics, Euler made major contributions to physics, particularly in mechanics and
-            hydrodynamics. He
-            formulated <em>Euler’s equations</em> governing the motion of fluids, worked on the theory of elasticity,
-            and laid
-            the foundations for the calculus of variations — a branch of mathematics essential in modern physics and
-            engineering.</p>
+            <h4>Achievements in Number Theory</h4>
+            <p>In number theory, Euler extended Fermat's work, introducing the <em>Euler totient function</em> and
+                proving
+                numerous
+                results involving prime numbers. He also solved the famous Basel problem, determining that the infinite
+                series of
+                reciprocal squares converges to:</p>
+            \[
+            \frac{\pi^2}{6}
+            \]
+            <p>This result stunned the mathematical world and demonstrated Euler’s exceptional insight and creativity.
+            </p>
 
-        <h4>Work Despite Blindness</h4>
-        <p>Amazingly, Euler continued producing world-class mathematics even after losing vision in one eye — and later
-            becoming
-            completely blind. His mental faculties remained as sharp as ever. He dictated entire volumes of mathematics
-            while
-            blind, relying on his incredible memory and computational skill.</p>
-        <p>It is estimated that Euler produced over 800 papers and books — a legacy unmatched by almost any
-            mathematician in
-            history.</p>
+            <h4>Contributions to Physics and Applied Mathematics</h4>
+            <p>Beyond pure mathematics, Euler made major contributions to physics, particularly in mechanics and
+                hydrodynamics. He
+                formulated <em>Euler’s equations</em> governing the motion of fluids, worked on the theory of
+                elasticity,
+                and laid
+                the foundations for the calculus of variations — a branch of mathematics essential in modern physics and
+                engineering.</p>
 
-        <h4>Final Years and Legacy</h4>
-        <p>Leonhard Euler passed away in 1783, reportedly after experiencing a brain hemorrhage shortly after discussing
-            the
-            orbit of Uranus. He left behind not just a towering body of work, but a legacy that would shape modern
-            science,
-            engineering, and mathematics.</p>
-        <p>Euler’s influence is so far-reaching that many of today’s mathematical tools, techniques, and notations owe
-            their
-            origins directly to him. From the simplest formulas to the most advanced theories, Euler’s ideas remain at
-            the heart
-            of mathematics.</p>
+            <h4>Work Despite Blindness</h4>
+            <p>Amazingly, Euler continued producing world-class mathematics even after losing vision in one eye — and
+                later
+                becoming
+                completely blind. His mental faculties remained as sharp as ever. He dictated entire volumes of
+                mathematics
+                while
+                blind, relying on his incredible memory and computational skill.</p>
+            <p>It is estimated that Euler produced over 800 papers and books — a legacy unmatched by almost any
+                mathematician in
+                history.</p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Final Years and Legacy</h4>
+            <p>Leonhard Euler passed away in 1783, reportedly after experiencing a brain hemorrhage shortly after
+                discussing
+                the
+                orbit of Uranus. He left behind not just a towering body of work, but a legacy that would shape modern
+                science,
+                engineering, and mathematics.</p>
+            <p>Euler’s influence is so far-reaching that many of today’s mathematical tools, techniques, and notations
+                owe
+                their
+                origins directly to him. From the simplest formulas to the most advanced theories, Euler’s ideas remain
+                at
+                the heart
+                of mathematics.</p>
 
-            if (h == 0) {
-                h = 12;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
+
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

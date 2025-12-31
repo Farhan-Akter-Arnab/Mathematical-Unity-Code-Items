@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,213 +26,329 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Aryabhata</h3>
-        <h4>Aryabhata (476 CE – c. 550 CE)</h4>
-        <p>
-            Aryabhata was a pioneering Indian mathematician and astronomer born in 476 CE, traditionally believed to be
-            from
-            Kusumapura (modern Patna, Bihar, India). He is one of the earliest mathematicians whose works have survived
-            and
-            whose influence shaped the foundation of classical Indian mathematics and astronomy.
-        </p>
-        <img src="Aryabhata.jpg" alt="Aryabhata" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <p>
-            Aryabhata authored the seminal work:
-        <ul>
-            <li><b>Aryabhatiya (499 CE)</b> — a comprehensive treatise combining mathematics and astronomy, composed in
-                118
-                verses, that remains a classic text influencing later scholars.</li>
-        </ul>
-        </p>
-        <hr>
-        <h4>Life and Background</h4>
-        <p>
-            Very little is conclusively known about Aryabhata's early life. Some sources identify him as hailing from
-            Kusumapura, capital of the ancient Magadha kingdom, a center of learning and culture. He lived during the
-            Gupta
-            period, a golden age for Indian arts and sciences.<br>
-            Aryabhata is sometimes confused with other later astronomers of the same name, but his distinct
-            contributions set
-            him apart as one of the earliest innovators in Indian mathematical astronomy.
-        </p>
-        <hr>
-        <h4>Mathematical Contributions</h4>
-        <dl>
-            <dt>Place Value and Zero</dt>
-            <dd>
-                Aryabhata used a place-value decimal system, an advanced form of notation that laid the groundwork for
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Aryabhata</h3>
+            <h4>Aryabhata (476 CE – c. 550 CE)</h4>
+            <p>
+                Aryabhata was a pioneering Indian mathematician and astronomer born in 476 CE, traditionally believed to
+                be
+                from
+                Kusumapura (modern Patna, Bihar, India). He is one of the earliest mathematicians whose works have
+                survived
+                and
+                whose influence shaped the foundation of classical Indian mathematics and astronomy.
+            </p>
+            <img src="Aryabhata.jpg" alt="Aryabhata" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <p>
+                Aryabhata authored the seminal work:
+            <ul>
+                <li><b>Aryabhatiya (499 CE)</b> — a comprehensive treatise combining mathematics and astronomy, composed
+                    in
+                    118
+                    verses, that remains a classic text influencing later scholars.</li>
+            </ul>
+            </p>
+            <hr>
+            <h4>Life and Background</h4>
+            <p>
+                Very little is conclusively known about Aryabhata's early life. Some sources identify him as hailing
+                from
+                Kusumapura, capital of the ancient Magadha kingdom, a center of learning and culture. He lived during
                 the
-                modern decimal system. While he did not explicitly use zero as a digit, his numeral system implied the
-                concept
-                of zero as a placeholder, which was elaborated by later mathematicians.
-            </dd>
-            <dt>Approximation of π</dt>
-            <dd>
-                Aryabhata gave an astonishingly accurate approximation of pi (π), stating it as:<br>
-                \<br>
-                He expressed it in terms of a circle’s circumference and diameter, estimating π correct to four decimal
-                places,
-                a remarkable achievement for the time.
-            </dd>
-            <dt>Trigonometry</dt>
-            <dd>
-                Aryabhata introduced the concepts of sine (jya), cosine, and versine in Indian mathematics. He presented
-                the
-                sine table for angles between 0° and 90° in increments of 3.75°, with values calculated using a radius
-                of 3438
-                (the number of minutes in a circle).<br>
-                His trigonometric formulas and methods of interpolation paved the way for more precise astronomical
-                calculations.
-            </dd>
-            <dt>Algebra and Arithmetic</dt>
-            <dd>
-                Aryabhata worked on solving linear and quadratic equations. He gave methods for summing arithmetic and
-                geometric
-                progressions and developed techniques for finding unknowns in indeterminate equations.
-            </dd>
-        </dl>
-        <hr>
-        <h4>Astronomical Contributions</h4>
-        <dl>
-            <dt>Earth’s Rotation and Heliocentrism</dt>
-            <dd>
-                He correctly explained the Earth’s rotation on its axis, giving a heliocentric explanation for the
-                apparent
-                movement of the stars.
-            </dd>
-            <dt>Solar Year Calculation</dt>
-            <dd>
-                He provided calculations of the length of the solar year as 365.358 days, very close to the modern
-                value.
-            </dd>
-            <dt>Eclipses</dt>
-            <dd>
-                His descriptions included solar and lunar eclipses, based on the shadows cast by and on the Earth.
-            </dd>
-            <dt>Earth and Celestial Measurements</dt>
-            <dd>
-                Aryabhata also estimated the diameter of the Earth and distances to the Moon and Sun with impressive
-                accuracy
-                for his era.
-            </dd>
-        </dl>
-        <hr>
-        <h4>Aryabhatiya: The Masterpiece</h4>
-        <p>
-            The Aryabhatiya is divided into four sections:
-        <ol>
-            <li><b>Gitikapada</b> — Introduction with mathematical and astronomical fundamentals.</li>
-            <li><b>Ganitapada</b> — Mathematics: arithmetic, algebra, trigonometry, and more.</li>
-            <li><b>Kalakriyapada</b> — Time calculations, including planetary positions and eclipses.</li>
-            <li><b>Golapada</b> — Sphere and celestial phenomena.</li>
-        </ol>
-        The work was written in concise verse form using a code system for numbers and concepts, designed for
-        memorization and
-        oral transmission.
-        </p>
-        <hr>
-        <h4>Legacy and Influence</h4>
-        <ul>
-            <li>His treatises were studied and commented on by later scholars like Varahamihira, Bhaskara I, and
-                Brahmagupta.
-            </li>
-            <li>Arab mathematicians and astronomers translated and incorporated his ideas during the Islamic Golden Age,
-                helping
-                to transmit Indian mathematical concepts to the West.</li>
-            <li>Aryabhata’s legacy endures in modern Indian science and mathematics, with institutions and awards named
-                in his
-                honor.</li>
-        </ul>
-        <hr>
-        <h4>Summary</h4>
-        <p>
-            Aryabhata stands as a monumental figure in the history of mathematics and astronomy:
-        <ul>
-            <li>Pioneer of place-value decimal system concepts.</li>
-            <li>Provided the first accurate approximation of π.</li>
-            <li>Explained Earth's rotation centuries before Copernicus.</li>
-            <li>Made critical advances in trigonometry and algebra.</li>
-            <li>Authored the Aryabhatiya, a foundational text still studied for its mathematical depth and elegance.
-            </li>
-        </ul>
-        </p>
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+                Gupta
+                period, a golden age for Indian arts and sciences.<br>
+                Aryabhata is sometimes confused with other later astronomers of the same name, but his distinct
+                contributions set
+                him apart as one of the earliest innovators in Indian mathematical astronomy.
+            </p>
+            <hr>
+            <h4>Mathematical Contributions</h4>
+            <dl>
+                <dt>Place Value and Zero</dt>
+                <dd>
+                    Aryabhata used a place-value decimal system, an advanced form of notation that laid the groundwork
+                    for
+                    the
+                    modern decimal system. While he did not explicitly use zero as a digit, his numeral system implied
+                    the
+                    concept
+                    of zero as a placeholder, which was elaborated by later mathematicians.
+                </dd>
+                <dt>Approximation of π</dt>
+                <dd>
+                    Aryabhata gave an astonishingly accurate approximation of pi (π), stating it as:<br>
+                    \<br>
+                    He expressed it in terms of a circle’s circumference and diameter, estimating π correct to four
+                    decimal
+                    places,
+                    a remarkable achievement for the time.
+                </dd>
+                <dt>Trigonometry</dt>
+                <dd>
+                    Aryabhata introduced the concepts of sine (jya), cosine, and versine in Indian mathematics. He
+                    presented
+                    the
+                    sine table for angles between 0° and 90° in increments of 3.75°, with values calculated using a
+                    radius
+                    of 3438
+                    (the number of minutes in a circle).<br>
+                    His trigonometric formulas and methods of interpolation paved the way for more precise astronomical
+                    calculations.
+                </dd>
+                <dt>Algebra and Arithmetic</dt>
+                <dd>
+                    Aryabhata worked on solving linear and quadratic equations. He gave methods for summing arithmetic
+                    and
+                    geometric
+                    progressions and developed techniques for finding unknowns in indeterminate equations.
+                </dd>
+            </dl>
+            <hr>
+            <h4>Astronomical Contributions</h4>
+            <dl>
+                <dt>Earth’s Rotation and Heliocentrism</dt>
+                <dd>
+                    He correctly explained the Earth’s rotation on its axis, giving a heliocentric explanation for the
+                    apparent
+                    movement of the stars.
+                </dd>
+                <dt>Solar Year Calculation</dt>
+                <dd>
+                    He provided calculations of the length of the solar year as 365.358 days, very close to the modern
+                    value.
+                </dd>
+                <dt>Eclipses</dt>
+                <dd>
+                    His descriptions included solar and lunar eclipses, based on the shadows cast by and on the Earth.
+                </dd>
+                <dt>Earth and Celestial Measurements</dt>
+                <dd>
+                    Aryabhata also estimated the diameter of the Earth and distances to the Moon and Sun with impressive
+                    accuracy
+                    for his era.
+                </dd>
+            </dl>
+            <hr>
+            <h4>Aryabhatiya: The Masterpiece</h4>
+            <p>
+                The Aryabhatiya is divided into four sections:
+            <ol>
+                <li><b>Gitikapada</b> — Introduction with mathematical and astronomical fundamentals.</li>
+                <li><b>Ganitapada</b> — Mathematics: arithmetic, algebra, trigonometry, and more.</li>
+                <li><b>Kalakriyapada</b> — Time calculations, including planetary positions and eclipses.</li>
+                <li><b>Golapada</b> — Sphere and celestial phenomena.</li>
+            </ol>
+            The work was written in concise verse form using a code system for numbers and concepts, designed for
+            memorization and
+            oral transmission.
+            </p>
+            <hr>
+            <h4>Legacy and Influence</h4>
+            <ul>
+                <li>His treatises were studied and commented on by later scholars like Varahamihira, Bhaskara I, and
+                    Brahmagupta.
+                </li>
+                <li>Arab mathematicians and astronomers translated and incorporated his ideas during the Islamic Golden
+                    Age,
+                    helping
+                    to transmit Indian mathematical concepts to the West.</li>
+                <li>Aryabhata’s legacy endures in modern Indian science and mathematics, with institutions and awards
+                    named
+                    in his
+                    honor.</li>
+            </ul>
+            <hr>
+            <h4>Summary</h4>
+            <p>
+                Aryabhata stands as a monumental figure in the history of mathematics and astronomy:
+            <ul>
+                <li>Pioneer of place-value decimal system concepts.</li>
+                <li>Provided the first accurate approximation of π.</li>
+                <li>Explained Earth's rotation centuries before Copernicus.</li>
+                <li>Made critical advances in trigonometry and algebra.</li>
+                <li>Authored the Aryabhatiya, a foundational text still studied for its mathematical depth and elegance.
+                </li>
+            </ul>
+            </p>
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            if (h == 0) {
-                h = 12;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
             }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

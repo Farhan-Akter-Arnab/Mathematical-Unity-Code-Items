@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,120 +26,224 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Nilakantha Somayaji</h3>
-        <h4>Kerala School Astronomer, Mathematician, and Pioneer of Quasi-Heliocentric Models</h4>
-        <p>Nilakantha Somayaji (1444 – 1544 CE) was a distinguished figure in Indian mathematics and astronomy,
-            renowned for advancing the legacy of Mādhava and shaping the intellectual foundations of the Kerala
-            School of Mathematics and Astronomy. Born in Trikkandiyur in present-day Kerala, India, he belonged to
-            the Nambudiri Brahmin lineage, and the title “Somayaji” signifies one who performed the prestigious
-            Vedic Soma sacrifice. His lifetime of scholarship synthesized observation, computation, and Vedic tradition,
-            producing works that anticipated concepts of modern astronomy and calculus.</p>
-        <img src="nilakantha-somayaji.jpg" alt="Nilakantha Somayaji" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <p>His magnum opus, the <i>Tantra Samgraha</i> (c. 1501 CE), is a comprehensive treatise covering
-            planetary theory, eclipses, celestial motion, and trigonometry. In it, he proposed a
-            <b>quasi-heliocentric model</b> in which Mercury, Venus, Mars, Jupiter, and Saturn revolve around the
-            Sun, which in turn revolves around the Earth—an idea that anticipated Copernican insights by decades
-            while preserving geocentric elements.
-        </p>
 
-        <p>Nilakantha extended <b>Mādhava’s infinite series</b> methods, refined trigonometric tables with higher
-            precision, and made early contributions to the understanding of derivatives and rates of change in
-            astronomical contexts. His corrections for planetary motion involved ideas conceptually similar to
-            modern Taylor series expansions. He also developed practical tools such as <i>Chandra Vākya</i> (Moon
-            sentences) and <i>Gola</i> (spherical astronomy) for astronomical calculations, which were used by
-            Kerala scholars for centuries.</p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Nilakantha Somayaji</h3>
+            <h4>Kerala School Astronomer, Mathematician, and Pioneer of Quasi-Heliocentric Models</h4>
+            <p>Nilakantha Somayaji (1444 – 1544 CE) was a distinguished figure in Indian mathematics and astronomy,
+                renowned for advancing the legacy of Mādhava and shaping the intellectual foundations of the Kerala
+                School of Mathematics and Astronomy. Born in Trikkandiyur in present-day Kerala, India, he belonged to
+                the Nambudiri Brahmin lineage, and the title “Somayaji” signifies one who performed the prestigious
+                Vedic Soma sacrifice. His lifetime of scholarship synthesized observation, computation, and Vedic
+                tradition,
+                producing works that anticipated concepts of modern astronomy and calculus.</p>
+            <img src="nilakantha-somayaji.jpg" alt="Nilakantha Somayaji" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <p>His magnum opus, the <i>Tantra Samgraha</i> (c. 1501 CE), is a comprehensive treatise covering
+                planetary theory, eclipses, celestial motion, and trigonometry. In it, he proposed a
+                <b>quasi-heliocentric model</b> in which Mercury, Venus, Mars, Jupiter, and Saturn revolve around the
+                Sun, which in turn revolves around the Earth—an idea that anticipated Copernican insights by decades
+                while preserving geocentric elements.
+            </p>
 
-        <ul>
-            <li>Authored <i>Tantra Samgraha</i>, a foundational work in Indian astronomy</li>
-            <li>Proposed a quasi-heliocentric planetary model decades before Copernicus</li>
-            <li>Extended infinite series and refined trigonometric tables</li>
-            <li>Applied early concepts of derivatives to planetary motion</li>
-            <li>Developed practical computation techniques like Chandra Vākya and Gola</li>
-        </ul>
+            <p>Nilakantha extended <b>Mādhava’s infinite series</b> methods, refined trigonometric tables with higher
+                precision, and made early contributions to the understanding of derivatives and rates of change in
+                astronomical contexts. His corrections for planetary motion involved ideas conceptually similar to
+                modern Taylor series expansions. He also developed practical tools such as <i>Chandra Vākya</i> (Moon
+                sentences) and <i>Gola</i> (spherical astronomy) for astronomical calculations, which were used by
+                Kerala scholars for centuries.</p>
 
-        <p>Nilakantha’s other significant texts include the <i>Aryabhatiya Bhashya</i>, a commentary on Aryabhata
-            integrating Mādhava’s insights, and the <i>Golasāra</i> on spherical astronomy. His meticulous
-            observation, rigorous logic, and mathematical innovation influenced later Kerala scholars such as
-            Jyesthadeva and Achyuta Pisharati, leaving a legacy that bridged the worlds of traditional Sanskrit
-            scholarship and pioneering scientific thought.</p>
+            <ul>
+                <li>Authored <i>Tantra Samgraha</i>, a foundational work in Indian astronomy</li>
+                <li>Proposed a quasi-heliocentric planetary model decades before Copernicus</li>
+                <li>Extended infinite series and refined trigonometric tables</li>
+                <li>Applied early concepts of derivatives to planetary motion</li>
+                <li>Developed practical computation techniques like Chandra Vākya and Gola</li>
+            </ul>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <p>Nilakantha’s other significant texts include the <i>Aryabhatiya Bhashya</i>, a commentary on Aryabhata
+                integrating Mādhava’s insights, and the <i>Golasāra</i> on spherical astronomy. His meticulous
+                observation, rigorous logic, and mathematical innovation influenced later Kerala scholars such as
+                Jyesthadeva and Achyuta Pisharati, leaving a legacy that bridged the worlds of traditional Sanskrit
+                scholarship and pioneering scientific thought.</p>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,164 +26,278 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="greek">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Hippasus</h3>
-        <h4>Discovered Irrational Numbers</h4>
-        <p>Hippasus of Metapontum (c. 5th century BCE) was a Greek philosopher and mathematician, believed to have been
-            a
-            follower of Pythagoras. He is best known (and sometimes controversially remembered) for discovering
-            something that
-            shook the foundation of Greek mathematics: the existence of irrational numbers — numbers that cannot be
-            expressed as
-            a ratio of two integers.</p>
-        <img src="Hippasus.webp" alt="Hippasus" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Discovery of Irrational Numbers</h4>
-        <p>The Pythagorean school believed that “all things are number,” meaning all quantities in the universe could be
-            expressed as ratios of whole numbers — fractions like \( \frac{1}{2} \), \( \frac{2}{3} \), \( \frac{7}{4}
-            \), etc.
-            These are called rational numbers.</p>
-        <p>But Hippasus found an exception to this belief. The story goes that he was studying the diagonal of a square.
-        </p>
-        <p>If a square has side length 1, then by the Pythagorean Theorem:</p>
-        \[
-        \text{Diagonal}^2 = \text{Side}^2 + \text{Side}^2
-        \]
-        \[
-        \text{Diagonal}^2 = 1^2 + 1^2 = 2
-        \]
-        \[
-        \text{Diagonal} = \sqrt{2}
-        \]
-        <p>Now \( \sqrt{2} \) cannot be written as a fraction — it’s a non-repeating, non-terminating decimal:</p>
-        \[
-        \sqrt{2} \approx 1.414213\ldots
-        \]
-        <p>So \( \sqrt{2} \) is irrational — a number that cannot be written as \( \frac{a}{b} \), where \( a \) and \(
-            b \) are
-            integers.</p>
-        <p>This discovery directly contradicted the Pythagorean belief that everything in the universe was rational and
-            proportionate.</p>
 
-        <h4>The Controversy and the Legend</h4>
-        <p>According to legend, the Pythagoreans were so disturbed by Hippasus’ discovery that:</p>
-        <ul>
-            <li>They considered it a secret too dangerous to reveal.</li>
-            <li>When Hippasus shared this knowledge with outsiders, he was allegedly punished — and some stories say he
-                was
-                drowned at sea for exposing the existence of irrational numbers.</li>
-        </ul>
-        <p>Although the exact truth is unknown, this story reflects the deep philosophical shock that irrational numbers
-            caused
-            to early Greek mathematicians.</p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Hippasus</h3>
+            <h4>Discovered Irrational Numbers</h4>
+            <p>Hippasus of Metapontum (c. 5th century BCE) was a Greek philosopher and mathematician, believed to have
+                been
+                a
+                follower of Pythagoras. He is best known (and sometimes controversially remembered) for discovering
+                something that
+                shook the foundation of Greek mathematics: the existence of irrational numbers — numbers that cannot be
+                expressed as
+                a ratio of two integers.</p>
+            <img src="Hippasus.webp" alt="Hippasus" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Discovery of Irrational Numbers</h4>
+            <p>The Pythagorean school believed that “all things are number,” meaning all quantities in the universe
+                could be
+                expressed as ratios of whole numbers — fractions like \( \frac{1}{2} \), \( \frac{2}{3} \), \(
+                \frac{7}{4}
+                \), etc.
+                These are called rational numbers.</p>
+            <p>But Hippasus found an exception to this belief. The story goes that he was studying the diagonal of a
+                square.
+            </p>
+            <p>If a square has side length 1, then by the Pythagorean Theorem:</p>
+            \[
+            \text{Diagonal}^2 = \text{Side}^2 + \text{Side}^2
+            \]
+            \[
+            \text{Diagonal}^2 = 1^2 + 1^2 = 2
+            \]
+            \[
+            \text{Diagonal} = \sqrt{2}
+            \]
+            <p>Now \( \sqrt{2} \) cannot be written as a fraction — it’s a non-repeating, non-terminating decimal:</p>
+            \[
+            \sqrt{2} \approx 1.414213\ldots
+            \]
+            <p>So \( \sqrt{2} \) is irrational — a number that cannot be written as \( \frac{a}{b} \), where \( a \) and
+                \(
+                b \) are
+                integers.</p>
+            <p>This discovery directly contradicted the Pythagorean belief that everything in the universe was rational
+                and
+                proportionate.</p>
 
-        <h4>Philosophical Ideas</h4>
-        <p>Hippasus is also believed to have contributed to:</p>
-        <ul>
-            <li>Early ideas of cosmology (the structure of the universe)</li>
-            <li>The concept of harmony using numbers and ratios, especially in music</li>
-        </ul>
-        <p>Some ancient sources say he believed that fire was the primary element of the universe, contrasting with
-            other
-            philosophers like Thales (who said water), and Anaximenes (who said air).</p>
+            <h4>The Controversy and the Legend</h4>
+            <p>According to legend, the Pythagoreans were so disturbed by Hippasus’ discovery that:</p>
+            <ul>
+                <li>They considered it a secret too dangerous to reveal.</li>
+                <li>When Hippasus shared this knowledge with outsiders, he was allegedly punished — and some stories say
+                    he
+                    was
+                    drowned at sea for exposing the existence of irrational numbers.</li>
+            </ul>
+            <p>Although the exact truth is unknown, this story reflects the deep philosophical shock that irrational
+                numbers
+                caused
+                to early Greek mathematicians.</p>
 
-        <h4>Importance of His Discovery</h4>
-        <p>The existence of irrational numbers opened up entire new areas in mathematics, but it also marked the end of
-            the
-            Pythagorean idea that numbers alone could explain the universe. It led to:</p>
-        <ul>
-            <li>Deeper studies in number theory</li>
-            <li>The eventual development of real numbers</li>
-            <li>A better understanding of geometry and algebra</li>
-        </ul>
-        <p>Irrational numbers like \( \sqrt{2} \), \( \pi \) (pi), and \( e \) are now fundamental to modern science,
-            mathematics, and engineering.</p>
+            <h4>Philosophical Ideas</h4>
+            <p>Hippasus is also believed to have contributed to:</p>
+            <ul>
+                <li>Early ideas of cosmology (the structure of the universe)</li>
+                <li>The concept of harmony using numbers and ratios, especially in music</li>
+            </ul>
+            <p>Some ancient sources say he believed that fire was the primary element of the universe, contrasting with
+                other
+                philosophers like Thales (who said water), and Anaximenes (who said air).</p>
 
-        <h4>Legacy</h4>
-        <p>Although not much is known about Hippasus’ life, his contribution changed mathematics forever. He may not
-            have
-            written major works like Euclid or Archimedes, but his bold discovery challenged dogma and expanded the
-            limits of
-            human knowledge.</p>
-        <p>Today, he is remembered as the first to prove that not everything in mathematics is rational — a discovery
-            that still
-            echoes through math classrooms around the world.</p>
+            <h4>Importance of His Discovery</h4>
+            <p>The existence of irrational numbers opened up entire new areas in mathematics, but it also marked the end
+                of
+                the
+                Pythagorean idea that numbers alone could explain the universe. It led to:</p>
+            <ul>
+                <li>Deeper studies in number theory</li>
+                <li>The eventual development of real numbers</li>
+                <li>A better understanding of geometry and algebra</li>
+            </ul>
+            <p>Irrational numbers like \( \sqrt{2} \), \( \pi \) (pi), and \( e \) are now fundamental to modern
+                science,
+                mathematics, and engineering.</p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Legacy</h4>
+            <p>Although not much is known about Hippasus’ life, his contribution changed mathematics forever. He may not
+                have
+                written major works like Euclid or Archimedes, but his bold discovery challenged dogma and expanded the
+                limits of
+                human knowledge.</p>
+            <p>Today, he is remembered as the first to prove that not everything in mathematics is rational — a
+                discovery
+                that still
+                echoes through math classrooms around the world.</p>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
+
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

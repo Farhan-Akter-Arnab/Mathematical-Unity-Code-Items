@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,140 +26,484 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="indian">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Indian Mathematicians</h3>
-        <p>
-            This section celebrates the brilliant mathematicians of India across the ages — from ancient scholars
-            who laid the foundations of arithmetic, algebra, and combinatorics, to modern visionaries whose
-            insights continue to influence mathematics and science globally. Their contributions span number theory,
-            trigonometry, geometry, and statistics, highlighting a legacy of rigorous thought, innovation, and
-            intellectual curiosity that has shaped both classical and contemporary mathematics.
-        </p>
-
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><a href="Pingala.html"><b>1. Pingala</b> (c. 3rd–2nd century BCE)</a></div>
-            <div class="math-card"><a href="Aryabhatta.html"><b>2. Aryabhata I</b> (476–550)</a></div>
-            <div class="math-card"><a href="Varāhamihira.html"><b>3. Varāhamihira</b> (505–587)</a></div>
-
-            <!-- Row 2 -->
-            <div class="math-card"><a href="Brahmagupta.html"><b>4. Brahmagupta</b> (598–c. 668)</a></div>
-            <div class="math-card"><a href="Bhaskara I.html"><b>5. Bhāskara I</b> (c. 600–c. 680)</a></div>
-            <div class="math-card"><a href="Mahavira.html"><b>6. Mahāvīra</b> (fl. c. 850)</a></div>
-
-            <!-- Row 3 -->
-            <div class="math-card"><a href="Sripati.html"><b>7. Śrīpati</b> (c. 1019–c. 1066)</a></div>
-            <div class="math-card"><a href="Jayadeva.html"><b>8. Jayadeva</b> (fl. 11th–12th century)</a></div>
-            <div class="math-card"><a href="Bhaskara II.html"><b>9. Bhāskara II</b> (1114–c. 1185)</a></div>
-
-            <!-- Row 4 -->
-            <div class="math-card"><a href="Madhava.html"><b>10. Mādhava of Sangamagrama</b> (c. 1340–c. 1425)</a></div>
-            <div class="math-card"><a href="Nilakantha Somayaji.html"><b>11. Nīlakaṇṭha Somayāji</b> (1444–1544)</a>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
             </div>
-            <div class="math-card"><a href="Jyeshthadeva.html"><b>12. Jyeṣṭhadeva</b> (c. 1500–c. 1575)</a></div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Indian Mathematicians</h3>
+            <p>
+                This section celebrates the brilliant mathematicians of India across the ages — from ancient scholars
+                who laid the foundations of arithmetic, algebra, and combinatorics, to modern visionaries whose
+                insights continue to influence mathematics and science globally. Their contributions span number theory,
+                trigonometry, geometry, and statistics, highlighting a legacy of rigorous thought, innovation, and
+                intellectual curiosity that has shaped both classical and contemporary mathematics.
+            </p>
 
-            <!-- Row 5 -->
-            <div class="math-card"><a href="Achyuta Pisharati.html"><b>13. Achyuta Pisharati</b> (1550–1621)</a></div>
-            <div class="math-card"><a href="Melpathur Narayana Bhattathiri.html"><b>14. Melpathur Nārāyaṇa
-                        Bhattathiri</b>
-                    (1560–1646)</a></div>
-            <div class="math-card"><a href="Radhanath Sikdar.html"><b>15. Radhanath Sikdar</b> (1813–1870)</a></div>
+            <div class="Math-grid">
 
-            <!-- Row 6 -->
-            <div class="math-card"><a href="Ashutosh Mukherjee.html"><b>16. Ashutosh Mukherjee</b> (1864–1924)</a></div>
-            <div class="math-card"><a href="Srinivasa Ramanujan.html"><b>17. Srinivasa Ramanujan</b> (1887–1920)</a>
+                <a href="Pingala.html" class="math-card">
+                    <img src="Pingala.webp" alt="Pingala">
+                    <div class="math-card-body">
+                        <h3>1. Pingala</h3>
+                        <p class="dates">(c. 3rd–2nd century BCE)</p>
+                        <p class="desc">Pingala is one of the earliest Indian scholars to apply mathematics in the study
+                            of
+                            language. He lived around the
+                            3rd–2nd century BCE (though some traditions place him slightly earlier) and authored the
+                            Chandaḥśāstra, a Sanskrit
+                            treatise on prosody (poetic meters).</p>
+                    </div>
+                </a>
+
+                <a href="Aryabhatta.html" class="math-card">
+                    <img src="Aryabhata.jpg" alt="Aryabhata I">
+                    <div class="math-card-body">
+                        <h3>2. Aryabhata I</h3>
+                        <p class="dates">(476–550)</p>
+                        <p class="desc">Aryabhata was a pioneering Indian mathematician and astronomer born in 476 CE,
+                            traditionally believed to be from
+                            Kusumapura (modern Patna, Bihar, India).</p>
+                    </div>
+                </a>
+
+                <a href="Varāhamihira.html" class="math-card">
+                    <img src="Varahamihira.jpeg" alt="Varāhamihira">
+                    <div class="math-card-body">
+                        <h3>3. Varāhamihira</h3>
+                        <p class="dates">(505–587)</p>
+                        <p class="desc">Varāhamihira was born around 505 CE in Ujjain, a renowned scholarly center in
+                            central India. He belonged to a Brahmin
+                            family and showed early brilliance in astronomy and astrology.</p>
+                    </div>
+                </a>
+
+                <a href="Brahmagupta.html" class="math-card">
+                    <img src="Brahmagupta.jpg" alt="Brahmagupta">
+                    <div class="math-card-body">
+                        <h3>4. Brahmagupta</h3>
+                        <p class="dates">(598–c. 668)</p>
+                        <p class="desc">Brahmagupta, born in 598 CE at Bhillamāla (modern Bhinmal in Rajasthan, India),
+                            was
+                            an eminent Indian mathematician and
+                            astronomer.</p>
+                    </div>
+                </a>
+
+                <a href="Bhaskara I.html" class="math-card">
+                    <img src="Bhaskara I.webp" alt="Bhāskara I">
+                    <div class="math-card-body">
+                        <h3>5. Bhāskara I</h3>
+                        <p class="dates">(c. 600–c. 680)</p>
+                        <p class="desc">Bhaskara I was one of the earliest Indian mathematicians to give a systematic
+                            exposition of Aryabhata’s work.</p>
+                    </div>
+                </a>
+
+                <a href="Mahavira.html" class="math-card">
+                    <img src="Mahavira.jpeg" alt="Mahāvīra">
+                    <div class="math-card-body">
+                        <h3>6. Mahāvīra</h3>
+                        <p class="dates">(fl. c. 850)</p>
+                        <p class="desc">Mahāvīra, also known as Mahāvīrācārya, was a prominent mathematician of
+                            9th-century
+                            India, likely active in Karnataka
+                            under the patronage of the Rashtrakuta dynasty during King Amoghavarsha’s reign (814–878
+                            CE).
+                        </p>
+                    </div>
+                </a>
+
+                <a href="Sripati.html" class="math-card">
+                    <img src="Sripati.png" alt="Śrīpati">
+                    <div class="math-card-body">
+                        <h3>7. Śrīpati</h3>
+                        <p class="dates">(c. 1019–c. 1066)</p>
+                        <p class="desc">Śrīpati was a medieval Indian mathematician and astronomer, born in the early
+                            11th
+                            century, likely in the southern
+                            region of Maharashtra or Karnataka.</p>
+                    </div>
+                </a>
+
+                <a href="Jayadeva.html" class="math-card">
+                    <img src="Jayadeva.webp" alt="Jayadeva">
+                    <div class="math-card-body">
+                        <h3>8. Jayadeva</h3>
+                        <p class="dates">(fl. 11th–12th century)</p>
+                        <p class="desc">Jayadeva lived around the 11th–12th century CE and is remembered as a
+                            mathematician
+                            who expanded upon the combinatorial
+                            and prosodic work of earlier scholars such as Pingala (c. 3rd–2nd century BCE).</p>
+                    </div>
+                </a>
+
+                <a href="Bhaskara II.html" class="math-card">
+                    <img src="Bhaskara II.jpeg" alt="Bhāskara II">
+                    <div class="math-card-body">
+                        <h3>9. Bhāskara II</h3>
+                        <p class="dates">(1114–c. 1185)</p>
+                        <p class="desc">haskara II, also called Bhaskaracharya, was one of India’s greatest medieval
+                            mathematicians and astronomers.</p>
+                    </div>
+                </a>
+
+                <a href="Madhava.html" class="math-card">
+                    <img src="Madhava.webp" alt="Mādhava of Sangamagrama">
+                    <div class="math-card-body">
+                        <h3>10. Mādhava of Sangamagrama</h3>
+                        <p class="dates">(c. 1340–c. 1425)</p>
+                        <p class="desc">Mādhava of Sangamagrama (c. 1340 – c. 1425 CE) was a pioneering mathematician
+                            and
+                            astronomer from Kerala, India.</p>
+                    </div>
+                </a>
+
+                <a href="Nilakantha Somayaji.html" class="math-card">
+                    <img src="nilakantha-somayaji.jpg" alt="Nīlakaṇṭha Somayāji">
+                    <div class="math-card-body">
+                        <h3>11. Nīlakaṇṭha Somayāji</h3>
+                        <p class="dates">(1444–1544)</p>
+                        <p class="desc">Nilakantha Somayaji (1444 – 1544 CE) was a distinguished figure in Indian
+                            mathematics and astronomy, renowned for
+                            advancing the legacy of Mādhava and shaping the intellectual foundations of the Kerala
+                            School of
+                            Mathematics and
+                            Astronomy.</p>
+                    </div>
+                </a>
+
+                <a href="Jyeshthadeva.html" class="math-card">
+                    <img src="Jyeshthadeva.jpg" alt="Jyeṣṭhadeva">
+                    <div class="math-card-body">
+                        <h3>12. Jyeṣṭhadeva</h3>
+                        <p class="dates">(c. 1500–c. 1575)</p>
+                        <p class="desc">Jyesthadeva was a seminal figure of the Kerala School of Mathematics and
+                            Astronomy,
+                            renowned for authoring Yuktibhāṣā,
+                            the first known text in the world to present calculus in a logically rigorous form.</p>
+                    </div>
+                </a>
+
+                <a href="Achyuta Pisharati.html" class="math-card">
+                    <img src="Achyuta Pisharati.jpg" alt="Achyuta Pisharati">
+                    <div class="math-card-body">
+                        <h3>13. Achyuta Pisharati</h3>
+                        <p class="dates">(1550–1621)</p>
+                        <p class="desc">Achyuta Pisharati (c. 1550 – c. 1621 CE) was a prominent figure of the Kerala
+                            School
+                            of Mathematics and Astronomy.</p>
+                    </div>
+                </a>
+
+                <a href="Melpathur Narayana Bhattathiri.html" class="math-card">
+                    <img src="Melpathur Narayana Bhattathiri.webp" alt="Melpathur Nārāyaṇa Bhattathiri">
+                    <div class="math-card-body">
+                        <h3>14. Melpathur Nārāyaṇa Bhattathiri</h3>
+                        <p class="dates">(1560–1646)</p>
+                        <p class="desc">Melpathur Narayana Bhattathiri (1560 – 1646 CE) was a brilliant Sanskrit
+                            scholar,
+                            mathematician, and philosopher of the
+                            Kerala School of Astronomy and Mathematics.</p>
+                    </div>
+                </a>
+
+                <a href="Radhanath Sikdar.html" class="math-card">
+                    <img src="Radhanath Sikder.webp" alt="Radhanath Sikdar">
+                    <div class="math-card-body">
+                        <h3>15. Radhanath Sikdar</h3>
+                        <p class="dates">(1813–1870)</p>
+                        <p class="desc">Radhanath Sikdar was an Indian mathematician and surveyor born in Jorasanko,
+                            Calcutta on 5 October 1813. He studied at
+                            Hindu College (now Presidency University), where his talent in mathematics was nurtured by
+                            John
+                            Tytler.</p>
+                    </div>
+                </a>
+
+                <a href="Ashutosh Mukherjee.html" class="math-card">
+                    <img src="Ashutosh Mukherjee.webp" alt="Ashutosh Mukherjee">
+                    <div class="math-card-body">
+                        <h3>16. Ashutosh Mukherjee</h3>
+                        <p class="dates">(1864–1924)</p>
+                        <p class="desc">Sir Ashutosh Mukherjee (1864 – 1924), widely known as the “Tiger of Bengal,” was
+                            a
+                            polymath, mathematician, jurist, and
+                            visionary educationist.</p>
+                    </div>
+                </a>
+
+                <a href="Srinivasa Ramanujan.html" class="math-card">
+                    <img src="Srinivasa Ramanujan.webp" alt="Srinivasa Ramanujan">
+                    <div class="math-card-body">
+                        <h3>17. Srinivasa Ramanujan</h3>
+                        <p class="dates">(1887–1920)</p>
+                        <p class="desc">Srinivasa Ramanujan (1887 – 1920) was born on December 22, 1887, in Erode, a
+                            small
+                            town in Tamil Nadu, India.</p>
+                    </div>
+                </a>
+
+                <a href="P. C. Mahalanobis.html" class="math-card">
+                    <img src="P. C. Mahalanobis.webp" alt="P. C. Mahalanobis">
+                    <div class="math-card-body">
+                        <h3>18. P. C. Mahalanobis</h3>
+                        <p class="dates">(1893–1972)</p>
+                        <p class="desc">Prasanta Chandra Mahalanobis (1893 – 1972) was born on June 29, 1893, in
+                            Calcutta
+                            (now Kolkata), India, into an
+                            intellectual and progressive Bengali family.</p>
+                    </div>
+                </a>
+
+                <a href="Raj Chandra Bose.html" class="math-card">
+                    <img src="Raj Chandra Bose.webp" alt="Raj Chandra Bose">
+                    <div class="math-card-body">
+                        <h3>19. Raj Chandra Bose</h3>
+                        <p class="dates">(1901–1987)</p>
+                        <p class="desc">Raj Chandra Bose (1901 – 1987) was a distinguished Indian mathematician whose
+                            work
+                            bridged pure and applied mathematics.</p>
+                    </div>
+                </a>
+
+                <a href="Tirukkannapuram Vijayaraghavan.html" class="math-card">
+                    <img src="Tirukkannapuram Vijayaraghavan.jpeg" alt="T. Vijayaraghavan">
+                    <div class="math-card-body">
+                        <h3>20. T. Vijayaraghavan</h3>
+                        <p class="dates">(1902–1955)</p>
+                        <p class="desc">Tirukkannapuram Vijayaraghavan (1902 – 1955) was a prominent Indian
+                            mathematician
+                            known for his contributions to
+                            analysis and number theory.</p>
+                    </div>
+                </a>
+
+                <a href="C. R. Rao.html" class="math-card">
+                    <img src="C. R. Rao.jpeg" alt="C. R. Rao">
+                    <div class="math-card-body">
+                        <h3>21. C. R. Rao</h3>
+                        <p class="dates">(1920–2023)</p>
+                        <p class="desc">Calyampudi Radhakrishna Rao (September 10, 1920 – August 22, 2023), widely known
+                            as
+                            C. R. Rao, was one of the most
+                            influential statisticians of the 20th and 21st centuries.</p>
+                    </div>
+                </a>
+
+                <a href="Harish Chandra.html" class="math-card">
+                    <img src="Harish Chandra.webp" alt="Harish-Chandra">
+                    <div class="math-card-body">
+                        <h3>22. Harish-Chandra</h3>
+                        <p class="dates">(1923–1983)</p>
+                        <p class="desc">Harish-Chandra was born on October 11, 1923, in Kanpur, India. He showed an
+                            early
+                            aptitude for mathematics and physics,
+                            earning a Bachelor’s degree in Physics from Allahabad University in 1940.</p>
+                    </div>
+                </a>
+
+                <a href="Ataullah Rashidi.html" class="math-card">
+                    <img src="Ataullah Rashidi.jpg" alt="Ataullah Rashidi">
+                    <div class="math-card-body">
+                        <h3>23. Ataullah Rashidi</h3>
+                        <p class="dates">(17th century)</p>
+                        <p class="desc">Ataullah Rashidi was a Mughal-era mathematician, translator, and architect,
+                            known
+                            for bridging Arabic, Sanskrit, and
+                            Persian mathematical traditions.</p>
+                    </div>
+                </a>
+
+                <a href="Mahadevan.html" class="math-card">
+                    <img src="Mahadevan.webp" alt="Mahadevan">
+                    <div class="math-card-body">
+                        <h3>24. Mahadevan</h3>
+                        <p class="dates">(1967– )</p>
+                        <p class="desc">Lakshminarayanan Mahadevan, commonly known as L. Mahadevan, was born in India in
+                            1967. He completed his undergraduate
+                            studies at the Indian Institute of Technology (IIT), Madras.</p>
+                    </div>
+                </a>
+
             </div>
-            <div class="math-card"><a href="P. C. Mahalanobis.html"><b>18. P. C. Mahalanobis</b> (1893–1972)</a></div>
 
-            <!-- Row 7 -->
-            <div class="math-card"><a href="Raj Chandra Bose.html"><b>19. Raj Chandra Bose</b> (1901–1987)</a></div>
-            <div class="math-card"><a href="Tirukkannapuram Vijayaraghavan.html"><b>20. T. Vijayaraghavan</b>
-                    (1902–1955)</a>
-            </div>
-            <div class="math-card"><a href="C. R. Rao.html"><b>21. C. R. Rao</b> (1920–2023)</a></div>
 
-            <!-- Row 8 -->
-            <div class="math-card"><a href="Harish Chandra.html"><b>22. Harish-Chandra</b> (1923–1983)</a></div>
-            <div class="math-card"><a href="Ataullah Rashidi.html"><b>23. Ataullah Rashidi</b> (20th century)</a></div>
-            <div class="math-card"><a href="Mahadevan.html"><b>24. Mahadevan</b> (1967– )</a></div>
+
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

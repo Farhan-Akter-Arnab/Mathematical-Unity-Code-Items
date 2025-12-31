@@ -1,0 +1,152 @@
+/*Background picture*/
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('Trig_Table.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Ensure the table container is scrollable horizontally */
+.real-choco-table-container {
+    overflow-x: auto; /* Enable horizontal scrolling for the table container */
+    white-space: nowrap; /* Prevent content from wrapping */
+    max-width: 100%; /* Constrain the table to the device width */
+}
+
+/* Table styling */
+.real-choco-table {
+    table-layout: fixed; /* Ensure fixed column widths */
+    width: 100%; /* Constrain the table width to the container */
+    border-collapse: separate;
+    border-spacing: 8px;
+    text-align: center;
+    font-size: larger;
+    color: chocolate;
+    background: #3a1d00;
+    border-radius: 2.4px;
+    border: 3px solid chocolate;
+    box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.1),
+        0 10px 25px rgba(0, 0, 0, 0.6);
+    padding: 8px;
+}
+
+/* Table cells */
+.real-choco-table td {
+    position: relative;
+    background: linear-gradient(145deg, #6b3c0f, #4a2605);
+    border-radius: 2.4px;
+    border: 3px solid chocolate;
+    padding: 14px 10px;
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.15),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.5),
+        0 5px 10px rgba(0, 0, 0, 0.6);
+    overflow-x: auto; /* Enable horizontal scrolling for overflowing content */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    max-width: 100%; /* Ensure content fits within the cell */
+    white-space: nowrap; /* Prevent content from wrapping */
+    height: 88px; /* Increase the height of the cells */
+}
+
+/* Table headers */
+.real-choco-table th {
+    position: relative;
+    background: linear-gradient(180deg, #4b2402 0%, #3a1d00 100%);
+    border-radius: 2.4px;
+    border: 3px solid chocolate;
+    padding: 14px 10px;
+    box-shadow:
+        inset 0 2px 2px rgba(255, 255, 255, 0.15),
+        inset 0 -3px 5px rgba(0, 0, 0, 0.5),
+        0 5px 10px rgba(0, 0, 0, 0.6);
+    white-space: nowrap; /* Prevent content from wrapping */
+    height: 88px; /* Match the height of table cells */
+    overflow: hidden; /* Remove unnecessary scrollbars */
+}
+
+/* Smooth upward-downward transition */
+.real-choco-table td .content {
+    position: absolute;
+    inset: 0;
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    backface-visibility: hidden;
+}
+
+/* Style the scrollbar for horizontal scrolling */
+.real-choco-table td::-webkit-scrollbar {
+    height: 6px; /* Reduce the height of the scrollbar */
+}
+
+.real-choco-table td::-webkit-scrollbar-thumb {
+    background: chocolate; /* Color of the scrollbar thumb */
+    border-radius: 3px; /* Rounded corners for the scrollbar thumb */
+}
+
+.real-choco-table td::-webkit-scrollbar-track {
+    background: #3a1d00; /* Color of the scrollbar track */
+    border-radius: 3px; /* Rounded corners for the scrollbar track */
+}
+
+/* Approximate text styling */
+.real-choco-table td .approx {
+    font-size: 0.824em; /* Slightly smaller font size for approximate text */
+    color: #d2a679; /* Lighter color for approximate text */
+}
+
+.real-choco-table td .original {
+    transform: translateY(0); /* Default position for the original value */
+    z-index: 2; /* Place the original value above the approximate value */
+}
+
+.real-choco-table td .approx {
+    transform: translateY(100%); /* Start below the cell */
+    z-index: 1; /* Place the approximate value below the original value */
+}
+
+/* When toggled, swap the positions */
+.real-choco-table td.toggled .original {
+    transform: translateY(-100%); /* Move the original value upwards */
+}
+
+.real-choco-table td.toggled .approx {
+    transform: translateY(0); /* Bring the approximate value into view */
+}
+
+@media (max-width: 768px) {
+
+    .real-choco-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        /* smooth iOS scrolling */
+    }
+
+    .real-choco-table {
+        width: max-content;
+        /* allow natural width */
+        min-width: 720px;
+        /* adjust if needed */
+        table-layout: auto;
+        /* stop forced shrinking */
+    }
+
+    .real-choco-table td,
+    .real-choco-table th {
+        white-space: nowrap;
+        /* keep trig values intact */
+    }
+}
+
+@media (max-width: 768px) {
+    .real-choco-table-container::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .real-choco-table-container::-webkit-scrollbar-thumb {
+        background: chocolate;
+        border-radius: 4px;
+    }
+}

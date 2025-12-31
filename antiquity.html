@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,150 +26,486 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="antiquity">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>
-            Mathematicians of the Antiquity: Bridging Hellenistic Knowledge to the Early Medieval Era
-        </h3>
-        <p>
-            From the Late Classical to the Early Medieval period, mathematicians and scholars advanced
-            the foundations of arithmetic, geometry, astronomy, and scientific reasoning.
-            Their work transmitted Hellenistic insights into later traditions, laying the groundwork
-            for medieval science and mathematics across Europe, the Middle East, and South Asia.
-            Figures like Hero of Alexandria and Ptolemy exemplify the fusion of practical engineering,
-            observation, and mathematical theory, demonstrating the enduring legacy of ancient scholarship.
-        </p>
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><span></span> <a href="Strabo.html">1. Strabo (64 BCE – 24 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Hero of Alexandria.html">2. Hero of Alexandria (c. 10 – 70
-                    CE)</a></div>
-            <div class="math-card"><span></span> <a href="Pliny the Elder.html">3. Pliny the Elder (23 – 79 CE)</a>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>
+                Mathematicians of the Antiquity: Bridging Hellenistic Knowledge to the Early Medieval Era
+            </h3>
+            <p>
+                From the Late Classical to the Early Medieval period, mathematicians and scholars advanced
+                the foundations of arithmetic, geometry, astronomy, and scientific reasoning.
+                Their work transmitted Hellenistic insights into later traditions, laying the groundwork
+                for medieval science and mathematics across Europe, the Middle East, and South Asia.
+                Figures like Hero of Alexandria and Ptolemy exemplify the fusion of practical engineering,
+                observation, and mathematical theory, demonstrating the enduring legacy of ancient scholarship.
+            </p>
+            <div class="Math-grid">
+
+                <a href="Strabo.html" class="math-card">
+                    <img src="Strabo.jpeg" alt="Strabo">
+                    <div class="math-card-body">
+                        <h3>1. Strabo</h3>
+                        <p class="dates">(64 BCE – 24 CE)</p>
+                        <p class="desc">Strabo (c. 64 BCE – c. 24 CE) was a Greek geographer and historian whose
+                            monumental
+                            Geographica remains one of the most
+                            important geographical works of antiquity.</p>
+                    </div>
+                </a>
+
+                <a href="Hero of Alexandria.html" class="math-card">
+                    <img src="Hero.webp" alt="Hero of Alexandria">
+                    <div class="math-card-body">
+                        <h3>2. Hero of Alexandria</h3>
+                        <p class="dates">(c. 10 – 70 CE)</p>
+                        <p class="desc">Hero (or Heron) of Alexandria (fl. c. 60 CE) was a Greek engineer and
+                            mathematician
+                            whose writings bridged the gap
+                            between theoretical mathematics and practical mechanical applications.</p>
+                    </div>
+                </a>
+
+                <a href="Pliny the Elder.html" class="math-card">
+                    <img src="Pliny the Elder.webp" alt="Pliny the Elder">
+                    <div class="math-card-body">
+                        <h3>3. Pliny the Elder</h3>
+                        <p class="dates">(23 – 79 CE)</p>
+                        <p class="desc">Pliny the Elder (23–79 CE), or Gaius Plinius Secundus, was a Roman polymath
+                            whose
+                            Natural History (Naturalis Historia)
+                            is among the largest works of reference to survive from antiquity.</p>
+                    </div>
+                </a>
+
+                <a href="Nicomachus of Gerasa.html" class="math-card">
+                    <img src="Nicomachus of Gerasa.webp" alt="Nicomachus of Gerasa">
+                    <div class="math-card-body">
+                        <h3>4. Nicomachus of Gerasa</h3>
+                        <p class="dates">(c. 60 – 120 CE)</p>
+                        <p class="desc">Nicomachus of Gerasa (c. 60–c. 120 CE) was a Greco-Roman mathematician and
+                            philosopher whose works preserved and
+                            expanded the arithmetical traditions of Pythagoras and Plato.</p>
+                    </div>
+                </a>
+
+                <a href="Theon of Smyrna.html" class="math-card">
+                    <img src="Theon of Smyrna.jpeg" alt="Theon of Smyrna">
+                    <div class="math-card-body">
+                        <h3>5. Theon of Smyrna</h3>
+                        <p class="dates">(fl. 100 – 135 CE)</p>
+                        <p class="desc">Theon of Smyrna (c. 70–c. 135 CE) was a Greek philosopher and mathematician
+                            whose
+                            writings reflect the enduring
+                            influence of Pythagorean thought in Late Antiquity.</p>
+                    </div>
+                </a>
+
+                <a href="Marinus of Tyre.html" class="math-card">
+                    <img src="Marinus of Tyre.jpg" alt="Marinus of Tyre">
+                    <div class="math-card-body">
+                        <h3>6. Marinus of Tyre</h3>
+                        <p class="dates">(fl. early 2nd century CE)</p>
+                        <p class="desc">Marinus of Tyre (fl. c. 100 CE) was a Syrian geographer and cartographer whose
+                            innovations laid the groundwork for the
+                            mathematical geography of Claudius Ptolemy.</p>
+                    </div>
+                </a>
+
+                <a href="Menalaus.html" class="math-card">
+                    <img src="Menelaus.jpg" alt="Menelaus of Alexandria">
+                    <div class="math-card-body">
+                        <h3>7. Menelaus of Alexandria</h3>
+                        <p class="dates">(fl. 100 CE)</p>
+                        <p class="desc">Menelaus of Alexandria (fl. c. 100 CE) was a Greek mathematician and astronomer
+                            best
+                            known for his contributions to
+                            spherical geometry—an essential branch of mathematics for astronomical observations and
+                            navigation.</p>
+                    </div>
+                </a>
+
+                <a href="Cleomedes.html" class="math-card">
+                    <img src="Cleomedes.jpeg" alt="Cleomedes">
+                    <div class="math-card-body">
+                        <h3>8. Cleomedes</h3>
+                        <p class="dates">(fl. late 1st – early 2nd century CE)</p>
+                        <p class="desc">Cleomedes (fl. late 1st or early 2nd century CE) was a Greek astronomer and
+                            natural
+                            philosopher, known for his preserved
+                            treatise On the Circular Motions of the Celestial Bodies.</p>
+                    </div>
+                </a>
+
+                <a href="Pausanias.html" class="math-card">
+                    <img src="Pausanias.jpg" alt="Pausanias">
+                    <div class="math-card-body">
+                        <h3>9. Pausanias</h3>
+                        <p class="dates">(c. 110 – 180 CE)</p>
+                        <p class="desc">Pausanias (fl. c. 110–180 CE) was a Greek traveler and geographer best known for
+                            his
+                            ten-volume work Description of
+                            Greece (Periegesis Hellados).</p>
+                    </div>
+                </a>
+
+                <a href="Ptolemy.html" class="math-card">
+                    <img src="Ptolemy.jpg" alt="Ptolemy">
+                    <div class="math-card-body">
+                        <h3>10. Ptolemy</h3>
+                        <p class="dates">(c. 100 – 170 CE)</p>
+                        <p class="desc">Claudius Ptolemy (c. 100–c. 170 CE) was a Greco-Roman mathematician, astronomer,
+                            and
+                            geographer whose work shaped both
+                            theoretical and applied mathematics for over a millennium.</p>
+                    </div>
+                </a>
+
+                <a href="Galen.html" class="math-card">
+                    <img src="Galen.jpeg" alt="Galen">
+                    <div class="math-card-body">
+                        <h3>11. Galen</h3>
+                        <p class="dates">(129 – c. 216 CE)</p>
+                        <p class="desc">Claudius Galen (c. 129 – c. 216 CE), commonly known as Galen of Pergamon, was a
+                            Greek physician, anatomist, and
+                            philosopher whose medical writings dominated both Eastern and Western medicine for over a
+                            millennium.</p>
+                    </div>
+                </a>
+
+                <a href="Diophantus.html" class="math-card">
+                    <img src="diophantus.jpg" alt="Diophantus">
+                    <div class="math-card-body">
+                        <h3>12. Diophantus</h3>
+                        <p class="dates">(c. 200 – 284 CE)</p>
+                        <p class="desc">Diophantus of Alexandria was a Greek mathematician commonly referred to as the
+                            "Father of Algebra" due to his earliest
+                            known work on solving equations and studying numerical relationships; although in most cases
+                            Muhammad ibn Musa
+                            al-Khwarizmi is considered as the "Father of Algebra".</p>
+                    </div>
+                </a>
+
+                <a href="Serenus.html" class="math-card">
+                    <img src="Serenus.jpg" alt="Serenus of Antinoöpolis">
+                    <div class="math-card-body">
+                        <h3>13. Serenus of Antinoöpolis</h3>
+                        <p class="dates">(c. 300 – 360 CE)</p>
+                        <p class="desc">Serenus of Antinoöpolis (c. 300–c. 360 CE) was a Greek mathematician known for
+                            his
+                            work on geometry, particularly conic
+                            sections and the properties of cylinders and cones.</p>
+                    </div>
+                </a>
+
+                <a href="Pappus.html" class="math-card">
+                    <img src="Pappus.jpg" alt="Pappus of Alexandria">
+                    <div class="math-card-body">
+                        <h3>14. Pappus of Alexandria</h3>
+                        <p class="dates">(c. 290 – 350 CE)</p>
+                        <p class="desc">Pappus of Alexandria (c. 290 – c. 350 CE) was one of the final great figures of
+                            the
+                            ancient Greek mathematical
+                            tradition.</p>
+                    </div>
+                </a>
+
+                <a href="Theon of Alexandria.html" class="math-card">
+                    <img src="Theon of Alexandria.jpg" alt="Theon of Alexandria">
+                    <div class="math-card-body">
+                        <h3>15. Theon of Alexandria</h3>
+                        <p class="dates">(c. 335 – 405 CE)</p>
+                        <p class="desc">Theon of Alexandria (c. 335–c. 405 CE) was a mathematician, astronomer, and
+                            teacher
+                            whose principal legacy is editorial
+                            and pedagogical: his recension of Euclid’s Elements and his commentaries on Ptolemy’s works
+                            shaped how geometry and
+                            computational astronomy were read for many centuries.</p>
+                    </div>
+                </a>
+
+                <a href="Hypatia.html" class="math-card">
+                    <img src="Hypatia.jpeg" alt="Hypatia">
+                    <div class="math-card-body">
+                        <h3>16. Hypatia</h3>
+                        <p class="dates">(c. 360 – 415 CE)</p>
+                        <p class="desc">Hypatia of Alexandria (c. 355–415 CE) was a renowned mathematician, philosopher,
+                            and
+                            teacher in late antique Alexandria.</p>
+                    </div>
+                </a>
+
+                <a href="Proclus.html" class="math-card">
+                    <img src="Proclus.webp" alt="Proclus">
+                    <div class="math-card-body">
+                        <h3>17. Proclus</h3>
+                        <p class="dates">(412 – 485 CE)</p>
+                        <p class="desc">Proclus (412–485 CE) was a Greek philosopher, head of the Platonic Academy in
+                            Athens, and an influential commentator on
+                            Euclid’s Elements.</p>
+                    </div>
+                </a>
+
+                <a href="Anthemius.html" class="math-card">
+                    <img src="Anthemius.webp" alt="Anthemius of Tralles">
+                    <div class="math-card-body">
+                        <h3>18. Anthemius of Tralles</h3>
+                        <p class="dates">(c. 474 – 534 CE)</p>
+                        <p class="desc">Anthemius of Tralles (c. 474 – mid-6th century CE) was a Byzantine mathematician
+                            and
+                            architect best known as one of the
+                            co-designers of Hagia Sophia in Constantinople.</p>
+                    </div>
+                </a>
+
+                <a href="Isidore.html" class="math-card">
+                    <img src="Isidore.jpg" alt="Isidore of Miletus">
+                    <div class="math-card-body">
+                        <h3>19. Isidore of Miletus</h3>
+                        <p class="dates">(c. 442 – 537 CE)</p>
+                        <p class="desc">Isidore of Miletus (born c. 475 CE) was a Byzantine mathematician and architect,
+                            co-leader with Anthemius of Tralles on
+                            the construction of Hagia Sophia.</p>
+                    </div>
+                </a>
+
+                <a href="Boethius.html" class="math-card">
+                    <img src="Boethius.jpeg" alt="Boethius">
+                    <div class="math-card-body">
+                        <h3>20. Boethius</h3>
+                        <p class="dates">(c. 480 – 524 CE)</p>
+                        <p class="desc">Anicius Manlius Severinus Boethius (c. 480–524 CE) was a Roman philosopher,
+                            statesman, and mathematician whose works
+                            became the cornerstone of medieval mathematical education.</p>
+                    </div>
+                </a>
+
+                <a href="John Philoponus.html" class="math-card">
+                    <img src="John Philoponus.webp" alt="John Philoponus">
+                    <div class="math-card-body">
+                        <h3>21. John Philoponus</h3>
+                        <p class="dates">(c. 490 – 570 CE)</p>
+                        <p class="desc">John Philoponus (c. 490 – c. 570 CE), also known as “the Grammarian,” was a
+                            Byzantine philosopher and scientist whose
+                            critiques of Aristotelian physics revolutionized the intellectual landscape of late
+                            antiquity.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="Eutocius.html" class="math-card">
+                    <img src="Eutocius.jpg" alt="Eutocius of Ascalon">
+                    <div class="math-card-body">
+                        <h3>22. Eutocius of Ascalon</h3>
+                        <p class="dates">(c. 480 – 540 CE)</p>
+                        <p class="desc">Eutocius of Ascalon (early 6th century CE) was a Byzantine mathematician and
+                            commentator whose work primarily involved
+                            preserving and elucidating the writings of Archimedes and Apollonius.</p>
+                    </div>
+                </a>
+
+                <a href="Khosrow I.html" class="math-card">
+                    <img src="Khosrow I.webp" alt="Khosrow I">
+                    <div class="math-card-body">
+                        <h3>23. Khosrow I</h3>
+                        <p class="dates">(c. 501 – 579 CE)</p>
+                        <p class="desc">Khosrow I Anushirvan (reigned 531–579 CE) was a Sassanian Persian king renowned
+                            not
+                            only for his political reforms but
+                            also for his patronage of science, philosophy, and mathematics.</p>
+                    </div>
+                </a>
+
+                <a href="Severus Serbokht.html" class="math-card">
+                    <img src="Severus Serbokht.webp" alt="Severus Sebokht">
+                    <div class="math-card-body">
+                        <h3>24. Severus Sebokht</h3>
+                        <p class="dates">(c. 575 – 667 CE)</p>
+                        <p class="desc">Severus Sebokht (575–664 CE; born within your specified window) was a Syriac
+                            mathematician, astronomer, and bishop whose
+                            writings bridged Greek, Indian, and early Islamic mathematical traditions.</p>
+                    </div>
+                </a>
+
             </div>
 
-            <!-- Row 2 -->
-            <div class="math-card"><span></span> <a href="Nicomachus of Gerasa.html">4. Nicomachus of Gerasa (c. 60 –
-                    120 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Theon of Smyrna.html">5. Theon of Smyrna (fl. 100 – 135
-                    CE)</a></div>
-            <div class="math-card"><span></span> <a href="Marinus of Tyre.html">6. Marinus of Tyre (fl. early 2nd
-                    century CE)</a></div>
 
-            <!-- Row 3 -->
-            <div class="math-card"><span></span> <a href="Menalaus.html">7. Menelaus of Alexandria (fl. 100 CE)</a>
-            </div>
-            <div class="math-card"><span></span> <a href="Cleomedes.html">8. Cleomedes (fl. late 1st – early 2nd century
-                    CE)</a></div>
-            <div class="math-card"><span></span> <a href="Pausanias.html">9. Pausanias (c. 110 – 180 CE)</a></div>
-
-            <!-- Row 4 -->
-            <div class="math-card"><span></span> <a href="Ptolemy.html">10. Ptolemy (c. 100 – 170 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Galen.html">11. Galen (129 – c. 216 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Diophantus.html">12. Diophantus (c. 200 – 284 CE)</a></div>
-
-            <!-- Row 5 -->
-            <div class="math-card"><span></span> <a href="Serenus.html">13. Serenus of Antinoöpolis (c. 300 – 360
-                    CE)</a></div>
-            <div class="math-card"><span></span> <a href="Pappus.html">14. Pappus of Alexandria (c. 290 – 350 CE)</a>
-            </div>
-            <div class="math-card"><span></span> <a href="Theon of Alexandria.html">15. Theon of Alexandria (c. 335 –
-                    405 CE)</a></div>
-
-            <!-- Row 6 -->
-            <div class="math-card"><span></span> <a href="Hypatia.html">16. Hypatia (c. 360 – 415 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Proclus.html">17. Proclus (412 – 485 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Anthemius.html">18. Anthemius of Tralles (c. 474 – 534 CE)</a>
-            </div>
-
-            <!-- Row 7 -->
-            <div class="math-card"><span></span> <a href="Isidore.html">19. Isidore of Miletus (c. 442 – 537 CE)</a>
-            </div>
-            <div class="math-card"><span></span> <a href="Boethius.html">20. Boethius (c. 480 – 524 CE)</a></div>
-            <div class="math-card"><span></span> <a href="John Philoponus.html">21. John Philoponus (c. 490 – 570
-                    CE)</a></div>
-
-            <!-- Row 8 -->
-            <div class="math-card"><span></span> <a href="Eutocius.html">22. Eutocius of Ascalon (c. 480 – 540 CE)</a>
-            </div>
-            <div class="math-card"><span></span> <a href="Khosrow I.html">23. Khosrow I (c. 501 – 579 CE)</a></div>
-            <div class="math-card"><span></span> <a href="Severus Serbokht.html">24. Severus Sebokht (c. 575 – 667
-                    CE)</a></div>
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

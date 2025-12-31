@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,138 +26,498 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="muslim">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
+        </div>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
             <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
             <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>Muslim Mathematicians & Scientists</h3>
-        <p>
-            Pioneers of mathematics, astronomy, and science during the Islamic Golden Age whose groundbreaking
-            discoveries
-            shaped global knowledge and advanced the foundations of mathematics, engineering, and astronomy.
-        </p>
-
-        <div class="Math-grid">
-            <!-- Row 1 -->
-            <div class="math-card"><a href="Thabit ibn Qurrah.html"><b>1. Thabit ibn al-Qurrah</b> (c. 826–901)</a>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
             </div>
-            <div class="math-card"><a href="Abbas ibn Firnas.html"><b>2. Abbas ibn Firnas</b> (c. 810–887)</a></div>
-            <div class="math-card"><a href="Al-Kindi.html"><b>3. Al-Kindi</b> (c. 801–873)</a></div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>Muslim Mathematicians & Scientists</h3>
+            <p>
+                The Islamic Golden Age produced scholars whose pursuit of knowledge transformed mathematics, astronomy,
+                and
+                the sciences
+                through rigorous reasoning and innovation. Building upon Greek, Persian, and Indian traditions, they
+                developed algebra,
+                refined trigonometry, advanced geometry, and perfected astronomical observation. Figures such as
+                al-Khwarizmi and Ibn
+                al-Haytham combined theory with experiment, creating systematic methods and instruments that influenced
+                Europe, Asia,
+                and Africa, laying enduring foundations for modern mathematics, engineering, and scientific inquiry.
+            </p>
 
-            <!-- Row 2 -->
-            <div class="math-card"><a href="Al-Battani.html"><b>4. Al-Battani</b> (c. 858–929)</a></div>
-            <div class="math-card"><a href="Abu al-Wafa al-Buzjani.html"><b>5. Abu al-Wafa al-Buzjani</b> (940–998)</a>
+            <div class="Math-grid">
+                <!-- Row 1 -->
+                <a href="Thabit ibn Qurrah.html" class="math-card">
+                    <img src="Thabit ibn Qurrah.jpeg" alt="Thabit ibn al-Qurrah">
+                    <div class="math-card-body">
+                        <h3>1. Thabit ibn al-Qurrah</h3>
+                        <p class="dates">(c. 826–901)</p>
+                        <p class="desc">Thābit ibn Qurrah (c. 826/836 – 19 February 901 CE) was an Arab Sabian scholar
+                            from
+                            Ḥarrān, active in Baghdad during the
+                            mid-Abbāsid era.</p>
+                    </div>
+                </a>
+
+                <a href="Abbas ibn Firnas.html" class="math-card">
+                    <img src="Abbas ibn Firnas.jpeg" alt="Abbas ibn Firnas">
+                    <div class="math-card-body">
+                        <h3>2. Abbas ibn Firnas</h3>
+                        <p class="dates">(c. 810–887)</p>
+                        <p class="desc">Abū al-Qāsim ʿAbbās ibn Firnās ibn Wirdūs al-Tākurnī (c. 810 – 887 CE) was a
+                            notable
+                            Andalusian polymath active in
+                            Córdoba.</p>
+                    </div>
+                </a>
+
+                <a href="Al-Kindi.html" class="math-card">
+                    <img src="Al-Kindi.jpg" alt="Al-Kindi">
+                    <div class="math-card-body">
+                        <h3>3. Al-Kindi</h3>
+                        <p class="dates">(c. 801–873)</p>
+                        <p class="desc">Al-Kindi (c. 801 – c. 873 CE), known in Latin as Alkindus, was an Arab polymath
+                            who
+                            made lasting contributions across
+                            philosophy, mathematics, astronomy, medicine, cryptography, music theory, and more.</p>
+                    </div>
+                </a>
+
+                <!-- Row 2 -->
+                <a href="Al-Battani.html" class="math-card">
+                    <img src="Al-Battani.png" alt="Al-Battani">
+                    <div class="math-card-body">
+                        <h3>4. Al-Battani</h3>
+                        <p class="dates">(c. 858–929)</p>
+                        <p class="desc">Al-Battani (c. 858 – 929 CE), also known in Latin as Albatenius, was an Arab
+                            astronomer, mathematician, and astrologer
+                            whose observational precision and theoretical contributions had a profound impact on both
+                            Islamic and European
+                            astronomy.</p>
+                    </div>
+                </a>
+
+                <a href="Abu al-Wafa al-Buzjani.html" class="math-card">
+                    <img src="Abu al-Wafa al-Buzjani.jpeg" alt="Abu al-Wafa al-Buzjani">
+                    <div class="math-card-body">
+                        <h3>5. Abu al-Wafa al-Buzjani</h3>
+                        <p class="dates">(940–998)</p>
+                        <p class="desc">Abū al-Wafāʾ al-Būzjānī (10 June 940 – July 998 CE) was a distinguished Persian
+                            mathematician and astronomer active in
+                            Baghdad.</p>
+                    </div>
+                </a>
+
+                <a href="Al-Majriti.html" class="math-card">
+                    <img src="Al-Majriti.webp" alt="Al-Majriti">
+                    <div class="math-card-body">
+                        <h3>6. Al-Majriti</h3>
+                        <p class="dates">(c. 950–c. 1007)</p>
+                        <p class="desc">Abu al-Qāsim Maslama ibn Aḥmad al-Majrīṭī (c. 950–1007 CE), also known in Latin
+                            as
+                            Methilem, was a prominent Muslim
+                            mathematician, astronomer, alchemist, economist, and polymath based in al-Andalus.</p>
+                    </div>
+                </a>
+
+                <!-- Row 3 -->
+                <a href="Al-Khwarizmi.html" class="math-card">
+                    <img src="Al-Khwarizmi.jpg" alt="Al-Khwarizmi">
+                    <div class="math-card-body">
+                        <h3>7. Al-Khwarizmi</h3>
+                        <p class="dates">(c. 780–c. 850)</p>
+                        <p class="desc">Muhammad ibn Musa al-Khwarizmi (c. 780 – c. 850 CE) was a Persian polymath who
+                            made
+                            foundational contributions to
+                            mathematics, astronomy, and geography.</p>
+                    </div>
+                </a>
+
+                <a href="Al-Biruni.html" class="math-card">
+                    <img src="Al-Biruni.jpg" alt="Al-Biruni">
+                    <div class="math-card-body">
+                        <h3>8. Al-Biruni</h3>
+                        <p class="dates">(973–1048)</p>
+                        <p class="desc">Al-Biruni (973 – after 1050 CE) was a Persian scholar and polymath who made
+                            groundbreaking contributions to a wide array
+                            of disciplines, including mathematics, astronomy, physics, geography, history, and
+                            linguistics.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="Al-Farabi.html" class="math-card">
+                    <img src="Al-Farabi.jpeg" alt="Al-Farabi">
+                    <div class="math-card-body">
+                        <h3>9. Al-Farabi</h3>
+                        <p class="dates">(c. 872–950)</p>
+                        <p class="desc">Al-Farabi (c. 872 – c. 950 CE), also known as Abu Nasr Muhammad ibn Muhammad
+                            al-Farabi, was a renowned philosopher,
+                            scientist, logician, and musician of the Islamic Golden Age.</p>
+                    </div>
+                </a>
+
+                <!-- Row 4 -->
+                <a href="Al-Mas'udi.html" class="math-card">
+                    <img src="Al-Mas'udi.jpg" alt="Al-Mas’udi">
+                    <div class="math-card-body">
+                        <h3>10. Al-Mas’udi</h3>
+                        <p class="dates">(c. 896–956)</p>
+                        <p class="desc">Abū al‑Ḥasan ʿAlī ibn al‑Ḥusayn al‑Masʿūdī (c. 896 – September 956 CE) was a
+                            pioneering Arab historian, geographer, and
+                            traveler, often called the “Herodotus of the Arabs.”</p>
+                    </div>
+                </a>
+
+                <a href="Al-Sijzi.html" class="math-card">
+                    <img src="Al-Sijzi.jpeg" alt="Al-Sijzi">
+                    <div class="math-card-body">
+                        <h3>11. Al-Sijzi</h3>
+                        <p class="dates">(c. 945–c. 1020)</p>
+                        <p class="desc">Al-Sijzi (c. 945 – c. 1020 CE), full name Abu Sa'id Ahmad ibn Muhammad ibn 'Abd
+                            al-Jalil al-Sijzi, was a Persian
+                            mathematician and astronomer known for his original contributions to geometry, planetary
+                            theory,
+                            and astronomical
+                            instruments.</p>
+                    </div>
+                </a>
+
+                <a href="Ali_Qushji.html" class="math-card">
+                    <img src="Ali_Qushji.jpg" alt="Ali Qushji">
+                    <div class="math-card-body">
+                        <h3>12. Ali Qushji</h3>
+                        <p class="dates">(c. 1403–1474)</p>
+                        <p class="desc">Ali Qushji (c. 1403 – 1474 CE), full name Ala al-Dīn Ali ibn Muhammed al-Qushji,
+                            was
+                            a prominent astronomer,
+                            mathematician, physicist, and theologian of Central Asian origin.</p>
+                    </div>
+                </a>
+
+                <!-- Row 5 -->
+                <a href="ibn-al-haytham.html" class="math-card">
+                    <img src="Ibn al-Haytham.jpeg" alt="Ibn al-Haytham">
+                    <div class="math-card-body">
+                        <h3>13. Ibn al-Haytham</h3>
+                        <p class="dates">(c. 965–1040)</p>
+                        <p class="desc">Hasan ibn-al-Haytham was a mathematician, physicist and an astronomer at the
+                            same
+                            time during the Islamic Golden
+                            Age. He was also an influential polymath.</p>
+                    </div>
+                </a>
+
+                <a href="Abd ar-Rahman as-Sufi.html" class="math-card">
+                    <img src="Abd ar-Rahman as-Sufi.jpeg" alt="Abd-ar-Rahman as-Sufi">
+                    <div class="math-card-body">
+                        <h3>14. Abd-ar-Rahman as-Sufi</h3>
+                        <p class="dates">(903–986)</p>
+                        <p class="desc">Abd‑ar‑Rahman al‑Ṣūfī (7 December 903 – 25 May 986 CE), often known in the West
+                            as
+                            Azophi, was a Persian astronomer who
+                            lived at the court of Emir ‛Adud ad‑Daula in Isfahan, Persia.</p>
+                    </div>
+                </a>
+
+                <a href="Al-Idrisi.html" class="math-card">
+                    <img src="Al-Idrisi.jpg" alt="Al-Idrisi">
+                    <div class="math-card-body">
+                        <h3>15. Al-Idrisi</h3>
+                        <p class="dates">(1100–1165)</p>
+                        <p class="desc">Muhammad ibn Muhammad al‑Idrisi (c. 1100 – c. 1165 CE), also known as Al‑Sharif
+                            al‑Idrisi, was a renowned Arab Muslim
+                            geographer, cartographer, and scholar.</p>
+                    </div>
+                </a>
+
+                <!-- Row 6 -->
+                <a href="Omar Khayyam.html" class="math-card">
+                    <img src="Omar Khayyam.jpg" alt="Omar Khayyam">
+                    <div class="math-card-body">
+                        <h3>16. Omar Khayyam</h3>
+                        <p class="dates">(1048–1131)</p>
+                        <p class="desc">Omar Khayyam (1048 – 1131 CE) was a Persian polymath renowned for his profound
+                            contributions to mathematics, astronomy,
+                            philosophy, and literature.</p>
+                    </div>
+                </a>
+
+                <a href="Ibn Sina.html" class="math-card">
+                    <img src="Ibn Sina.jpeg" alt="Ibn Sina">
+                    <div class="math-card-body">
+                        <h3>17. Ibn Sina</h3>
+                        <p class="dates">(980–1037)</p>
+                        <p class="desc">Ibn Sina (980 – 1037 CE), known in the West as Avicenna, was a Persian polymath
+                            whose achievements span philosophy,
+                            medicine, astronomy, mathematics, physics, and more.</p>
+                    </div>
+                </a>
+
+                <a href="Ismail al-Jazari.html" class="math-card">
+                    <img src="Ismail al-Jazari.jpg" alt="Isma’il al-Jazari">
+                    <div class="math-card-body">
+                        <h3>18. Isma’il al-Jazari</h3>
+                        <p class="dates">(1136–1206)</p>
+                        <p class="desc">Badīʿ az-Zamān Abū l-ʿIzz ibn Ismāʿīl ibn al-Razzāz al-Jazarī (1136–1206 CE) was
+                            a
+                            celebrated Muslim polymath—engineer,
+                            inventor, artisan, and artist—who served as chief mechanical engineer to the Artuqid rulers
+                            in
+                            Mesopotamia.</p>
+                    </div>
+                </a>
+
+                <!-- Row 7 -->
+                <a href="Jamshid al Kashi.html" class="math-card">
+                    <img src="Jamshid al Kashi.webp" alt="Jamshid al-Kashi">
+                    <div class="math-card-body">
+                        <h3>19. Jamshid al-Kashi</h3>
+                        <p class="dates">(c. 1380–1429)</p>
+                        <p class="desc">Ghiyāth al-Dīn Jamshīd al-Kāshī (c. 1380 – 22 June 1429 CE) was a Persian
+                            mathematician and astronomer born in Kashān,
+                            Persia, and later based at the Samarkand Observatory under Ulugh Beg.</p>
+                    </div>
+                </a>
+
+                <a href="Sharaf ad-Din at-Tusi.html" class="math-card">
+                    <img src="Sharaf ad-Din at-Tusi.jpeg" alt="Sharaf ad-Din at-Tusi">
+                    <div class="math-card-body">
+                        <h3>20. Sharaf ad-Din at-Tusi</h3>
+                        <p class="dates">(c. 1135–1213)</p>
+                        <p class="desc">Sharaf al‑Dīn al‑Muẓaffar ibn Muḥammad ibn al‑Muẓaffar al‑Ṭūsī (c. 1135 –
+                            c. 1213 CE) hailed from Tus in present-day
+                            Iran.</p>
+                    </div>
+                </a>
+
+                <a href="Nasir-ud-Din-at-Tusi.html" class="math-card">
+                    <img src="Nasir-ud-Din al-Tusi.webp" alt="Nasir ud-Din at-Tusi">
+                    <div class="math-card-body">
+                        <h3>21. Nasir ud-Din at-Tusi</h3>
+                        <p class="dates">(1201–1274)</p>
+                        <p class="desc">Nasir-ud-Din al-Tusi (1201 – 1274 CE), full name Muhammad ibn Muhammad ibn
+                            al-Hasan
+                            al-Tusi, was a Persian polymath who
+                            made significant contributions to astronomy, mathematics, philosophy, and theology during
+                            the
+                            Islamic Golden Age.</p>
+                    </div>
+                </a>
+
+                <!-- Row 8 -->
+                <a href="ulugh-beg.html" class="math-card">
+                    <img src="Ulugh-Beg.webp" alt="Ulugh Beg">
+                    <div class="math-card-body">
+                        <h3>22. Ulugh Beg</h3>
+                        <p class="dates">(1394–1449)</p>
+                        <p class="desc">Muhammad Taraghay Ulugh Beg was the fourth Sultan of the Timurid Empire. He was
+                            the
+                            descendant of the worldwide known
+                            Amir Timur (Tamerlane).</p>
+                    </div>
+                </a>
+
+                <a href="Ibn ar Rushd.html" class="math-card">
+                    <img src="Ibn ar Rushd.webp" alt="Ibn ar-Rushd">
+                    <div class="math-card-body">
+                        <h3>23. Ibn ar-Rushd</h3>
+                        <p class="dates">(1126–1198)</p>
+                        <p class="desc">Ibn ar-Rushd (1126 – 1198 CE), also known as Averroes, was a towering figure of
+                            the
+                            Islamic Golden Age.</p>
+                    </div>
+                </a>
+
+                <a href="Al-Qalasadi.html" class="math-card">
+                    <img src="Al-Qalasadi.jpg" alt="Al-Qalasadi">
+                    <div class="math-card-body">
+                        <h3>24. Al-Qalasadi</h3>
+                        <p class="dates">(1412–1486)</p>
+                        <p class="desc">Al-Qalasadi (1412 – 1486 CE), full name Abu al-Hasan Ali ibn Muhammad
+                            al-Qalasadi,
+                            was a prominent Arab mathematician
+                            from Al-Andalus, born in Baza near Granada in modern-day Spain.</p>
+                    </div>
+                </a>
             </div>
-            <div class="math-card"><a href="Al-Majriti.html"><b>6. Al-Majriti</b> (c. 950–c. 1007)</a></div>
 
-            <!-- Row 3 -->
-            <div class="math-card"><a href="Al-Khwarizmi.html"><b>7. Al-Khwarizmi</b> (c. 780–c. 850)</a></div>
-            <div class="math-card"><a href="Al-Biruni.html"><b>8. Al-Biruni</b> (973–1048)</a></div>
-            <div class="math-card"><a href="Al-Farabi.html"><b>9. Al-Farabi</b> (c. 872–950)</a></div>
 
-            <!-- Row 4 -->
-            <div class="math-card"><a href="Al-Mas'udi.html"><b>10. Al-Mas’udi</b> (c. 896–956)</a></div>
-            <div class="math-card"><a href="Al-Sijzi.html"><b>11. Al-Sijzi</b> (c. 945–c. 1020)</a></div>
-            <div class="math-card"><a href="Ali_Qushji.html"><b>12. Ali Qushji</b> (c. 1403–1474)</a></div>
 
-            <!-- Row 5 -->
-            <div class="math-card"><a href="ibn-al-haytham.html"><b>13. Ibn al-Haytham</b> (c. 965–1040)</a></div>
-            <div class="math-card"><a href="Abd ar-Rahman as-Sufi.html"><b>14. Abd-ar-Rahman as-Sufi</b> (903–986)</a>
-            </div>
-            <div class="math-card"><a href="Al-Idrisi.html"><b>15. Al-Idrisi</b> (1100–1165)</a></div>
-
-            <!-- Row 6 -->
-            <div class="math-card"><a href="Omar Khayyam.html"><b>16. Omar Khayyam</b> (1048–1131)</a></div>
-            <div class="math-card"><a href="Ibn Sina.html"><b>17. Ibn Sina</b> (980–1037)</a></div>
-            <div class="math-card"><a href="Ismail al-Jazari.html"><b>18. Isma’il al-Jazari</b> (1136–1206)</a></div>
-
-            <!-- Row 7 -->
-            <div class="math-card"><a href="Jamshid al Kashi.html"><b>19. Jamshid al-Kashi</b> (c. 1380–1429)</a></div>
-            <div class="math-card"><a href="Sharaf ad-Din at-Tusi.html"><b>20. Sharaf ad-Din at-Tusi</b> (c.
-                    1135–1213)</a>
-            </div>
-            <div class="math-card"><a href="Nasir-ud-Din-at-Tusi.html"><b>21. Nasir ud-Din at-Tusi</b> (1201–1274)</a>
-            </div>
-
-            <!-- Row 8 -->
-            <div class="math-card"><a href="ulugh-beg.html"><b>22. Ulugh Beg</b> (1394–1449)</a></div>
-            <div class="math-card"><a href="Ibn ar Rushd.html"><b>23. Ibn ar-Rushd</b> (1126–1198)</a></div>
-            <div class="math-card"><a href="Al-Qalasadi.html"><b>24. Al-Qalasadi</b> (1412–1486)</a></div>
         </div>
+        <script>
+            function removeLoader() {
+                // Check if already removed to prevent double-firing
+                if (document.body.classList.contains('loaded')) return;
 
+                // Add 'loaded' class to body -> triggers CSS fade out
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loading');
+            }
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            // 1. Standard Listener: Wait for page to fully load
+            window.addEventListener('load', () => {
+                // Small delay (1000ms) so users can actually admire your animation
+                setTimeout(removeLoader, 1000);
+            });
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+            // 2. Safety Fallback: If page hangs for 4 seconds, force open
+            setTimeout(removeLoader, 3240);
+            let sidebarOpen = false;
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+            function toggleSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();</script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+                if (!sidebarOpen) {
+                    // OPEN
+                    sidebar.style.left = "0";
+
+                    if (!isMobile) {
+                        // Desktop → push
+                        content.classList.add("shift-desktop");
+                    } else {
+                        // Mobile → overlay + darken
+                        document.body.classList.add("sidebar-open");
+                    }
+
+                    sidebarOpen = true;
+                } else {
+                    // CLOSE
+                    sidebar.style.left = isMobile ? "-40%" : "-24%";
+                    content.classList.remove("shift-desktop");
+                    document.body.classList.remove("sidebar-open");
+
+                    sidebarOpen = false;
+                }
+            }
+
+            function closeSidebar() {
+                const sidebar = document.getElementById("sidebar");
+                const content = document.getElementById("page-content");
+                const isMobile = window.innerWidth <= 768;
+
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+
+            document.addEventListener("click", function (e) {
+                const sidebar = document.getElementById("sidebar");
+                const isMobile = window.innerWidth <= 768;
+
+                if (!isMobile || !sidebarOpen) return;
+
+                // If click is outside sidebar
+                if (!sidebar.contains(e.target)) {
+                    closeSidebar();
+                }
+            });
+
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
+
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
+
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
+            }
+            showTime();
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

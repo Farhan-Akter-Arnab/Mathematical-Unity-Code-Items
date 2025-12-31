@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -21,147 +26,189 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body class="contemporary">
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="scientists.html" class="active">Scientists</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h3>James Clerk Maxwell</h3>
-        <h4>Father of Electromagnetic Theory</h4>
-        <h5><i><strong>Not to be confused with <a href="Glenn Maxwell.html" style="color:white;" id="by-product">Glenn
-                        Maxwell!!! (Clickable Link)</a></strong></i></h5>
-        <p>James Clerk Maxwell (1831–1879) was a Scottish physicist and mathematician whose groundbreaking work unified
-            electricity, magnetism, and light. Born in Edinburgh, Scotland, Maxwell displayed extraordinary intellectual
-            abilities from an early age, mastering mathematics and science while still a child. He studied at the
-            University of
-            Edinburgh and later at the University of Cambridge, where he developed his interest in the theoretical
-            foundations
-            of physics.</p>
-        <img src="James Clerk Maxwell.png" alt="James Clerk Maxwell" class="img-fluid"
-            style="max-width: 300px; max-height: 400px; float:right;">
-        <h4>Maxwell’s Equations</h4>
-        <p>Maxwell’s most famous achievement was formulating a set of equations that describe the behavior of electric
-            and
-            magnetic fields and their interrelation. These equations, known as Maxwell’s equations, elegantly unify all
-            classical electromagnetic phenomena:</p>
-        \[
-        \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
-        \]
-        \[
-        \nabla \cdot \mathbf{B} = 0
-        \]
-        \[
-        \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
-        \]
-        \[
-        \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
-        \]
-        <p>Here, \( \mathbf{E} \) is the electric field, \( \mathbf{B} \) is the magnetic field, \( \rho \) is charge
-            density,
-            \( \mathbf{J} \) is current density, \( \varepsilon_0 \) is the permittivity of free space, and \( \mu_0 \)
-            is the
-            permeability of free space.</p>
 
-        <h4>Electromagnetic Waves and Light</h4>
-        <p>From his equations, Maxwell predicted the existence of electromagnetic waves traveling at the speed of light,
-            demonstrating that light itself is an electromagnetic phenomenon. This discovery laid the theoretical
-            foundation for
-            modern optics, radio, and wireless communication.</p>
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html" class="active">Scientists</a>
+            <a href="materials.html">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h3>James Clerk Maxwell</h3>
+            <h4>Father of Electromagnetic Theory</h4>
+            <h5><i><strong>Not to be confused with <a href="Glenn Maxwell.html" style="color:white;"
+                            id="by-product">Glenn
+                            Maxwell!!! (Clickable Link)</a></strong></i></h5>
+            <p>James Clerk Maxwell (1831–1879) was a Scottish physicist and mathematician whose groundbreaking work
+                unified
+                electricity, magnetism, and light. Born in Edinburgh, Scotland, Maxwell displayed extraordinary
+                intellectual
+                abilities from an early age, mastering mathematics and science while still a child. He studied at the
+                University of
+                Edinburgh and later at the University of Cambridge, where he developed his interest in the theoretical
+                foundations
+                of physics.</p>
+            <img src="James Clerk Maxwell.png" alt="James Clerk Maxwell" class="img-fluid"
+                style="max-width: 300px; max-height: 400px; float:right;">
+            <h4>Maxwell’s Equations</h4>
+            <p>Maxwell’s most famous achievement was formulating a set of equations that describe the behavior of
+                electric
+                and
+                magnetic fields and their interrelation. These equations, known as Maxwell’s equations, elegantly unify
+                all
+                classical electromagnetic phenomena:</p>
+            \[
+            \nabla \cdot \mathbf{E} = \frac{\rho}{\varepsilon_0}
+            \]
+            \[
+            \nabla \cdot \mathbf{B} = 0
+            \]
+            \[
+            \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+            \]
+            \[
+            \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \varepsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+            \]
+            <p>Here, \( \mathbf{E} \) is the electric field, \( \mathbf{B} \) is the magnetic field, \( \rho \) is
+                charge
+                density,
+                \( \mathbf{J} \) is current density, \( \varepsilon_0 \) is the permittivity of free space, and \( \mu_0
+                \)
+                is the
+                permeability of free space.</p>
 
-        <h4>Other Contributions</h4>
-        <p>Beyond electromagnetism, Maxwell contributed to kinetic theory of gases, color vision, and thermodynamics. He
-            developed the Maxwell-Boltzmann distribution, explaining the statistical behavior of particles in gases. In
-            optics,
-            he created color wheels to demonstrate additive color mixing, showing the relationship between physical
-            light
-            properties and human perception.</p>
+            <h4>Electromagnetic Waves and Light</h4>
+            <p>From his equations, Maxwell predicted the existence of electromagnetic waves traveling at the speed of
+                light,
+                demonstrating that light itself is an electromagnetic phenomenon. This discovery laid the theoretical
+                foundation for
+                modern optics, radio, and wireless communication.</p>
 
-        <h4>Legacy</h4>
-        <p>Maxwell’s work transformed physics, inspiring generations of scientists including Albert Einstein, who
-            credited
-            Maxwell’s theory as a cornerstone for the theory of relativity. Maxwell’s unification of electricity,
-            magnetism, and
-            optics is considered one of the greatest achievements in physics, bridging theory and experiment and shaping
-            the
-            modern understanding of the natural world.</p>
+            <h4>Other Contributions</h4>
+            <p>Beyond electromagnetism, Maxwell contributed to kinetic theory of gases, color vision, and
+                thermodynamics. He
+                developed the Maxwell-Boltzmann distribution, explaining the statistical behavior of particles in gases.
+                In
+                optics,
+                he created color wheels to demonstrate additive color mixing, showing the relationship between physical
+                light
+                properties and human perception.</p>
 
-    </div>
-    <script>
-        function showTime() {
-            var date = new Date();
-            var h = date.getHours();
-            var min = date.getMinutes();
-            var s = date.getSeconds();
-            var tar = date.getDate();
-            var month = date.getMonth() + 1;
-            var year = date.getFullYear();
-            var day = date.getDay();
-            var day_ord = "Sunday";
-            var session = "AM";
+            <h4>Legacy</h4>
+            <p>Maxwell’s work transformed physics, inspiring generations of scientists including Albert Einstein, who
+                credited
+                Maxwell’s theory as a cornerstone for the theory of relativity. Maxwell’s unification of electricity,
+                magnetism, and
+                optics is considered one of the greatest achievements in physics, bridging theory and experiment and
+                shaping
+                the
+                modern understanding of the natural world.</p>
 
-            if (h == 0) {
-                h = 12;
-            }
-            if (h > 12) {
-                h = h - 12;
-                session = "PM";
-            }
-            if (day == 0) {
-                day_ord = "Sunday";
-            }
-            if (day == 1) {
-                day_ord = "Monday";
-            }
-            if (day == 2) {
-                day_ord = "Tuesday";
-            }
-            if (day == 3) {
-                day_ord = "Wednesday";
-            }
-            if (day == 4) {
-                day_ord = "Thursday";
-            }
-            if (day == 5) {
-                day_ord = "Friday";
-            }
-            if (day == 6) {
-                day_ord = "Saturday";
-            }
-            h = (h < 10) ? "0" + h : h;
-            min = (min < 10) ? "0" + min : min;
-            s = (s < 10) ? "0" + s : s;
-            tar = (tar < 10) ? "0" + tar : tar;
-            month = (month < 10) ? "0" + month : month;
-            year = (year < 10) ? "0" + year : year;
+        </div>
+        <script>
+            function showTime() {
+                var date = new Date();
+                var h = date.getHours();
+                var min = date.getMinutes();
+                var s = date.getSeconds();
+                var tar = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var day = date.getDay();
+                var day_ord = "Sunday";
+                var session = "AM";
 
-            var tarihi = tar + "." + month + "." + year + " " + day_ord;
+                if (h == 0) {
+                    h = 12;
+                }
+                if (h > 12) {
+                    h = h - 12;
+                    session = "PM";
+                }
+                if (day == 0) {
+                    day_ord = "Sunday";
+                }
+                if (day == 1) {
+                    day_ord = "Monday";
+                }
+                if (day == 2) {
+                    day_ord = "Tuesday";
+                }
+                if (day == 3) {
+                    day_ord = "Wednesday";
+                }
+                if (day == 4) {
+                    day_ord = "Thursday";
+                }
+                if (day == 5) {
+                    day_ord = "Friday";
+                }
+                if (day == 6) {
+                    day_ord = "Saturday";
+                }
+                h = (h < 10) ? "0" + h : h;
+                min = (min < 10) ? "0" + min : min;
+                s = (s < 10) ? "0" + s : s;
+                tar = (tar < 10) ? "0" + tar : tar;
+                month = (month < 10) ? "0" + month : month;
+                year = (year < 10) ? "0" + year : year;
 
-            var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
-            document.getElementById("Mathematical_Clock").innerText = time;
-            setTimeout(showTime, 1000);
-        }
-        showTime();
-        document.getElementById('by-product').addEventListener('click', function (event) {
-            if (!confirm('This is not about James Clerk Maxwell, but a fishy by-product of this website. Do you want to continue?')) {
-                event.preventDefault(); // Stops navigation if user says No
+                var tarihi = tar + "." + month + "." + year + " " + day_ord;
+
+                var time = h + ":" + min + ":" + s + " " + session + ", " + tarihi;
+                document.getElementById("Mathematical_Clock").innerText = time;
+                setTimeout(showTime, 1000);
             }
-        });
-    </script>
-    <br><br>
-    <div class="footer">
-        <img src="Mathematical Unity.jpeg" height="150" id="horse">
-        <p>All rights reserved by the Mathematical Unity</p>
-        <p>Contact: +8801400044645</p>
-        <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-        <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                Riyadiyat]</a></p>
-    </div>
+            showTime();
+            document.getElementById('by-product').addEventListener('click', function (event) {
+                if (!confirm('This is not about James Clerk Maxwell, but a fishy by-product of this website. Do you want to continue?')) {
+                    event.preventDefault(); // Stops navigation if user says No
+                }
+            });
+        </script>
+        <br><br>
+        <div class="footer">
+            <img src="Mathematical Unity.jpeg" height="150" id="horse">
+            <p>All rights reserved by the Mathematical Unity</p>
+            <p>Contact: +8801400044645</p>
+            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
+            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                    Riyadiyat]</a></p>
+        </div>
     </div>
 </body>
 

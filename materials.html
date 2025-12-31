@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="Mathematical Unity_Icon.png">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -22,43 +27,166 @@
 
 <body>
     <div class="container-fluid">
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="mathematicians.html">Mathematicians</a>
-            <a href="aboutus.html"><img src="Mathematical Unity_Logo.png" height="64px"></a>
-            <a href="materials.html" class="active">Materials</a>
-            <a href="profile.html">Profile</a>
+
+        <div id="loader-wrapper">
+            <div class="loader-content">
+                <div class="wobble-scale-wrapper">
+                    <div class="wobble-loader"></div>
+                </div>
+                <div class="loading-text">On My Way...</div>
+            </div>
         </div>
-        <div id="Mathematical_Clock" onload="showTime()"></div>
-        <h1>Welcome to the Mathematical World!</h1>
-        <h4>Starting journey of Mathematics</h4>
-        <p>Mathematics is nothing but a great journey towards a mysterious world of the beauty of the environment and
-            their patterns. However, it is our duty to start the journey completely ourselves. Only then one can find
-            its true beauty. Here are some links to guide you on your way:</p>
-        <h4>List of some Mathematical sites</h4>
-        <p>
-        <ul class="mather">
-            <li><a href="Math Village.html">Mathematical Villages, Turkiye</a></li>
-            <li><a href="calculator.html">Simple Calculator from the Mathematical World itself</a></li>
-            <li><a href="IMO.html">International Mathematical Olympiad</a></li>
-            <li><a href="BDMO.html">Bangladesh Mathematical Olympiad</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Mathematics">Wikipedia page on Mathematics</a></li>
-            <li><a href="https://www.desmos.com/">An effective Calculator: Desmos</a></li>
-            <li><a href="https://www.youtube.com/@ChamokHasan">YouTube Channel of Chamok Hasan</a></li>
-            <li><a href="https://www.youtube.com/@MathVisualProofs">Mathematical Visual Proofs</a></li>
-        </ul>
-        </p>
-        <br><br>
-        <div class="footer">
-            <img src="Mathematical Unity.jpeg" height="150" id="horse">
-            <p>All rights reserved by the Mathematical Unity</p>
-            <p>Contact: +8801400044645</p>
-            <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a></p>
-            <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
-                    Riyadiyat]</a></p>
+
+        <div id="sidebar" class="sidebar">
+            <a href="index.html" class="logo-link2">
+                <img src="Mathematical Unity_Logo.png" height="64px">
+            </a>
+            <hr style="height:1.997px; border: none; background-color:gray; margin: 10px 0;">
+            <a href="aboutus.html">About Us</a>
+            <a href="scientists.html">Scientists</a>
+            <a href="materials.html" class="active">Materials</a>
+        </div>
+        <div id="page-content">
+            <div class="navbar custom-navbar">
+                <a href="javascript:void(0)" class="menu-btn" onclick="toggleSidebar()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-layout-sidebar-inset" viewBox="0 0 16 16">
+                        <path
+                            d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z" />
+                        <path d="M3 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" />
+                    </svg><span class="nav-text">Categories</span></a>
+                <a href="index.html" class="logo-link">
+                    <img src="Mathematical Unity_Logo.png" height="64px">
+                </a>
+                <a href="profile.html" class="profile-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                    </svg><span class="nav-text">Profile</span></a>
+            </div>
+            <div id="Mathematical_Clock" onload="showTime()"></div>
+            <h1>Welcome to the Mathematical World!</h1>
+            <h4>Starting journey of Mathematics</h4>
+            <p>Mathematics is much more than a set of rules or calculations; it is a meaningful journey into a world
+                filled
+                with beauty, structure, and patterns that shape both nature and human understanding. Through
+                mathematics, we
+                begin to recognize the order behind complexity and the harmony hidden within the world around us.</p>
+            <p>This journey, however, requires active participation. It is essential to approach mathematics with
+                curiosity,
+                patience, and a willingness to explore ideas independently. Only by engaging thoughtfully can one truly
+                appreciate its depth, elegance, and lasting value.</p>
+            <p>The sites below are intended to serve as helpful guides along this path, offering direction and insight
+                as
+                you continue your exploration of mathematics.</p>
+            <h4>List of some Mathematical sites</h4>
+            <div class="Math-grid">
+                <a href="Math Village.html" class="math-card">
+                    <img src="Matematik_Köyü_Ali_Nesin_Ders_Anlatırken_2007.jpg" alt="Math Village Image">
+                    <div class="math-card-body">
+                        <h3>Mathematical Villages, Turkiye</h3>
+                        <p class="desc">It is natural to become highly astonished, because no one ever has let most of
+                            the readers to know that such a
+                            mathematical village exists in this world.</p>
+                    </div>
+                </a>
+                <a href="calculator.html" class="math-card">
+                    <img src="calculator.jpg" alt="Calculator">
+                    <div class="math-card-body">
+                        <h3>Simple Calculator from the Mathematical World itself</h3>
+                        <p class="desc">A calculator is typically a portable electronic device used to perform
+                            calculations, ranging from basic arithmetic to
+                            complex mathematics.</p>
+                    </div>
+                </a>
+                <a href="Trig_Table.html" class="math-card">
+                    <img src="Trig_Table.webp" alt="Chocolate">
+                    <div class="math-card-body">
+                        <h3>Trigonometric Chocolate Bar !!!</h3>
+                        <p class="desc">Chocolate is undoubtedly very delicious and favourite to all, right? But what
+                            does it mean by Trigonometric Chocolate Bar!? Is it edible?</p>
+                    </div>
+                </a>
+                <a href="IMO.html" class="math-card">
+                    <img src="IMO.webp" alt="IMO">
+                    <div class="math-card-body">
+                        <h3>International Mathematical Olympiad</h3>
+                        <p class="desc">The International Mathematical Olympiad (IMO) is the oldest and most prestigious
+                            annual mathematics competition for
+                            high-school students worldwide.</p>
+                    </div>
+                </a>
+                <a href="BDMO.html" class="math-card">
+                    <img src="bdmo-logo.png" alt="BDMO">
+                    <div class="math-card-body">
+                        <h3>Bangladesh Mathematical Olympiad</h3>
+                        <p class="desc">The Bangladesh Mathematical Olympiad — commonly abbreviated BdMO — is a
+                            nationwide series of mathematics competitions,
+                            festivals, and training events for school and college students (up to Class XII).</p>
+                    </div>
+                </a>
+            </div>
+            <br><br>
+            <div class="footer">
+                <img src="Mathematical Unity.jpeg" height="150" id="horse">
+                <p>All rights reserved by the Mathematical Unity</p>
+                <p>Contact: +8801400044645</p>
+                <p>Email: <a href="mailto:mathematicalhorse1453@gmail.com" id="link">mathematicalhorse1453@gmail.com</a>
+                </p>
+                <p>Our Discord Server: <a href="https://discord.gg/94tCxYhVV7" id="link">Mathematical Unity [Ulus
+                        Riyadiyat]</a></p>
+            </div>
         </div>
     </div>
     <script>
+        function removeLoader() {
+            // Check if already removed to prevent double-firing
+            if (document.body.classList.contains('loaded')) return;
+
+            // Add 'loaded' class to body -> triggers CSS fade out
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loading');
+        }
+
+        // 1. Standard Listener: Wait for page to fully load
+        window.addEventListener('load', () => {
+            // Small delay (1000ms) so users can actually admire your animation
+            setTimeout(removeLoader, 1000);
+        });
+
+        // 2. Safety Fallback: If page hangs for 4 seconds, force open
+        setTimeout(removeLoader, 3240);
+        let sidebarOpen = false;
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            const content = document.getElementById("page-content");
+            const isMobile = window.innerWidth <= 768;
+
+            if (!sidebarOpen) {
+                // OPEN
+                sidebar.style.left = "0";
+
+                if (!isMobile) {
+                    // Desktop → push
+                    content.classList.add("shift-desktop");
+                } else {
+                    // Mobile → overlay + darken
+                    document.body.classList.add("sidebar-open");
+                }
+
+                sidebarOpen = true;
+            } else {
+                // CLOSE
+                sidebar.style.left = isMobile ? "-40%" : "-24%";
+                content.classList.remove("shift-desktop");
+                document.body.classList.remove("sidebar-open");
+
+                sidebarOpen = false;
+            }
+        }
+
         function showTime() {
             var date = new Date();
             var h = date.getHours();
