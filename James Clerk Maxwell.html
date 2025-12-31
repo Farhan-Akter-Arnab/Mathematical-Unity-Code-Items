@@ -140,6 +140,53 @@
 
         </div>
         <script>
+            function removeLoader() {
+                    // Check if already removed to prevent double-firing
+                    if (document.body.classList.contains('loaded')) return;
+
+                    // Add 'loaded' class to body -> triggers CSS fade out
+                    document.body.classList.add('loaded');
+                    document.body.classList.remove('loading');
+                }
+
+                // 1. Standard Listener: Wait for page to fully load
+                window.addEventListener('load', () => {
+                    // Small delay (1000ms) so users can actually admire your animation
+                    setTimeout(removeLoader, 1000);
+                });
+
+                // 2. Safety Fallback: If page hangs for 4 seconds, force open
+                setTimeout(removeLoader, 3240);
+                let sidebarOpen = false;
+
+                function toggleSidebar() {
+                    const sidebar = document.getElementById("sidebar");
+                    const content = document.getElementById("page-content");
+                    const isMobile = window.innerWidth <= 768;
+
+                    if (!sidebarOpen) {
+                        // OPEN
+                        sidebar.style.left = "0";
+
+                        if (!isMobile) {
+                            // Desktop → push
+                            content.classList.add("shift-desktop");
+                        } else {
+                            // Mobile → overlay + darken
+                            document.body.classList.add("sidebar-open");
+                        }
+
+                        sidebarOpen = true;
+                    } else {
+                        // CLOSE
+                        sidebar.style.left = isMobile ? "-40%" : "-24%";
+                        content.classList.remove("shift-desktop");
+                        document.body.classList.remove("sidebar-open");
+
+                        sidebarOpen = false;
+                    }
+                }
+
             function showTime() {
                 var date = new Date();
                 var h = date.getHours();
