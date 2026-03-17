@@ -8,15 +8,53 @@ body {
 
 /* Ensure the table container is scrollable horizontally */
 .real-choco-table-container {
-    overflow-x: auto; /* Enable horizontal scrolling for the table container */
-    white-space: nowrap; /* Prevent content from wrapping */
-    max-width: 100%; /* Constrain the table to the device width */
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    touch-action: pan-x !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain !important;
+    scrollbar-width: thin;
+    scrollbar-color: chocolate #2a1300;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 12px !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    white-space: nowrap !important;
+    position: relative;
+}
+
+.real-choco-table-container::-webkit-scrollbar {
+    height: 12px;
+}
+
+.real-choco-table-container::-webkit-scrollbar-thumb {
+    background: chocolate;
+    border-radius: 8px;
+    border: 2px solid #3a1d00;
+}
+
+.real-choco-table-container::-webkit-scrollbar-track {
+    background: #2a1300;
+    border-radius: 8px;
+}
+
+.real-choco-table-container::-webkit-scrollbar-thumb {
+    background: chocolate;
+    border-radius: 8px;
+    border: 2px solid #3a1d00;
+}
+
+.real-choco-table-container::-webkit-scrollbar-track {
+    background: #2a1300;
+    border-radius: 8px;
 }
 
 /* Table styling */
 .real-choco-table {
-    table-layout: fixed; /* Ensure fixed column widths */
-    width: 100%; /* Constrain the table width to the container */
+    table-layout: fixed;
+    width: max-content;
+    min-width: 100%;
     border-collapse: separate;
     border-spacing: 8px;
     text-align: center;
@@ -30,6 +68,26 @@ body {
     padding: 8px;
 }
 
+#degrad {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    box-sizing: border-box;
+}
+
+/* Table headers and cells equal width */
+.real-choco-table th,
+.real-choco-table td {
+    width: 390px;
+    min-width: 390px;
+    box-sizing: border-box;
+}
+
+.real-choco-table {
+    width: max-content !important;
+    min-width: 100% !important;
+}
+
 /* Table cells */
 .real-choco-table td {
     position: relative;
@@ -41,11 +99,9 @@ body {
         inset 0 2px 2px rgba(255, 255, 255, 0.15),
         inset 0 -3px 5px rgba(0, 0, 0, 0.5),
         0 5px 10px rgba(0, 0, 0, 0.6);
-    overflow-x: auto; /* Enable horizontal scrolling for overflowing content */
-    overflow-y: hidden; /* Prevent vertical scrolling */
-    max-width: 100%; /* Ensure content fits within the cell */
-    white-space: nowrap; /* Prevent content from wrapping */
-    height: 88px; /* Increase the height of the cells */
+    overflow: hidden;
+    white-space: nowrap;
+    height: 100px;
 }
 
 /* Table headers */
@@ -59,9 +115,12 @@ body {
         inset 0 2px 2px rgba(255, 255, 255, 0.15),
         inset 0 -3px 5px rgba(0, 0, 0, 0.5),
         0 5px 10px rgba(0, 0, 0, 0.6);
-    white-space: nowrap; /* Prevent content from wrapping */
-    height: 88px; /* Match the height of table cells */
-    overflow: hidden; /* Remove unnecessary scrollbars */
+    white-space: nowrap;
+    /* Prevent content from wrapping */
+    height: 88px;
+    /* Match the height of table cells */
+    overflow: hidden;
+    /* Remove unnecessary scrollbars */
 }
 
 /* Smooth upward-downward transition */
@@ -76,44 +135,95 @@ body {
     backface-visibility: hidden;
 }
 
+.table-scroll-ui {
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+}
+
+.scroll-helper {
+    font-size: 0.85rem;
+    color: #fff4;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    padding: 3px 8px;
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+.scrollbar-track {
+    height: 10px;
+    width: 100%;
+    background: #2b1700;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.scrollbar-thumb {
+    height: 100%;
+    width: 15%;
+    background: chocolate;
+    border-radius: 10px;
+    transition: transform 0.1s linear;
+}
+
 /* Style the scrollbar for horizontal scrolling */
 .real-choco-table td::-webkit-scrollbar {
-    height: 6px; /* Reduce the height of the scrollbar */
+    height: 6px;
+    /* Reduce the height of the scrollbar */
 }
 
 .real-choco-table td::-webkit-scrollbar-thumb {
-    background: chocolate; /* Color of the scrollbar thumb */
-    border-radius: 3px; /* Rounded corners for the scrollbar thumb */
+    background: chocolate;
+    /* Color of the scrollbar thumb */
+    border-radius: 3px;
+    /* Rounded corners for the scrollbar thumb */
 }
 
 .real-choco-table td::-webkit-scrollbar-track {
-    background: #3a1d00; /* Color of the scrollbar track */
-    border-radius: 3px; /* Rounded corners for the scrollbar track */
+    background: #3a1d00;
+    /* Color of the scrollbar track */
+    border-radius: 3px;
+    /* Rounded corners for the scrollbar track */
 }
 
 /* Approximate text styling */
 .real-choco-table td .approx {
-    font-size: 0.824em; /* Slightly smaller font size for approximate text */
-    color: #d2a679; /* Lighter color for approximate text */
+    font-size: 0.824em;
+    /* Slightly smaller font size for approximate text */
+    color: #d2a679;
+    /* Lighter color for approximate text */
 }
 
 .real-choco-table td .original {
-    transform: translateY(0); /* Default position for the original value */
-    z-index: 2; /* Place the original value above the approximate value */
+    transform: translateY(0);
+    /* Default position for the original value */
+    z-index: 2;
+    /* Place the original value above the approximate value */
 }
 
 .real-choco-table td .approx {
-    transform: translateY(100%); /* Start below the cell */
-    z-index: 1; /* Place the approximate value below the original value */
+    transform: translateY(100%);
+    /* Start below the cell */
+    z-index: 1;
+    /* Place the approximate value below the original value */
 }
 
 /* When toggled, swap the positions */
 .real-choco-table td.toggled .original {
-    transform: translateY(-100%); /* Move the original value upwards */
+    transform: translateY(-100%);
+    /* Move the original value upwards */
 }
 
 .real-choco-table td.toggled .approx {
-    transform: translateY(0); /* Bring the approximate value into view */
+    transform: translateY(0);
+    /* Bring the approximate value into view */
 }
 
 @media (max-width: 768px) {
