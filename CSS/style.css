@@ -1,6 +1,6 @@
 body {
     background-color: navy;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Mathematics Arslan Khan.JPG');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Images/Mathematics Arslan Khan.JPG');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -17,10 +17,17 @@ body {
 img {
     border-radius: 8px;
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     text-align: center;
 }
-h1, h2, h3, h4 {
+
+h1,
+h2,
+h3,
+h4 {
     font-weight: bold;
 }
 
@@ -29,7 +36,7 @@ h1, h2, h3, h4 {
 }
 
 .contemporary {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Contemporary/Contemporary.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Contemporary/Images/Contemporary.png');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -37,7 +44,7 @@ h1, h2, h3, h4 {
 }
 
 .muslim {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Muslim/Muslim.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Muslim/Images/Muslim.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -45,7 +52,7 @@ h1, h2, h3, h4 {
 }
 
 .greek {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Greek/Greek.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Greek/Images/Greek.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -53,7 +60,7 @@ h1, h2, h3, h4 {
 }
 
 .antiquity {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Antiquity/Anthemius.webp');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Antiquity/Images/Antiquity.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -61,7 +68,7 @@ h1, h2, h3, h4 {
 }
 
 .indian {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Indian.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Indian/Images/Indian.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -69,7 +76,7 @@ h1, h2, h3, h4 {
 }
 
 .east-asian {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/East Asian/Chinese.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/East Asian/Images/Chinese.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -77,7 +84,7 @@ h1, h2, h3, h4 {
 }
 
 .russian {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Russian.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Russian/Images/Russian.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -85,7 +92,7 @@ h1, h2, h3, h4 {
 }
 
 .renaissance {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Renaissance/Renaissance.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Scientists/Renaissance/Images/Renaissance.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     font-optical-sizing: auto;
@@ -242,7 +249,7 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
-.sidebar a::after{
+.sidebar a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -483,7 +490,8 @@ td {
     inset: 0;
 }
 
-.math-card, .math-card:link,
+.math-card,
+.math-card:link,
 .math-card:visited {
     color: #ffffff;
     /* normal link color */
@@ -535,12 +543,17 @@ button {
     margin-left: 10% relative;
     margin-right: 10% relative;
     margin-bottom: 10px;
-}/* Style the container */
+}
+
+/* Style the container */
 .mather {
     display: flex;
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px; /* Add spacing between buttons */
-    width: 100%; /* Ensure the container spans the full width */
+    flex-direction: column;
+    /* Stack buttons vertically */
+    gap: 10px;
+    /* Add spacing between buttons */
+    width: 100%;
+    /* Ensure the container spans the full width */
     padding: 0;
     margin: 0;
     border: none;
@@ -549,31 +562,48 @@ button {
 
 /* Style the buttons */
 .mather button {
-    background: linear-gradient(145deg, #3046bd, #0b1c57); /* Gradient background */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
-    padding: 15px; /* Add padding for better spacing */
-    width: 100%; /* Make buttons occupy the full width of the container */
-    text-align: center; /* Center-align the text */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    background: linear-gradient(145deg, #3046bd, #0b1c57);
+    /* Gradient background */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* Add shadow for depth */
+    padding: 15px;
+    /* Add padding for better spacing */
+    width: 100%;
+    /* Make buttons occupy the full width of the container */
+    text-align: center;
+    /* Center-align the text */
+    cursor: pointer;
+    /* Change cursor to pointer */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
 }
 
 /* Style the links inside buttons */
 .mather button a {
-    text-decoration: none; /* Remove underline */
-    color: #ffffff; /* Set text color */
-    font-weight: bold; /* Make text bold */
-    font-size: 1.1em; /* Slightly increase font size */
-    display: block; /* Ensure the link spans the entire button */
+    text-decoration: none;
+    /* Remove underline */
+    color: #ffffff;
+    /* Set text color */
+    font-weight: bold;
+    /* Make text bold */
+    font-size: 1.1em;
+    /* Slightly increase font size */
+    display: block;
+    /* Ensure the link spans the entire button */
 }
 
 /* Add hover effects for buttons */
 .mather button:hover {
-    background: linear-gradient(145deg, #0b1c57, #3046bd); /* Reverse gradient on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* Increase shadow depth */
-    transform: translateY(-3px); /* Slightly lift the button */
+    background: linear-gradient(145deg, #0b1c57, #3046bd);
+    /* Reverse gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5);
+    /* Increase shadow depth */
+    transform: translateY(-3px);
+    /* Slightly lift the button */
 }
 
 /* Add hover effects for links */
