@@ -45,6 +45,22 @@ function toggleSidebar() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+    if (sidebarCloseBtn) {
+        sidebarCloseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // Directly invoke your toggle function if the sidebar is currently open
+            if (typeof sidebarOpen !== 'undefined' && sidebarOpen) {
+                toggleSidebar();
+            }
+        });
+    }
+});
+
+
 function showTime() {
     var date = new Date();
     var h = date.getHours();

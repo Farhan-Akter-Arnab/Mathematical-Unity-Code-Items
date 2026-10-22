@@ -221,6 +221,11 @@ h4 {
     z-index: 1050;
 }
 
+/* Sidebar Open State (Triggered by adding the 'open' class) */
+.sidebar.open {
+    left: 0;
+}
+
 /* Sidebar links – same capsule style */
 .sidebar a {
     display: block;
@@ -278,6 +283,35 @@ h4 {
     color: rgb(10, 50, 87);
 }
 
+.sidebar-close-btn {
+    background: transparent;
+    border: none;
+    outline: none;                /* Removes the browser's default click outline */
+    color: #62cddb;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: auto;
+    display: block;
+    width: auto;                  /* Keeps it from stretching across the sidebar */
+    margin: 5px 15px 10px auto;   /* Pushes it cleanly to the right */
+    text-align: right;
+    line-height: 1;
+    z-index: 1060;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prevents any border/outline from flashing when the button is clicked or focused */
+.sidebar-close-btn:focus,
+.sidebar-close-btn:active {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.sidebar-close-btn:hover {
+    color: orange;                /* Keeps your theme hover color */
+}
 
 /* Mobile width */
 @media (max-width: 768px) {
