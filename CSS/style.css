@@ -1,4 +1,5 @@
 body {
+    isolation: isolate;
     background-color: navy;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Images/Mathematics Arslan Khan.JPG');
     background-repeat: no-repeat;
@@ -41,12 +42,9 @@ h4 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
-    /* Place it above your math background layer */
+    z-index: -1;
     pointer-events: none;
-    /* Allows clicking through to your content */
     background: transparent;
-    /* KEY FIX: Keeps your math background visible */
 }
 
 .contemporary {

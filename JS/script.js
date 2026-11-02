@@ -135,8 +135,14 @@ showTime();
 
     // Resize canvas dynamically to match window dimensions
     function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+        const pixelRatio = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = Math.round(width * pixelRatio);
+        canvas.height = Math.round(height * pixelRatio);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
         cx = width / 2;
         cy = height / 2;
     }
