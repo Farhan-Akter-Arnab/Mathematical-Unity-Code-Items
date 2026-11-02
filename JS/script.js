@@ -115,3 +115,106 @@ function showTime() {
     setTimeout(showTime, 1000);
 }
 showTime();
+
+(function initStarfield() {
+    const canvas = document.getElementById('aw-starfield');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+
+    // Configuration Settings
+    const CONFIG = {
+        numStars: 700,         // Total number of active stars
+        speed: 1,             // Speed of forward motion
+        starColor: '#ffffff',  // Cyan color (or '#ffffff' for clean white)
+        focalDistance: 300     // 3D perspective depth scale
+    };
+
+    let width = 0, height = 0;
+    let cx = 0, cy = 0;
+
+    // Resize canvas dynamically to match window dimensions
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        cx = width / 2;
+        cy = height / 2;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // Star Object Class
+    class Star {
+        constructor() {
+            this.reset(true);
+        }
+
+        reset(initial = false) {
+            // Random 3D spatial positioning
+            this.x = (Math.random() - 0.5) * width * 3;
+            this.y = (Math.random() - 0.5) * height * 3;
+            this.z = initial ? Math.random() * 1000 : 1000;
+            this.pz = this.z; // Previous Z position for drawing motion trails
+        }
+
+        update() {
+            this.pz = this.z;
+            this.z -= CONFIG.speed;
+
+            // Reset star when it flies past the viewer screen
+            if (this.z <= 1) {
+                this.reset(false);
+                this.pz = this.z;
+            }
+        }
+
+        draw() {
+            // 3D Perspective Projection: X = cx + (x / z) * k, Y = cy + (y / z) * k
+            const k = CONFIG.focalDistance;
+            const px = cx + (this.x / this.z) * k;
+            const py = cy + (this.y / this.z) * k;
+
+            const prevPx = cx + (this.x / this.pz) * k;
+            const prevPy = cy + (this.y / this.pz) * k;
+
+            // Skip drawing if outside screen bounds
+            if (px < 0 || px >= width || py < 0 || py >= height) return;
+
+            // Calculate opacity and line thickness based on proximity
+            const alpha = Math.min(1, Math.max(0, (1000 - this.z) / 800));
+            const size = Math.max(0.5, (1 - this.z / 1000) * 2.5);
+
+            // Draw forward-moving star streak line
+            ctx.beginPath();
+            ctx.moveTo(prevPx, prevPy);
+            ctx.lineTo(px, py);
+            ctx.strokeStyle = CONFIG.starColor;
+            ctx.globalAlpha = alpha;
+            ctx.lineWidth = size;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+            ctx.globalAlpha = 1.0;
+        }
+    }
+
+    // Initialize Star Pool
+    const stars = Array.from({ length: CONFIG.numStars }, () => new Star());
+
+    // 60 FPS Render Animation Loop
+    function animate() {
+        // Clear screen with dark background (or adjust alpha for motion blur trails)
+        ctx.fillStyle = '#030508';
+        ctx.clearRect(0, 0, width, height);
+
+        // Update and draw all stars
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].update();
+            stars[i].draw();
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    // Start animation on window load
+    requestAnimationFrame(animate);
+})();
