@@ -84,6 +84,7 @@
                 format. Otherwise in 12-hour clock format, especially in analogue clocks, it can be confusing. Because
                 8:00 on an analogue clock could be either 8 AM (in the morning) or 8 PM (at night), depending on the
                 context. So, it is important to understand both formats and their applications.</p>
+            <hr>
             <div class="wrapper">
                 <div class="bar-seconds"></div>
                 <div class="number-hours"></div>
@@ -93,6 +94,55 @@
                     <div class="hand seconds"><i></i></div>
                 </div>
             </div>
+            <div class="clock-info-panel">
+                <div class="info-card">
+                    <span class="info-label">Digital Time (24h)</span>
+                    <span id="digital-24" class="info-value">00:00:00</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Hand Angle (H-M)</span>
+                    <span id="angle-hm" class="info-value">0°</span>
+                </div>
+                <div class="info-card">
+                    <span class="info-label">Percentage of Day</span>
+                    <span id="day-percent" class="info-value">0.00%</span>
+                </div>
+            </div>
+            <hr>
+            <h4>Mathematical Derivation of Hand Angles for a 24-Hour Clock</h4>
+            
+            <p>In a standard 24-hour clock face, the full circle of \(360^\circ\) is distributed across 24 hours instead of 12. This
+                changes the angular velocity of the hour hand while keeping the minute hand traversal identical.</p>
+            
+            <p><strong>1. Hour Hand Traversal (\( \theta_H\) ):</strong></p>
+            <ul>
+                <li><strong>Hourly rate:</strong> Since \(360^\circ / 24 = 15^\circ\) per hour, \(H\) hours contribute \(15H^\circ\).</li>
+                <li><strong>Minute contribution:</strong> The hour hand moves \(15^\circ\) over 60 minutes, which is \(15^\circ / 60 =
+                    0.25^\circ\) (or \(\frac{M}{4}\)) per minute.</li>
+                <li><strong>Second contribution:</strong> Over 60 seconds, it moves an additional \(0.25^\circ / 60 =
+                    \frac{1}{240}^\circ\) per second.</li>
+            </ul>
+            <p>Combining these, the total degrees traversed by the hour hand from the 0/24 position is:</p>
+            <p>$$ \theta_H = 15H + \frac{M}{4} + \frac{S}{240} $$</p>
+            
+            <p><strong>2. Minute Hand Traversal (\( \theta_M\) ):</strong></p>
+            <p>The minute hand completes a full \(360^\circ\) rotation every 60 minutes, regardless of the clock dial's numbering
+                system:</p>
+            <ul>
+                <li><strong>Minute rate:</strong> \(360^\circ / 60 = 6^\circ\) per minute (\(6M\)).</li>
+                <li><strong>Second contribution:</strong> \(6^\circ / 60 = 0.1^\circ\) (or \(\frac{S}{10}\)) per second.</li>
+            </ul>
+            <p>Thus, the total degrees traversed by the minute hand is:</p>
+            <p>\[ \theta_M = 6M + \frac{S}{10} \]</p>
+            
+            <p><strong>3. Angle Between Hour and Minute Hands (\( \Delta\theta \) ):</strong></p>
+            <p>Subtracting the minute hand's position from the hour hand's position yields the absolute angular difference:</p>
+            <p>$$ \Delta\theta = \left| \left(15H + \frac{M}{4} + \frac{S}{240}\right) - \left(6M + \frac{S}{10}\right) \right| $$
+            </p>
+            <p>Simplifying the coefficients gives the direct formula:</p>
+            <p>$$ \Delta\theta = \left| 15H - \frac{23}{4}M - \frac{23}{240}S \right| $$</p>
+            <p><em>(Note: If the resulting absolute value exceeds \(180^\circ\), take \(360^\circ - \Delta\theta\) to find the minor
+                    interior angle).</em></p>
         </div>
         <script src="../JS/script.js"></script>
         <script src="../JS/clock.js"></script>
