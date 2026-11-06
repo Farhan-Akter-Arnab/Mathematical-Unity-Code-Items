@@ -135,6 +135,9 @@ h4 {
 
 .azerbaycan {
     background-color: white;
+    margin: 10px;
+    max-width: 100%;
+    min-width: 50%;
 }
 
 .navbar {
